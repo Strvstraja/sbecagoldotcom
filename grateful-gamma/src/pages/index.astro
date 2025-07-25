@@ -1,0 +1,551 @@
+---
+// src/pages/index.astro
+import coverBugReports from '../assets/coverBugReports.png';
+import coverTestCases from '../assets/coverTestCases.png';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strahinja Becagol - QA Courses</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary-color: #10b981;
+        --primary-hover: #059669;
+        --text-color: #e2e8f0;
+        --text-light: #94a3b8;
+        --bg-color: #0f172a;
+        --bg-accent: #1e293b;
+        --border-color: #334155;
+        --card-bg: #1e293b;
+        --gradient-start: #0f766e;
+        --gradient-end: #0284c7;
+      }
+      
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Inter', sans-serif;
+        color: var(--text-color);
+        line-height: 1.6;
+        background-color: var(--bg-color);
+        background-image: 
+          radial-gradient(circle at 25% 15%, rgba(16, 185, 129, 0.1) 0%, transparent 40%),
+          radial-gradient(circle at 75% 85%, rgba(2, 132, 199, 0.1) 0%, transparent 40%),
+          linear-gradient(135deg, var(--bg-color) 0%, #111827 100%);
+        background-attachment: fixed;
+        min-height: 100vh;
+      }
+      
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem;
+      }
+      
+      header {
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+      
+      .hero {
+        padding: 4rem 2rem;
+        background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+        border-radius: 12px;
+        margin-bottom: 3rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+      
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        opacity: 0.5;
+      }
+      
+      h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: white;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        position: relative;
+        z-index: 1;
+      }
+      
+      .tagline {
+        font-size: 1.25rem;
+        color: rgba(255, 255, 255, 0.9);
+        max-width: 600px;
+        margin: 0 auto 1.5rem;
+        position: relative;
+        z-index: 1;
+      }
+      
+      h2 {
+        font-size: 1.75rem;
+        font-weight: 600;
+        margin: 2.5rem 0 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      
+      p {
+        margin-bottom: 1.5rem;
+      }
+      
+      .section {
+        margin-bottom: 3rem;
+        padding: 2rem;
+        border-radius: 8px;
+        background-color: var(--bg-accent);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        border: 1px solid var(--border-color);
+        backdrop-filter: blur(10px);
+      }
+      
+      .course-list {
+        list-style: none;
+        display: grid;
+        gap: 1rem;
+      }
+      
+      .course-card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        padding: 1.5rem;
+        transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .course-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary-color), var(--gradient-end));
+      }
+      
+      .course-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        border-color: var(--primary-color);
+      }
+      
+      .course-header {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      
+      
+      .course-link {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+        display: block;
+        padding: 0.5rem 0;
+      }
+      
+      .course-link:hover {
+        color: var(--primary-hover);
+      }
+      
+      .course-details {
+        margin-top: 1rem;
+      }
+      
+      .course-highlight {
+        font-weight: 500;
+        font-size: 1.1rem;
+        color: var(--primary-color);
+        margin-bottom: 0.75rem;
+      }
+      
+      .course-features {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin: 1.25rem 0;
+      }
+      
+      .feature {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      
+      .feature-icon {
+        color: var(--primary-color);
+        font-weight: bold;
+      }
+      
+      .course-topics {
+        margin: 1.5rem 0;
+        padding: 1rem;
+        background-color: rgba(0, 0, 0, 0.15);
+        border-radius: 6px;
+        border-left: 3px solid var(--primary-color);
+      }
+      
+      .course-topics h4 {
+        margin-bottom: 0.75rem;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+      
+      .course-topics ul {
+        list-style: disc;
+        padding-left: 1.5rem;
+        margin-bottom: 0;
+      }
+      
+      .course-topics li {
+        margin-bottom: 0.5rem;
+      }
+      
+      .course-meta {
+        display: flex;
+        gap: 1.5rem;
+        margin: 1.5rem 0;
+      }
+      
+      .meta-item {
+        flex: 1;
+        background-color: rgba(0, 0, 0, 0.15);
+        border-radius: 6px;
+        padding: 0.75rem 1rem;
+      }
+      
+      .meta-item:first-child {
+        border-left: 3px solid var(--gradient-start);
+      }
+      
+      .meta-item:last-child {
+        border-left: 3px solid var(--gradient-end);
+      }
+      
+      .meta-item h4 {
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+      
+      .meta-item p {
+        font-size: 0.9rem;
+        margin-bottom: 0;
+      }
+      
+      .course-cta {
+        margin-top: 1.5rem;
+      }
+      
+      .btn-secondary {
+        display: inline-block;
+        background-color: transparent;
+        color: var(--primary-color);
+        padding: 0.6rem 1.2rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.2s;
+        border: 1px solid var(--primary-color);
+      }
+      
+      .btn-secondary:hover {
+        background-color: var(--primary-color);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+      
+      .ebook-section {
+        text-align: center;
+        padding: 3rem 2rem;
+        background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+        color: white;
+        border-radius: 8px;
+        margin-bottom: 3rem;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+      
+      .ebook-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
+      }
+      
+      .ebook-section h2 {
+        color: white;
+        margin-top: 0;
+      }
+      
+      .btn {
+        display: inline-block;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.2s;
+        margin-top: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(5px);
+        position: relative;
+        z-index: 1;
+      }
+      
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        background-color: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.3);
+      }
+      
+      .contact-section {
+        text-align: center;
+      }
+      
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1rem;
+      }
+      
+      .social-link {
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+      }
+      
+      .social-link:hover {
+        color: var(--primary-hover);
+        text-decoration: underline;
+      }
+      
+      .course-header {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      
+      .course-cover {
+        width: 150px;
+        height: 150px;
+        border-radius: 8px;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+        object-fit: cover;
+      }
+      
+      .course-cover:hover {
+        transform: scale(1.05);
+      }
+      
+      .course-link {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: var(--primary-color);
+        text-decoration: none;
+        transition: color 0.3s ease;
+        flex: 1;
+      }
+      
+      .course-link:hover {
+        color: var(--gradient-end);
+      }
+      
+      footer {
+        text-align: center;
+        padding: 2rem 0;
+        color: var(--text-light);
+        font-size: 0.875rem;
+        border-top: 1px solid var(--border-color);
+        margin-top: 3rem;
+        background: linear-gradient(to top, var(--bg-color), transparent);
+      }
+      
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2rem;
+        }
+        
+        .hero {
+          padding: 2rem 1rem;
+        }
+        
+        .section {
+          padding: 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="hero">
+        <h1>Hi, I'm Strahinja</h1>
+        <p class="tagline">I help testers write better bug reports, test cases, and survive projects that make no sense.</p>
+      </div>
+
+      <section class="section">
+        <h2>🎓 My Courses</h2>
+        <ul class="course-list">
+          <li class="course-card">
+            <div class="course-header">
+              <img src={coverTestCases.src} alt="Test Cases Course Cover" class="course-cover" />
+              <a class="course-link" href="https://www.udemy.com/course/how-to-write-test-cases-that-dont-suck/">How to Write Test Cases That Don't Suck</a>
+            </div>
+            <div class="course-details">
+              <p class="course-highlight">Are you tired of vague, confusing test cases that cause more problems than they solve?</p>
+              <p>Learn how to write clear and effective test cases for manual QA with real examples, templates, and best practices that will transform how you approach software testing.</p>
+              
+              <div class="course-features">
+                <div class="feature">
+                  <span class="feature-icon">✓</span>
+                  <span>38-minute focused video course</span>
+                </div>
+                <div class="feature">
+                  <span class="feature-icon">✓</span>
+                  <span>1 article & downloadable resource</span>
+                </div>
+                <div class="feature">
+                  <span class="feature-icon">✓</span>
+                  <span>Examples & live walkthroughs</span>
+                </div>
+              </div>
+              
+              <div class="course-topics">
+                <h4>What you'll learn:</h4>
+                <ul>
+                  <li>How to structure a well-written test case using essential fields like ID, Title, Steps, and Expected Result</li>
+                  <li>How to write precise and readable test steps that others can follow</li>
+                  <li>How to identify and fix common mistakes in poorly written test cases</li>
+                  <li>How to apply best practices and reuse templates for faster, cleaner test writing</li>
+                </ul>
+              </div>
+              
+              <div class="course-meta">
+                <div class="meta-item">
+                  <h4>Requirements:</h4>
+                  <p>No prior experience needed. Beginner-friendly.</p>
+                </div>
+                
+                <div class="meta-item">
+                  <h4>Who it's for:</h4>
+                  <p>QA beginners, aspiring testers, developers who write test cases.</p>
+                </div>
+              </div>
+              
+              <div class="course-cta">
+                <a href="https://www.udemy.com/course/how-to-write-test-cases-that-dont-suck/" class="btn-secondary">View Course Details</a>
+              </div>
+            </div>
+          </li>
+          <li class="course-card">
+            <div class="course-header">
+              <img src={coverBugReports.src} alt="Bug Reports Course Cover" class="course-cover" />
+              <a class="course-link" href="https://www.udemy.com/course/how-to-write-bug-reports-that-dont-suck/">How to Write Bug Reports That Don't Suck</a>
+            </div>
+            <div class="course-details">
+              <p class="course-highlight">"I can't reproduce this" or "It works on my machine" — Sound familiar?</p>
+              <p>Learn how to write bug reports that actually get bugs fixed - clear, detailed, and impossible to ignore. Stop the frustration of having your bugs dismissed or misunderstood.</p>
+              
+              <div class="course-features">
+                <div class="feature">
+                  <span class="feature-icon">✓</span>
+                  <span>1 hour of focused video content</span>
+                </div>
+                <div class="feature">
+                  <span class="feature-icon">✓</span>
+                  <span>2 downloadable resources</span>
+                </div>
+                <div class="feature">
+                  <span class="feature-icon">✓</span>
+                  <span>Real examples & walkthroughs</span>
+                </div>
+              </div>
+              
+              <div class="course-topics">
+                <h4>What you'll learn:</h4>
+                <ul>
+                  <li>Write clear, concise, and actionable bug reports that developers can easily understand</li>
+                  <li>Identify and include essential details like steps to reproduce, expected vs actual results</li>
+                  <li>Avoid common mistakes that lead to ignored or misunderstood bug reports</li>
+                  <li>Use structured formats and real-world examples to improve communication</li>
+                </ul>
+              </div>
+              
+              <div class="course-meta">
+                <div class="meta-item">
+                  <h4>Requirements:</h4>
+                  <p>No experience needed. Basic computer skills.</p>
+                </div>
+                
+                <div class="meta-item">
+                  <h4>Who it's for:</h4>
+                  <p>QA engineers, aspiring testers, developers reporting bugs.</p>
+                </div>
+              </div>
+              
+              <div class="course-cta">
+                <a href="https://www.udemy.com/course/how-to-write-bug-reports-that-dont-suck/" class="btn-secondary">View Course Details</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="ebook-section">
+        <h2>📘 Free Ebook</h2>
+        <p>
+          Want the free ebook on better testing practices?
+        </p>
+        <a class="btn" href="https://your-mailerlite-link.com">Get Your Free Copy</a>
+      </section>
+
+      <section class="contact-section">
+        <h2>📬 Contact</h2>
+        <p>Have questions or want to collaborate? Reach out to me!</p>
+        <div class="social-links">
+          <a class="social-link" href="https://www.linkedin.com/in/becagol/">LinkedIn</a>
+          <a class="social-link" href="mailto:strahinja.becagol@sbecagol.com">strahinja.becagol@sbecagol.com</a>
+        </div>
+      </section>
+      
+      <footer>
+        <p>&copy; 2025 Strahinja Becagol. All rights reserved.</p>
+      </footer>
+    </div>
+  </body>
+</html>
