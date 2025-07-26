@@ -1,5 +1,6 @@
 ---
 // src/pages/index.astro
+import { Image } from 'astro:assets';
 import coverBugReports from '../assets/coverBugReports.png';
 import coverTestCases from '../assets/coverTestCases.png';
 ---
@@ -423,7 +424,7 @@ import coverTestCases from '../assets/coverTestCases.png';
         <ul class="course-list">
           <li class="course-card">
             <div class="course-header">
-              <img src={coverTestCases.src} alt="Test Cases Course Cover" class="course-cover" />
+              <Image src={coverTestCases} alt="Test Cases Course Cover" class="course-cover" width={150} height={150} />
               <a class="course-link" href="https://www.udemy.com/course/how-to-write-test-cases-that-dont-suck/">How to Write Test Cases That Don't Suck</a>
             </div>
             <div class="course-details">
@@ -474,7 +475,7 @@ import coverTestCases from '../assets/coverTestCases.png';
           </li>
           <li class="course-card">
             <div class="course-header">
-              <img src={coverBugReports.src} alt="Bug Reports Course Cover" class="course-cover" />
+              <Image src={coverBugReports} alt="Bug Reports Course Cover" class="course-cover" width={150} height={150} />
               <a class="course-link" href="https://www.udemy.com/course/how-to-write-bug-reports-that-dont-suck/">How to Write Bug Reports That Don't Suck</a>
             </div>
             <div class="course-details">
