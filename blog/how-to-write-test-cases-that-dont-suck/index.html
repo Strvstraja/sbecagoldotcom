@@ -1,0 +1,63 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-4sn4zg3r> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>How to Write Test Cases That Don’t Suck | Strahinja Becagol - QA Courses</title><meta name="description" content="A practical guide to writing test cases that are actually useful - and won’t make your team hate you."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><!-- Google tag (gtag.js) --><script async src="https://www.googletagmanager.com/gtag/js?id=G-Q35NJNWLZN"></script><script type="module">window.dataLayer=window.dataLayer||[];function a(){dataLayer.push(arguments)}a("js",new Date);a("config","G-Q35NJNWLZN");</script><link rel="stylesheet" href="/_assets/_slug_.BJMF5AoM.css"></head> <body data-astro-cid-4sn4zg3r> <header data-astro-cid-4sn4zg3r> <div class="container" data-astro-cid-4sn4zg3r> <a href="/" class="logo" data-astro-cid-4sn4zg3r>Strahinja Bećagol</a> <nav data-astro-cid-4sn4zg3r> <ul data-astro-cid-4sn4zg3r> <li data-astro-cid-4sn4zg3r><a href="/" data-astro-cid-4sn4zg3r>Home</a></li> <li data-astro-cid-4sn4zg3r><a href="/#courses" data-astro-cid-4sn4zg3r>Courses</a></li> <li data-astro-cid-4sn4zg3r><a href="/#ebook" class="nav-link-highlight" data-astro-cid-4sn4zg3r>Free eBook</a></li> <li data-astro-cid-4sn4zg3r><a href="/blog" data-astro-cid-4sn4zg3r>Blog</a></li> </ul> </nav> </div> </header> <main class="container" data-astro-cid-4sn4zg3r> <a href="/blog" class="back-link" data-astro-cid-4sn4zg3r>← Back to Blog</a> <article data-astro-cid-4sn4zg3r> <div class="blog-header" data-astro-cid-4sn4zg3r> <h1 class="blog-title" data-astro-cid-4sn4zg3r>How to Write Test Cases That Don’t Suck</h1> <div class="blog-meta" data-astro-cid-4sn4zg3r> <span class="blog-date" data-astro-cid-4sn4zg3r>July 28, 2025</span> <span class="blog-author" data-astro-cid-4sn4zg3r>By Strahinja Becagol</span> <div class="blog-tags" data-astro-cid-4sn4zg3r> <span class="blog-tag" data-astro-cid-4sn4zg3r>qa</span><span class="blog-tag" data-astro-cid-4sn4zg3r>test cases</span><span class="blog-tag" data-astro-cid-4sn4zg3r>manual testing</span> </div> </div> </div> <img src="/blogPostCover3.png" alt="How to Write Test Cases That Don’t Suck" class="blog-featured-image" onError="this.src='/placeholder-image.jpg'; this.onerror=null;" data-astro-cid-4sn4zg3r> <div class="blog-content" data-astro-cid-4sn4zg3r> <h1 id="how-to-write-test-cases-that-dont-suck">How to Write Test Cases That Don’t Suck</h1>
+<p>Not all test cases are created equal. Some are helpful, clear, and save everyone’s sanity. Others? They’re vague, confusing, and somehow make things worse than not having any test cases at all.<br>
+In one word they SUCK!</p>
+<p>Let’s fix that.</p>
+<h2 id="what-is-a-test-case">What Is a Test Case?</h2>
+<p>A test case is a set of conditions, steps, and expected results used to verify that a feature works as intended.</p>
+<p>Sounds simple, right? But poorly written test cases can cause:</p>
+<ul>
+<li>Confusion for other testers</li>
+<li>Bugs slipping through the cracks</li>
+<li>Endless follow-up questions from developers</li>
+<li>Slower QA cycles</li>
+<li>General chaos</li>
+</ul>
+<p>Good test cases do the opposite. They make testing repeatable, reliable, and clear.</p>
+<h2 id="anatomy-of-a-test-case">Anatomy of a Test Case</h2>
+<p>Here are the basic parts that every useful test case should include:</p>
+<ul>
+<li><strong>ID</strong>: A unique identifier (e.g., TC-001)</li>
+<li><strong>Title</strong>: A short, descriptive name (e.g., “Login with valid credentials”)</li>
+<li><strong>Preconditions</strong>: What needs to be set up before the test</li>
+<li><strong>Steps</strong>: The exact steps to follow</li>
+<li><strong>Expected Results</strong>: What you should see after performing the steps</li>
+<li><strong>Actual Results</strong> <em>(optional during planning)</em>: Used to log the outcome</li>
+<li><strong>Status</strong>: Pass/Fail when executing the test</li>
+</ul>
+<h2 id="best-practices-for-writing-test-cases">Best Practices for Writing Test Cases</h2>
+<p>Here’s how to make your test cases not suck:</p>
+<ul>
+<li><strong>Be clear and concise</strong>: Don’t overcomplicate. Your future self (or teammate) will thank you.</li>
+<li><strong>Avoid ambiguity</strong>: “Click the button” is not enough. Which button?</li>
+<li><strong>Use consistent structure</strong>: Makes it easier to review and reuse.</li>
+<li><strong>Focus on what matters</strong>: Don’t test the blinking cursor. Test actual functionality.</li>
+<li><strong>Think like the user</strong>: Walk through the feature like they would.</li>
+<li><strong>Test one thing per case</strong>: Keep it simple and isolated.</li>
+</ul>
+<h2 id="common-mistakes">Common Mistakes</h2>
+<p>Some classic ways to write terrible test cases:</p>
+<ul>
+<li>Skipping preconditions</li>
+<li>Writing one massive case to cover 10 flows</li>
+<li>Being too vague (“App works correctly” – wow, thanks)</li>
+<li>Forgetting edge cases (what if the user enters an emoji as their name?)</li>
+</ul>
+<h2 id="a-quick-example">A Quick Example</h2>
+<p>Here’s a decent test case:</p>
+<ul>
+<li><strong>Title</strong>: Login with valid credentials</li>
+<li><strong>Preconditions</strong>: User is on login page</li>
+<li><strong>Steps</strong>:
+<ol>
+<li>Enter valid email</li>
+<li>Enter correct password</li>
+<li>Click “Login”</li>
+</ol>
+</li>
+<li><strong>Expected Result</strong>: User is redirected to dashboard</li>
+</ul>
+<p>Simple. Clear. No guesswork.</p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>You don’t need 10 years of experience or a fancy tool to write good test cases. You just need structure, clarity, and the will to not write garbage.</p>
+<p>And hey, if you want to go deeper, <a href="https://www.udemy.com/course/how-to-write-test-cases-that-dont-suck/?referralCode=8914C6D9F0373B3952B9">How To Write Test Cases That Don’t Suck is live on Udemy</a>.</p>
+<p>Test smarter. Don’t make your team cry.</p> </div> </article> </main> <footer data-astro-cid-4sn4zg3r> <div class="container" data-astro-cid-4sn4zg3r> <p data-astro-cid-4sn4zg3r>&copy; 2025 Strahinja Becagol. All rights reserved.</p> </div> </footer> </body></html>
