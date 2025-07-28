@@ -1,0 +1,271 @@
+---
+import { getCollection } from 'astro:content';
+
+// Get all blog posts that aren't drafts
+const posts = await getCollection('blog', ({ data }) => {
+  return !data.draft;
+});
+
+// Sort posts by publication date
+const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog | Strahinja Becagol - QA Courses</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q35NJNWLZN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Q35NJNWLZN');
+    </script>
+    <style>
+      :root {
+        --primary-color: #10b981;
+        --primary-hover: #059669;
+        --text-color: #e2e8f0;
+        --text-light: #94a3b8;
+        --bg-color: #0f172a;
+        --bg-accent: #1e293b;
+        --border-color: #334155;
+        --gradient-start: #0f766e;
+        --gradient-end: #0d9488;
+        --card-bg: rgba(30, 41, 59, 0.8);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      header {
+        padding: 2rem 0;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-color);
+        text-decoration: none;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+      }
+
+      nav li {
+        margin-left: 1.5rem;
+      }
+
+      nav a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+
+      nav a:hover {
+        color: var(--primary-color);
+      }
+      
+      .nav-link-highlight {
+        color: var(--primary-color);
+      }
+
+      .page-title {
+        margin: 3rem 0;
+        text-align: center;
+      }
+
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 4rem;
+      }
+
+      .blog-card {
+        background-color: var(--bg-accent);
+        border-radius: 0.5rem;
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border: 1px solid var(--border-color);
+      }
+
+      .blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .blog-card-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .blog-card-content {
+        padding: 1.5rem;
+      }
+
+      .blog-card-date {
+        color: var(--text-light);
+        font-size: 0.875rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .blog-card-title {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+        font-weight: 600;
+      }
+
+      .blog-card-description {
+        color: var(--text-light);
+        margin-bottom: 1rem;
+      }
+
+      .blog-card-link {
+        display: inline-block;
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+
+      .blog-card-link:hover {
+        color: var(--primary-hover);
+      }
+
+      .blog-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-top: 1rem;
+      }
+
+      .blog-tag {
+        background-color: rgba(16, 185, 129, 0.1);
+        color: var(--primary-color);
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 500;
+      }
+
+      footer {
+        margin-top: 4rem;
+        padding: 2rem 0;
+        background-color: var(--bg-accent);
+        border-top: 1px solid var(--border-color);
+        text-align: center;
+        color: var(--text-light);
+      }
+
+      .back-link {
+        display: inline-block;
+        margin-bottom: 2rem;
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .back-link:hover {
+        text-decoration: underline;
+      }
+
+      @media (max-width: 768px) {
+        .blog-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <a href="/" class="logo">Strahinja Bećagol</a>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/#courses">Courses</a></li>
+            <li><a href="/#ebook" class="nav-link-highlight">Free eBook</a></li>
+            <li><a href="/blog" aria-current="page">Blog</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h1 class="page-title">QA Testing Blog</h1>
+      
+      <a href="/" class="back-link">← Back to Home</a>
+      
+      <div class="blog-grid">
+        {sortedPosts.map((post) => (
+          <article class="blog-card">
+            {post.data.image && (
+              <img 
+                src={post.data.image} 
+                alt={post.data.title} 
+                class="blog-card-image"
+                onError="this.src='/placeholder-image.jpg'; this.onerror=null;"
+              />
+            )}
+            <div class="blog-card-content">
+              <p class="blog-card-date">{post.data.pubDate.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}</p>
+              <h2 class="blog-card-title">{post.data.title}</h2>
+              <p class="blog-card-description">{post.data.description}</p>
+              <a href={`/blog/${post.slug}`} class="blog-card-link">Read More →</a>
+              <div class="blog-tags">
+                {post.data.tags.map((tag) => (
+                  <span class="blog-tag">{tag}</span>
+                ))}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; {new Date().getFullYear()} Strahinja Becagol. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
