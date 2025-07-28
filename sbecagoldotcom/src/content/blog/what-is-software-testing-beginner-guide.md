@@ -4,7 +4,7 @@ description: 'Discover what software testing is, why it matters, and how to get 
 pubDate: 2025-07-28
 author: 'Strahinja Becagol'
 image: '/blogPost1Cover.png'
-tags: ['qa', 'manual testing', 'beginners']
+tags: ['qa', 'software testing', 'beginners guide']
 ---
 
 # What Is Software Testing? A Beginner-Friendly Guide
@@ -27,22 +27,22 @@ Benefits of testing include:
 - **Preventing costly production issues**
 - **Improving user satisfaction**
 - **Enabling confident, faster releases**
+- **Preventing server room from going down in flames**
+- **Prevents premature loss of hair for managers and developers alike**
 
 ## Types of Software Testing
 
-There are many types of testing, but here are a few key categories:
+There are many types of testing, but here a simplest division possible
 
-- **Manual Testing**: Performed by a human, exploring and checking the application step by step.
-- **Automated Testing**: Scripts run predefined tests automatically.
-- **Functional Testing**: Ensures features work according to requirements.
-- **Regression Testing**: Verifies new changes didn’t break existing features.
-- **Exploratory Testing**: Combines learning and testing in real-time.
+- **Functional Testing**: Verifies that the software behaves according to specified requirements.
+- **Non Functional Testing**: Evaluates aspects like performance, usability, reliability, and scalability.
+
 
 ## Who Performs Software Testing?
 
 Anyone can test, but dedicated QA (Quality Assurance) professionals are trained to think critically, spot edge cases, and ensure high-quality releases.
 
-In smaller teams, developers often write tests as part of their workflow.
+In smaller teams, developers often write unit tests as part of their workflow.
 
 ## How to Start Learning Testing
 
@@ -50,10 +50,10 @@ In smaller teams, developers often write tests as part of their workflow.
 2. **Practice manual testing** using free demo sites or open-source apps.
 3. **Learn bug reporting** – clear and helpful reports are gold.
 4. **Explore test case writing** – structured test steps with expected outcomes.
-5. **Try automation** once you're comfortable with the basics.
+5. **Try automation** once you're comfortable with the basics. (Note THERE IS NO AUTOMATION WITHOUT MANUAL TESTING)
 
 ## Final Thoughts
 
-Testing isn’t about pointing fingers—it’s about protecting quality. Whether you're a curious beginner or aiming for a QA career, learning software testing will make you a better developer, teammate, or tech professional.
+Testing isn’t about pointing fingers, that never works, it’s about protecting quality. Whether you're a curious beginner or aiming for a QA career, learning software testing will make you a better developer, teammate, or tech professional.
 
 More beginner-friendly guides are on the way. Stay tuned!
