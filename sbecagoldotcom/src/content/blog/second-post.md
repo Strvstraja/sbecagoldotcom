@@ -1,13 +1,13 @@
 ---
-title: 'What Is Software Testing? A Beginner-Friendly Guide'
+title: 'How to Write Bug Reports That Don’t Suck'
 description: 'Discover what software testing is, why it matters, and how to get started as a beginner.'
 pubDate: 2025-07-28
 author: 'Strahinja Becagol'
-image: '/blogPost1Cover.png'
+image: '/blogPostCover2.png'
 tags: ['qa', 'manual testing', 'beginners']
 ---
 
-# What Is Software Testing? A Beginner-Friendly Guide
+# How to Write Bug Reports That Don’t Suck
 
 Software testing is the process of evaluating a software application to find and fix bugs, ensure it meets requirements, and deliver a better user experience.
 
