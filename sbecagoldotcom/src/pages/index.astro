@@ -401,6 +401,13 @@ import coverTestCases from '../assets/coverTestCases.png';
         padding: 0.75rem 1rem;
       }
       
+      @media (max-width: 600px) {
+        .course-meta {
+          flex-direction: column;
+          gap: 0.75rem;
+        }
+      }
+      
       .meta-item:first-child {
         border-left: 3px solid var(--gradient-start);
       }
@@ -600,15 +607,14 @@ import coverTestCases from '../assets/coverTestCases.png';
   </head>
   <body>
     <div class="container">
-      <div class="hero">
-        <h1>Hi, I'm Strahinja Bećagol</h1>
-        <p class="tagline">I help testers write better bug reports, test cases, and survive projects that make no sense.</p>
-      </div>
-      
       <div class="main-nav">
         <a href="#courses" class="main-nav-link">Courses</a>
         <a href="#ebook" class="main-nav-link main-nav-link-highlight">Free eBook</a>
         <a href="/blog" class="main-nav-link">Blog</a>
+      </div>
+      <div class="hero">
+        <h1>Hi, I'm Strahinja Bećagol</h1>
+        <p class="tagline">I help testers write better bug reports, test cases, and survive projects that make no sense.</p>
       </div>
 
       <section id="courses" class="section">
