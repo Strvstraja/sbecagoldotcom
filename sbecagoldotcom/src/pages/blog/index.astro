@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import CookieConsent from '../../components/CookieConsent.astro';
 
 // Get all blog posts that aren't drafts
 const posts = await getCollection('blog', ({ data }) => {
@@ -19,14 +20,7 @@ const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDa
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HDYYD92WHW"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-HDYYD92WHW');
-    </script>
+    <!-- Google Analytics will be loaded via cookie consent -->
     <style>
       :root {
         --primary-color: #10b981;
@@ -279,5 +273,6 @@ const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDa
         <p>&copy; {new Date().getFullYear()} Strahinja Becagol. All rights reserved.</p>
       </div>
     </footer>
+    <CookieConsent />
   </body>
 </html>
