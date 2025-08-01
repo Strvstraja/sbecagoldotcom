@@ -17,9 +17,55 @@ const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDa
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog | Strahinja Becagol - QA Courses</title>
+    <meta name="description" content="Explore QA and software testing articles, tutorials, and guides from Strahinja Becagol. Practical advice for testers of all levels." />
+    <link rel="canonical" href="https://sbecagol.com/blog" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Blog | Strahinja Becagol - QA Courses" />
+    <meta property="og:description" content="Explore QA and software testing articles, tutorials, and guides from Strahinja Becagol. Practical advice for testers of all levels." />
+    <meta property="og:url" content="https://sbecagol.com/blog" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Blog | Strahinja Becagol - QA Courses" />
+    <meta name="twitter:description" content="Explore QA and software testing articles, tutorials, and guides from Strahinja Becagol. Practical advice for testers of all levels." />
+    
+    <!-- Structured Data / Schema Markup for Blog -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Strahinja Becagol's QA Blog",
+      "description": "Explore QA and software testing articles, tutorials, and guides from Strahinja Becagol.",
+      "url": "https://sbecagol.com/blog",
+      "author": {
+        "@type": "Person",
+        "name": "Strahinja Becagol",
+        "url": "https://sbecagol.com"
+      }
+    }
+    </script>
+    
+    <!-- Structured Data / Schema Markup for Blog Listing -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {sortedPosts.slice(0, 3).map((post, index) => `{
+          "@type": "ListItem",
+          "position": ${index + 1},
+          "url": "https://sbecagol.com/blog/${post.slug}",
+          "name": "${post.data.title}"
+        }`).join(',\n        ')}
+      ]
+    }
+    </script>
+    
     <!-- Google Analytics will be loaded via cookie consent -->
     <style>
       :root {

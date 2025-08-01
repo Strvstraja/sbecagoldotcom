@@ -12,10 +12,73 @@ import CookieConsent from '../components/CookieConsent.astro';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Strahinja Becagol - QA Courses</title>
+    <meta name="description" content="Expert QA courses by Strahinja Becagol. Learn software testing, bug reporting, and test case writing with practical, beginner-friendly courses." />
+    <link rel="canonical" href="https://sbecagol.com/" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Open Graph tags -->
+    <meta property="og:title" content="Strahinja Becagol - QA Courses" />
+    <meta property="og:description" content="Expert QA courses by Strahinja Becagol. Learn software testing, bug reporting, and test case writing with practical, beginner-friendly courses." />
+    <meta property="og:url" content="https://sbecagol.com/" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Twitter Card tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Strahinja Becagol - QA Courses" />
+    <meta name="twitter:description" content="Expert QA courses by Strahinja Becagol. Learn software testing, bug reporting, and test case writing with practical, beginner-friendly courses." />
+    
     <!-- Google Analytics will be loaded via cookie consent -->
+    
+    <!-- Structured Data / Schema Markup for Person -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Strahinja Becagol",
+      "url": "https://sbecagol.com",
+      "sameAs": ["https://www.linkedin.com/in/becagol/"],
+      "jobTitle": "QA Expert",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Strahinja Becagol QA Courses"
+      }
+    }
+    </script>
+    
+    <!-- Structured Data / Schema Markup for Courses -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "Course",
+          "position": 1,
+          "name": "How to Write Test Cases That Don't Suck",
+          "description": "Learn how to write effective test cases that help find bugs and improve software quality.",
+          "provider": {
+            "@type": "Person",
+            "name": "Strahinja Becagol"
+          },
+          "url": "https://www.udemy.com/course/how-to-write-test-cases-that-dont-suck/"
+        },
+        {
+          "@type": "Course",
+          "position": 2,
+          "name": "How to Write Bug Reports That Don't Suck",
+          "description": "Learn how to write bug reports that actually get bugs fixed - clear, detailed, and impossible to ignore.",
+          "provider": {
+            "@type": "Person",
+            "name": "Strahinja Becagol"
+          },
+          "url": "https://www.udemy.com/course/how-to-write-bug-reports-that-dont-suck/"
+        }
+      ]
+    }
+    </script>
+    
     <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1753253");</style>
     <style type="text/css">
     /* LOADER */
