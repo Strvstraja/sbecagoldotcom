@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import CookieConsent from '../../components/CookieConsent.astro';
+import LeadMagnetPopup from '../../components/LeadMagnetPopup.astro';
 
 // Generate static paths for all blog posts
 export async function getStaticPaths() {
@@ -77,6 +78,18 @@ const formattedDate = entry.data.pubDate.toLocaleDateString('en-US', {
     </script>
     
     <!-- Google Analytics will be loaded via cookie consent -->
+    
+    <!-- MailerLite Universal -->
+    <script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '1684695');
+    </script>
+    <!-- End MailerLite Universal -->
+    
+    <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1753253");</style>
     <style>
       :root {
         --primary-color: #10b981;
@@ -348,6 +361,8 @@ const formattedDate = entry.data.pubDate.toLocaleDateString('en-US', {
         <div class="blog-content">
           <Content />
         </div>
+        
+        <LeadMagnetPopup />
       </article>
     </main>
 

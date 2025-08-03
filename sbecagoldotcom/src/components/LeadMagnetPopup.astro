@@ -1,0 +1,162 @@
+---
+---
+
+<div id="lead-magnet-popup" class="lead-magnet-container">
+  <div class="lead-magnet-content">
+    <h3>Grab the free ebook:</h3>
+    <p class="lead-magnet-description">
+      "Software Testing for Beginners" is packed with real-world tips on writing bug reports, test cases, and surviving chaotic projects.
+    </p>
+    
+    <div class="lead-magnet-features">
+      <h4>💡 What's inside:</h4>
+      <ul>
+        <li>Smart test case templates</li>
+        <li>Bug reports devs actually respect</li>
+        <li>Tools, tips, and tactics that work</li>
+      </ul>
+      <p class="lead-magnet-tagline">No fluff. No BS. Just stuff every tester should know.</p>
+    </div>
+    
+    <button class="lead-magnet-button ml-onclick-form" onclick="ml('show', 'rGtm8o', true)">
+      👉 Send Me the Free Ebook
+    </button>
+    
+    <p class="lead-magnet-footer">Pop it in your inbox. Learn something useful. Go break stuff (intentionally).</p>
+  </div>
+</div>
+
+<style>
+  .lead-magnet-container {
+    margin: 3rem 0;
+    padding: 2rem;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: white;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .lead-magnet-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .lead-magnet-content {
+    max-width: 650px;
+    margin: 0 auto;
+  }
+  
+  .lead-magnet-container h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  .lead-magnet-description {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+  
+  .lead-magnet-features {
+    margin-bottom: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1.25rem;
+    border-radius: 6px;
+  }
+  
+  .lead-magnet-features h4 {
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  
+  .lead-magnet-features ul {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+  }
+  
+  .lead-magnet-features li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .lead-magnet-tagline {
+    font-weight: 600;
+    font-style: italic;
+  }
+  
+  .lead-magnet-button {
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    background-color: white;
+    color: var(--gradient-start);
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin: 1.5rem 0 1rem;
+    text-align: center;
+  }
+  
+  .lead-magnet-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .lead-magnet-footer {
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+  
+  @media (max-width: 768px) {
+    .lead-magnet-container {
+      padding: 1.5rem;
+    }
+    
+    .lead-magnet-container h3 {
+      font-size: 1.5rem;
+    }
+    
+    .lead-magnet-description {
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<script>
+  // Function to check if an element is in viewport
+  function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+  
+  // Function to handle scroll events
+  function handleScroll() {
+    const leadMagnet = document.getElementById('lead-magnet-popup');
+    
+    // If user has scrolled to near the bottom of the page
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 300) {
+      leadMagnet.classList.add('visible');
+    }
+  }
+  
+  // Add scroll event listener
+  document.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('scroll', handleScroll);
+    
+    // Check on initial load too
+    setTimeout(handleScroll, 1000);
+  });
+</script>
