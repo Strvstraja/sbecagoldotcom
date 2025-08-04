@@ -96,7 +96,7 @@ Your bug report is the bridge between you and the dev. If the bridge is full of 
 
 A clear, simple bug report saves time, earns respect, and makes you look like a pro.
 
-And if you want to see real-world examples and get a free downloadable bug report template, check out [the course](#https://www.udemy.com/course/how-to-write-bug-reports-that-dont-suck/?referralCode=645D71A53EE949028617).  
+And if you want to see real-world examples and get a free downloadable bug report template, check out [the course](https://www.udemy.com/course/how-to-write-bug-reports-that-dont-suck/?referralCode=645D71A53EE949028617).  
 It’s short. Filled with years of experience.  
 And it doesn’t suck!
 
