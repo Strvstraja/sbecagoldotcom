@@ -245,13 +245,20 @@ const formattedDate = entry.data.pubDate.toLocaleDateString('en-US', {
         margin-bottom: 0.5rem;
       }
 
-      .blog-content a {
-        color: var(--primary-color);
-        text-decoration: none;
+      /* Stronger link styling for content links */
+      .blog-content a,
+      .blog-content a:link,
+      .blog-content a:visited {
+        color: #38bdf8 !important; /* brighter for dark bg */
+        text-decoration: underline;
+        font-weight: 600;
       }
 
-      .blog-content a:hover {
+      .blog-content a:hover,
+      .blog-content a:focus {
+        color: #7dd3fc !important;
         text-decoration: underline;
+        outline: none;
       }
 
       .blog-content blockquote {
@@ -314,6 +321,23 @@ const formattedDate = entry.data.pubDate.toLocaleDateString('en-US', {
           align-items: flex-start;
           gap: 0.5rem;
         }
+      }
+    </style>
+    
+    <!-- Global styles so MDX-rendered content links are affected -->
+    <style is:global>
+      .blog-content a,
+      .blog-content a:link,
+      .blog-content a:visited {
+        color: #38bdf8 !important;
+        text-decoration: underline;
+        font-weight: 600;
+      }
+      .blog-content a:hover,
+      .blog-content a:focus {
+        color: #7dd3fc !important;
+        text-decoration: underline;
+        outline: none;
       }
     </style>
   </head>

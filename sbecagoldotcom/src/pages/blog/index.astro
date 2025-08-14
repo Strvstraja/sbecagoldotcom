@@ -208,14 +208,21 @@ const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDa
 
       .blog-card-link {
         display: inline-block;
-        color: var(--primary-color);
+        color: #38bdf8 !important; /* brighter for dark bg */
         text-decoration: none;
-        font-weight: 500;
+        font-weight: 600;
         transition: color 0.2s;
       }
 
-      .blog-card-link:hover {
-        color: var(--primary-hover);
+      .blog-card-link:visited {
+        color: #38bdf8 !important;
+      }
+
+      .blog-card-link:hover,
+      .blog-card-link:focus {
+        color: #7dd3fc !important;
+        text-decoration: underline;
+        outline: none;
       }
 
       .blog-tags {
