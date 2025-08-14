@@ -18,7 +18,7 @@ This post will help you write bug reports that actually get read, understood, an
 
 A bug report isn’t just a note that “something is broken.”
 
-It’s a **communication tool** — one that connects the person who found the issue (you) with the person who can fix it (usually a developer).
+It’s a **communication tool** - one that connects the person who found the issue (you) with the person who can fix it (usually a developer).
 
 If that message is unclear or incomplete, the bug might:
 - Never get fixed
@@ -72,11 +72,11 @@ It should answer:
 
 - **Environment**: Firefox 118, Windows 11, Staging environment
 
-- **Attachments**: Screenshot, video, console logs — anything that helps
+- **Attachments**: Screenshot, video, console logs - anything that helps
 
 ## Tips for Writing Bug Reports That Don’t Suck
 
-- Be precise: Don’t say “something’s off” — say *what’s* off
+- Be precise: Don’t say “something’s off” - say *what’s* off
 - Reproduce it yourself before reporting it
 - Avoid assuming, describe what you saw, not what you think caused it
 - Use short sentences and bullet points

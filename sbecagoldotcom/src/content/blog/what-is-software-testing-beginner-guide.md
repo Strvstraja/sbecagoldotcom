@@ -16,7 +16,7 @@ Software testing is the process of evaluating a software application to find and
 Testing helps answer a simple but critical question:  
 **"Does the software work as expected?"**
 
-Without testing, software is like a car without brakes—it might move fast, but it’s not safe.   
+Without testing, software is like a car without brakes - it might move fast, but it’s not safe.   
   
 Or let me rephrase it to bring it closer to the real world:  
 Without testing it is like driving a car but you are not sure if the brakes are installed at all and there is a slight chance that if you press the brakes the car will accelerate
