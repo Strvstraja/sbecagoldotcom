@@ -40,8 +40,19 @@
       .back:hover { text-decoration: underline; }
       h1 { margin: 0; font-size: 1.5rem; }
       .spacer { flex: 1; }
-      .theme-toggle { border: 1px solid var(--border); background: rgba(255,255,255,.04); color: var(--text); border-radius: 999px; padding: .4rem .75rem; font-weight: 600; cursor: pointer; transition: background .2s ease, border-color .2s ease; }
-      .theme-toggle:hover { background: rgba(255,255,255,.08); border-color: #3b4a63; }
+      .theme-toggle {
+        appearance: none;
+        border: none;
+        background: none;
+        cursor: pointer;
+        color: var(--muted);
+        font-size: 1.125rem;
+        padding: 0;
+        transition: color 0.2s ease;
+      }
+      .theme-toggle:hover {
+        color: var(--text);
+      }
 
       .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
       .new { display: flex; gap: .5rem; }
@@ -85,7 +96,7 @@
         <a class="back" href="/test-apps">← Back</a>
         <h1>Todo List</h1>
         <div class="spacer"></div>
-        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌙 Dark</button>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark/light mode">☀</button>
       </div>
 
       <section class="panel" aria-label="Todo app">
@@ -111,25 +122,30 @@
     <script>
       // @ts-nocheck
       (function() {
-        // Theme: reuse the same key as calculator so preference is shared
+        // Theme toggle functionality
         const root = document.documentElement;
-        const savedTheme = localStorage.getItem('calc-theme');
-        const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-        const initialTheme = savedTheme || (prefersLight ? 'light' : 'dark');
-        function applyTheme(theme) {
-          root.setAttribute('data-theme', theme);
-          const btn = document.getElementById('themeToggle');
-          if (btn) btn.textContent = theme === 'light' ? '🌞 Light' : '🌙 Dark';
-        }
-        applyTheme(initialTheme);
         const themeToggle = document.getElementById('themeToggle');
-        if (themeToggle) {
-          themeToggle.addEventListener('click', () => {
-            const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-            applyTheme(next);
-            localStorage.setItem('calc-theme', next);
-          });
+        const savedTheme = localStorage.getItem('login-theme');
+        
+        // Set initial theme
+        if (savedTheme) {
+          root.setAttribute('data-theme', savedTheme);
+          themeToggle.textContent = savedTheme === 'light' ? '☾' : '☀';
+        } else {
+          // Check system preference
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          root.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
+          themeToggle.textContent = prefersDark ? '☀' : '☾';
+          localStorage.setItem('login-theme', prefersDark ? 'dark' : 'light');
         }
+        
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', () => {
+          const isLight = root.getAttribute('data-theme') === 'light' ? false : true;
+          root.setAttribute('data-theme', isLight ? 'light' : 'dark');
+          themeToggle.textContent = isLight ? '☾' : '☀';
+          localStorage.setItem('login-theme', isLight ? 'light' : 'dark');
+        });
 
         // Todo app
         const listEl = document.getElementById('list');

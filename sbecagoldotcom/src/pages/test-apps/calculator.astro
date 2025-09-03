@@ -41,8 +41,19 @@
       .back:hover { text-decoration: underline; }
       h1 { margin: 0; font-size: 1.5rem; }
       .spacer { flex: 1; }
-      .theme-toggle { border: 1px solid var(--border); background: rgba(255,255,255,.04); color: var(--text); border-radius: 999px; padding: .4rem .75rem; font-weight: 600; cursor: pointer; }
-      .theme-toggle:hover { background: rgba(255,255,255,.08); }
+      .theme-toggle {
+        appearance: none;
+        border: none;
+        background: none;
+        cursor: pointer;
+        color: var(--muted);
+        font-size: 1.125rem;
+        padding: 0;
+        transition: color 0.2s ease;
+      }
+      .theme-toggle:hover {
+        color: var(--text);
+      }
 
       .calc { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,.35); }
       .display { padding: 1rem; text-align: right; background: linear-gradient(180deg, rgba(2,132,199,.15), transparent); border-bottom: 1px solid var(--border); }
@@ -70,7 +81,7 @@
         <a href="/test-apps" class="back">← Back</a>
         <h1>Calculator</h1>
         <div class="spacer"></div>
-        <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌙 Dark</button>
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle dark/light mode">☀</button>
       </div>
 
       <section class="calc" role="application" aria-label="Calculator">
@@ -113,22 +124,31 @@
       (function() {
         // THEME: init from storage or system
         const root = document.documentElement;
-        const saved = localStorage.getItem('calc-theme');
+        // Use the same storage key as login-demo
+        const savedTheme = localStorage.getItem('login-theme');
         const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
-        const initialTheme = saved || (prefersLight ? 'light' : 'dark');
-        function applyTheme(/** @type {'light'|'dark'} */ theme) {
-          root.setAttribute('data-theme', theme);
-          const btn = document.getElementById('themeToggle');
-          if (btn) btn.textContent = theme === 'light' ? '🌞 Light' : '🌙 Dark';
+        const initialTheme = savedTheme || (prefersLight ? 'light' : 'dark');
+        
+        // Set initial theme
+        if (savedTheme) {
+          root.setAttribute('data-theme', savedTheme);
+          const themeToggle = document.getElementById('themeToggle');
+          if (themeToggle) themeToggle.textContent = savedTheme === 'light' ? '☾' : '☀';
+        } else {
+          // Check system preference
+          root.setAttribute('data-theme', initialTheme);
+          const themeToggle = document.getElementById('themeToggle');
+          if (themeToggle) themeToggle.textContent = initialTheme === 'light' ? '☾' : '☀';
+          localStorage.setItem('login-theme', initialTheme);
         }
-        applyTheme(initialTheme);
 
         const themeToggle = document.getElementById('themeToggle');
         if (themeToggle) {
           themeToggle.addEventListener('click', () => {
-            const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-            applyTheme(next);
-            localStorage.setItem('calc-theme', next);
+            const isLight = root.getAttribute('data-theme') === 'light' ? false : true;
+            root.setAttribute('data-theme', isLight ? 'light' : 'dark');
+            themeToggle.textContent = isLight ? '☾' : '☀';
+            localStorage.setItem('login-theme', isLight ? 'light' : 'dark');
           });
         }
 
