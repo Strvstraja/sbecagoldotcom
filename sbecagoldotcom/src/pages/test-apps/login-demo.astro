@@ -10,21 +10,326 @@
     <title>Login Demo - Test Apps</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-      :root { --text: #e2e8f0; --bg: #0f172a; --primary: #10b981; }
-      body { margin: 0; font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); min-height: 100vh; display: grid; place-items: center; }
-      .wrap { text-align:center; padding: 2rem; }
-      .title { font-size: 2rem; margin-bottom: 1rem; }
-      a { color: var(--primary); text-decoration: none; font-weight: 600; }
-      a:hover { text-decoration: underline; }
+      /* Light/Dark Theme Variables */
+      :root {
+        --text: #e2e8f0;
+        --muted: #94a3b8;
+        --bg: #0f172a;
+        --bg-card: #1e293b;
+        --border: #334155;
+        --primary: #10b981;
+        --accent: #06b6d4;
+        --danger: #ef4444;
+      }
+      
+      :root.light {
+        --text: #0f172a;
+        --muted: #64748b;
+        --bg: #f8fafc;
+        --bg-card: #ffffff;
+        --border: #e2e8f0;
+        --primary: #059669;
+        --accent: #0891b2;
+        --danger: #dc2626;
+      }
+
+      * { box-sizing: border-box; }
+      
+      body {
+        margin: 0;
+        font-family: 'Inter', sans-serif;
+        color: var(--text);
+        background: var(--bg);
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        transition: color 0.2s ease, background-color 0.2s ease;
+        line-height: 1.5;
+      }
+      
+      .container {
+        width: 100%;
+        max-width: 360px;
+        padding: 1rem;
+      }
+      
+      .top {
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+      }
+      
+      .back {
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 0.875rem;
+        transition: color 0.2s ease;
+      }
+      
+      .back:hover {
+        color: var(--text);
+      }
+      
+      h1 {
+        font-size: 1.25rem;
+        font-weight: 500;
+        margin: 0;
+        flex-grow: 1;
+        text-align: center;
+      }
+      
+      .theme-toggle {
+        appearance: none;
+        border: none;
+        background: none;
+        cursor: pointer;
+        color: var(--muted);
+        font-size: 1.125rem;
+        padding: 0;
+        transition: color 0.2s ease;
+      }
+      
+      .theme-toggle:hover {
+        color: var(--text);
+      }
+      
+      .login-form {
+        margin-top: 1rem;
+      }
+      
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+      
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 0.875rem;
+        color: var(--muted);
+      }
+      
+      input {
+        width: 100%;
+        padding: 0.75rem 0;
+        border: none;
+        border-bottom: 1px solid var(--border);
+        background-color: transparent;
+        color: var(--text);
+        font-family: inherit;
+        font-size: 1rem;
+        transition: border-color 0.2s ease;
+      }
+      
+      input:focus {
+        outline: none;
+        border-color: var(--primary);
+      }
+      
+      input::placeholder {
+        color: var(--muted);
+        opacity: 0.5;
+      }
+      
+      .options {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+        font-size: 0.875rem;
+      }
+      
+      .remember {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--muted);
+      }
+      
+      .remember input {
+        width: auto;
+        margin: 0;
+      }
+      
+      .forgot {
+        color: var(--muted);
+        text-decoration: none;
+      }
+      
+      .forgot:hover {
+        color: var(--text);
+      }
+      
+      .btn {
+        display: block;
+        width: 100%;
+        padding: 0.75rem;
+        border: none;
+        border-radius: 6px;
+        background: var(--primary);
+        color: #fff;
+        font-weight: 500;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+      }
+      
+      .btn:hover {
+        opacity: 0.9;
+      }
+      
+      .message {
+        margin-top: 1rem;
+        padding: 0.75rem 0;
+        font-size: 0.875rem;
+        color: var(--primary);
+        text-align: center;
+      }
+      
+      .message.error {
+        color: var(--danger);
+      }
+      
+      .signup {
+        margin-top: 2rem;
+        text-align: center;
+        font-size: 0.875rem;
+        color: var(--muted);
+      }
+      
+      .signup a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+      
+      .signup a:hover {
+        text-decoration: underline;
+      }
     </style>
   </head>
   <body>
-    <main class="wrap">
-      <div class="title">Login Demo</div>
-      <p><strong>Coming soon</strong></p>
-      <p><a href="/test-apps">← Back to Test Apps</a></p>
+    <main class="container">
+      <div class="top">
+        <a class="back" href="/test-apps">← Back</a>
+        <h1>Login Demo</h1>
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+          ☀
+        </button>
+      </div>
+      
+      <form id="login-form" class="login-form">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" placeholder="demo" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="••••••••" required>
+        </div>
+        
+        <div class="options">
+          <div class="remember">
+            <input type="checkbox" id="remember" name="remember">
+            <label for="remember">Remember me</label>
+          </div>
+          <a href="#" class="forgot">Forgot password?</a>
+        </div>
+        
+        <button type="submit" class="btn">Log in</button>
+      </form>
+      
+      <div id="message" class="message" style="display: none;"></div>
+      
+      <div class="signup">
+        Don't have an account? <a href="#">Sign up</a>
+      </div>
     </main>
+
+    <script>
+      // @ts-nocheck
+      document.addEventListener('DOMContentLoaded', () => {
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlRoot = document.documentElement;
+        const savedTheme = localStorage.getItem('login-theme');
+        
+        // Set initial theme
+        if (savedTheme) {
+          htmlRoot.classList.toggle('light', savedTheme === 'light');
+          themeToggle.textContent = savedTheme === 'light' ? '☾' : '☀';
+        } else {
+          // Check system preference
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          htmlRoot.classList.toggle('light', !prefersDark);
+          themeToggle.textContent = !prefersDark ? '☾' : '☀';
+          localStorage.setItem('login-theme', !prefersDark ? 'light' : 'dark');
+        }
+        
+        // Toggle theme on button click
+        themeToggle.addEventListener('click', () => {
+          const isLight = htmlRoot.classList.toggle('light');
+          themeToggle.textContent = isLight ? '☾' : '☀';
+          localStorage.setItem('login-theme', isLight ? 'light' : 'dark');
+        });
+        
+        // Mock login functionality
+        const loginForm = document.getElementById('login-form');
+        const messageEl = document.getElementById('message');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const submitBtn = loginForm.querySelector('button[type="submit"]');
+        
+        // Focus username field on load
+        usernameInput.focus();
+        
+        loginForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          
+          const username = usernameInput.value.trim();
+          const password = passwordInput.value;
+          
+          // Disable form during submission
+          submitBtn.disabled = true;
+          submitBtn.textContent = 'Logging in...';
+          
+          // Clear previous messages
+          messageEl.style.display = 'none';
+          
+          // Simulate API call delay
+          setTimeout(() => {
+            // Re-enable form
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Log in';
+            
+            // Mock authentication logic
+            if (username === 'demo' && password === 'password') {
+              // Success case
+              messageEl.textContent = 'Login successful';
+              messageEl.className = 'message';
+              messageEl.style.display = 'block';
+              
+              // Clear form
+              loginForm.reset();
+              
+              // Simulate redirect after successful login
+              setTimeout(() => {
+                alert('In a real app, you would be redirected to the dashboard now.');
+              }, 1000);
+            } else {
+              // Error case
+              messageEl.textContent = 'Invalid username or password';
+              messageEl.className = 'message error';
+              messageEl.style.display = 'block';
+              
+              // Focus password field for retry
+              passwordInput.value = '';
+              passwordInput.focus();
+            }
+          }, 600);
+        });
+      });
+    </script>
   </body>
 </html>
