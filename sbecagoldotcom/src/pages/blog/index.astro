@@ -279,6 +279,7 @@ const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDa
             <li><a href="/#courses">Courses</a></li>
             <li><a href="/#ebook" class="nav-link-highlight">Free eBook</a></li>
             <li><a href="/blog" aria-current="page">Blog</a></li>
+            <li><a href="/test-apps">Test Apps</a></li>
           </ul>
         </nav>
       </div>
@@ -298,7 +299,7 @@ const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDa
                   src={post.data.image} 
                   alt={post.data.title} 
                   class="blog-card-image"
-                  onError="this.src='/placeholder-image.jpg'; this.onerror=null;"
+                  onerror="this.src='/placeholder-image.jpg'; this.onerror=null;"
                 />
               </div>
             )}
