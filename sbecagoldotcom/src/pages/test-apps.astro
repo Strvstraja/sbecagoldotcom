@@ -1,4 +1,5 @@
 ---
+import CookieConsent from '../components/CookieConsent.astro';
 ---
 
 <!DOCTYPE html>
@@ -11,67 +12,238 @@
     <meta name="description" content="Practice software testing online with free demo apps. Test a login form, to-do list, and calculator with hidden bugs. Perfect for QA beginners, students, and interview prep." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
       :root {
+        --primary-color: #10b981;
+        --primary-hover: #059669;
         --text-color: #e2e8f0;
         --text-light: #94a3b8;
         --bg-color: #0f172a;
         --bg-accent: #1e293b;
         --border-color: #334155;
-        --primary: #10b981;
-        --primary-2: #0284c7;
+        --gradient-start: #0f766e;
+        --gradient-end: #0d9488;
       }
-      body {
+      * {
+        box-sizing: border-box;
         margin: 0;
-        font-family: 'Inter', sans-serif;
-        color: var(--text-color);
-        background: var(--bg-color);
-        min-height: 100vh;
       }
-      .container { max-width: 1100px; margin: 0 auto; padding: 2rem 1.25rem; }
-      header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem; }
-      .logo { color: var(--text-color); font-weight: 700; text-decoration: none; }
-      .title { font-size: 2rem; margin: 0; }
-      .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
-      .card { background: var(--bg-accent); border: 1px solid var(--border-color); border-radius: 10px; padding: 1.25rem; text-decoration: none; color: var(--text-color); transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease; box-shadow: 0 6px 16px rgba(0,0,0,.25); }
-      .card:hover { transform: translateY(-3px); border-color: var(--primary); box-shadow: 0 10px 22px rgba(0,0,0,.35); }
-      .card h3 { margin: 0 0 .5rem; }
-      .card p { margin: 0; color: var(--text-light); }
-      .badge { display: inline-block; background: rgba(16,185,129,.12); color: var(--primary); border: 1px solid rgba(16,185,129,.35); padding: .2rem .5rem; border-radius: 999px; font-size: .75rem; font-weight: 600; margin-bottom: .75rem; }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      header {
+        padding: 2rem 0;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-color);
+        text-decoration: none;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+      }
+
+      nav li {
+        margin-left: 1.5rem;
+      }
+
+      nav a {
+        color: var(--text-color);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+
+      nav a:hover {
+        color: var(--primary-color);
+      }
+      
+      .nav-link-highlight {
+        color: var(--primary-color);
+      }
+
+      .page-title {
+        margin: 3rem 0;
+        text-align: center;
+      }
+      
+      .section-title {
+        margin: 4rem 0 3rem;
+        text-align: center;
+        font-size: 1.8rem;
+      }
+      
+      .back-link {
+        display: inline-block;
+        margin-bottom: 2rem;
+        color: var(--primary-color);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .back-link:hover {
+        text-decoration: underline;
+      }
+      
+      footer {
+        margin-top: 4rem;
+        padding: 2rem 0;
+        background-color: var(--bg-accent);
+        border-top: 1px solid var(--border-color);
+        text-align: center;
+        color: var(--text-light);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-bottom: 4rem;
+      }
+
+      .card {
+        background-color: var(--bg-accent);
+        border-radius: 0.5rem;
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border: 1px solid var(--border-color);
+        text-decoration: none;
+        color: var(--text-color);
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+      }
+      
+      .card-content {
+        padding: 1.5rem;
+      }
+
+      .card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+        font-weight: 600;
+        margin-top: 0;
+      }
+
+      .card p {
+        color: var(--text-light);
+        margin: 0;
+      }
+
+      .badge {
+        display: inline-block;
+        background-color: rgba(16, 185, 129, 0.1);
+        color: var(--primary-color);
+        padding: 0.25rem 0.75rem;
+        border-radius: 9999px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        margin-bottom: 0.75rem;
+      }
+      
+      .blog-card-link {
+        display: inline-block;
+        color: #38bdf8 !important; /* brighter for dark bg */
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.2s;
+        margin-top: 1rem;
+      }
+
+      .blog-card-link:visited {
+        color: #38bdf8 !important;
+      }
+
+      .blog-card-link:hover,
+      .blog-card-link:focus {
+        color: #7dd3fc !important;
+        text-decoration: underline;
+        outline: none;
+      }
       .back { display:inline-block; margin: 1.5rem 0; color: var(--primary); text-decoration: none; font-weight: 600; }
       .back:hover { text-decoration: underline; }
     </style>
   </head>
   <body>
+    <header>
+      <div class="container">
+        <a href="/" class="logo">Strahinja Bećagol</a>
+        <nav>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/#courses">Courses</a></li>
+            <li><a href="/#ebook" class="nav-link-highlight">Free eBook</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/test-apps" aria-current="page">Test Apps</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
     <main class="container">
-      <header>
-        <a href="/" class="logo">← Home</a>
-        <h1 class="title">Test Apps - Free Practice Software for Software Testers</h1>
-      </header>
+      <h1 class="page-title">Test Apps - Free Practice Software for Software Testers</h1>
+      
+      <a href="/" class="back-link">← Back to Home</a>
       
       <section class="intro">
         <p>Looking for a safe place to sharpen your testing skills? This page offers a collection of free practice apps for software testers. Each app is lightweight, runs entirely in the browser, and is designed to help you practice exploratory testing, spot bugs, and build confidence without any setup.</p>
       </section>
       
-      <h2>Available Test Apps</h2>
+      <h2 class="section-title">Available Test Apps</h2>
       
       <section class="grid">
-        <a class="card" href="/test-apps/login-demo">
-          <span class="badge">Practice App</span>
-          <h3>Login Demo</h3>
-          <p>Practice testing a simple login form with intentional issues in validation, usability, and edge cases.</p>
-        </a>
-        <a class="card" href="/test-apps/todo-list">
-          <span class="badge">Practice App</span>
-          <h3>To-Do List Demo</h3>
-          <p>Explore a basic task manager and uncover subtle bugs in adding, editing, and filtering tasks.</p>
-        </a>
-        <a class="card" href="/test-apps/calculator">
-          <span class="badge">Practice App</span>
-          <h3>Calculator Demo</h3>
-          <p>Test a four-function calculator and learn to spot common problems like operator precedence and floating-point quirks.</p>
-        </a>
+        <article class="card">
+          <div class="card-content">
+            <span class="badge">Practice App</span>
+            <h3>Login Demo</h3>
+            <p>Practice testing a simple login form with intentional issues in validation, usability, and edge cases.</p>
+            <a href="/test-apps/login-demo" class="blog-card-link">Try App →</a>
+          </div>
+        </article>
+        
+        <article class="card">
+          <div class="card-content">
+            <span class="badge">Practice App</span>
+            <h3>To-Do List Demo</h3>
+            <p>Explore a basic task manager and uncover subtle bugs in adding, editing, and filtering tasks.</p>
+            <a href="/test-apps/todo-list" class="blog-card-link">Try App →</a>
+          </div>
+        </article>
+        
+        <article class="card">
+          <div class="card-content">
+            <span class="badge">Practice App</span>
+            <h3>Calculator Demo</h3>
+            <p>Test a four-function calculator and learn to spot common problems like operator precedence and floating-point quirks.</p>
+            <a href="/test-apps/calculator" class="blog-card-link">Try App →</a>
+          </div>
+        </article>
       </section>
       
       <section class="outro">
@@ -82,5 +254,12 @@
         <p>If you're learning how to test software or teaching others, these free software testing practice sites are a simple way to get hands-on experience.</p>
       </section>
     </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; {new Date().getFullYear()} Strahinja Becagol. All rights reserved.</p>
+      </div>
+    </footer>
+    <CookieConsent />
   </body>
 </html>
