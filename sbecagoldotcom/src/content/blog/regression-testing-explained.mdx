@@ -1,0 +1,95 @@
+---
+title: "Regression Testing Explained: Why It's a Tester's Safety Net"
+description: "Learn what regression testing is, why it matters, and how it works with exploratory testing to keep your software stable and reliable."
+pubDate: 2025-10-12
+author: "Strahinja Becagol"
+image: "/regression.png"
+tags: ["regression testing", "test automation", "exploratory testing", "software testing"]
+draft: false
+---
+
+# Regression Testing Explained: Why It's a Tester's Safety Net
+
+Regression testing is one of the biggest parts of a software tester's job. Or should I say one of the most time-consuming? It can be done manually or automated, but regardless of how you do it, the goal remains the same: to make sure that new changes haven't broken anything that used to work. Or in a nutshell, it's there to catch if we broke something that used to work.
+
+Think of regression testing as a safety net. Every time the development team introduces a new feature, fixes a bug, or refactors code, that safety net helps catch the side effects that might sneak into other parts of the product. But here's the catch every net has holes some larger than others and  it's not a guarantee that no bugs will ever get through. 
+
+Let's unpack what regression testing really means, why it matters, and how it fits together with other types of testing.
+
+## What Is Regression Testing?
+
+Regression testing is the process of re-running previously defined and already executed tests after a change in the software , usually a new feature or bug fix, to ensure that existing functionality still works as expected.
+
+In practice, it's all about verifying that something new didn't break something old. A typical scenario might look like this:
+The devs fix a bug for this weird edge case in the login form, the issue gets merged, and then deployed to a test environment. After this, the tester re-runs the existing test cases for authentication, user sessions, password resets, and even unrelated areas like profile updates, because you never know where side effects might appear.
+
+It sounds straightforward, but the scale and complexity of regression testing grow fast as your application evolves and there is a point where regression testing becomes overwhelming if done exclusively manually.
+
+## Manual and Automated Regression Testing
+
+Both have their place, and the best teams usually combine them.
+
+Manual regression testing works well for smaller applications or cases where the interface or behavior changes frequently. It allows testers to observe subtle issues that automation might miss, things like visual misalignments, unexpected flows, confusing UX behavior, or observe a crash when wandering off script, accidentally stumble into an "unexplored territory".
+
+Automated regression testing, on the other hand, shines when your product stabilizes. It saves massive amounts of time by letting scripts handle repetitive verifications, freeing testers to focus on more complex and creative testing.
+
+But automation isn't a magic solution to all testing. It requires maintenance, setup time, and ongoing care. An outdated automated suite can easily give you a false sense of security, make you feel like everything is safe while not touching the new features or updated flows, and that's worse than having no automation at all.
+
+## Why a "Safety Net"
+
+The phrase "safety net" fits perfectly because regression testing gives teams confidence to move fast without fear of breaking things. It's what allows developers to push updates frequently and testers to sleep (somewhat) peacefully at night.
+
+**When regression testing is well-designed:**
+- You catch side effects early.
+- You reduce the risk of production bugs.
+- You build trust in your release pipeline.
+- You probably can sleep better at night knowing there is a server somewhere doing your job while you're in bed!
+
+It's what keeps quality consistent while your software keeps evolving.
+
+## But It's Not Foolproof
+
+Far from it!
+Here's where some testers fall into a trap of relying on regression testing alone.
+
+Regression testing can confirm that existing functionality works as defined by your test cases, but it doesn't uncover unknown risks, new usability issues, or problems in areas not covered by your suite.
+
+In other words, regression testing checks what you already know and not what you don't.
+
+This is where exploratory testing comes in.
+
+## Where Exploratory Testing Complements Regression
+
+Exploratory testing fills the gaps left by scripted regression testing. It's unscripted, creative, and investigative. Testers use their intuition and experience to explore the product, looking for unexpected issues that automated or pre-defined tests would never catch.
+
+Imagine you just finished your regression run after a major update. Everything passes. Green lights everywhere.
+But then you start clicking around and notice that the "Save" button on one screen takes unusually long to respond, or that a tooltip displays outdated information. That's not something regression tests would necessarily find, but an exploratory session would.
+
+When you combine regression and exploratory testing, you get both structure and discovery. The safety net catches known risks, while exploration uncovers new ones.
+
+## How Often Should You Do Regression Testing?
+
+The short answer: every time you make a change.
+
+The longer answer depends on your workflow:
+- For agile teams, regression testing often runs at the end of each sprint.
+- For continuous deployment, automation may run after every merge or pull request.
+- For smaller teams, manual regression before key releases may be enough.
+
+The important part is consistency. Regression testing should be a habit, not an afterthought.
+
+## Tips for Better Regression Testing
+
+1. **Prioritize your tests.** Not all tests need to be run every time. Focus on critical paths first, whatever you are most worried about is that login, checkout,  perhaps payments? You, the tester, know our risks best; cover them with regression!
+2. **Automate smartly.** Automate stable, repetitive flows that take a lot of time to execute and leave exploratory or changing areas for manual testing.
+3. **Review your suite regularly.** Remove outdated tests and add new ones as features evolve. Disable flaky tests or just remove them, as if you can't rely on them, they are only a burden and don't bring value.
+4. **Combine with exploratory testing.** Use exploratory sessions to identify new edge cases to later turn into regression tests.
+
+## Conclusion
+
+Regression testing is essential, but it's only part of the quality story. It ensures stability but not necessarily usability, performance, or customer satisfaction.
+
+That's why great testers balance both the predictable routine of regression and the creative freedom of exploratory testing. Together, they form a complete safety net that keeps products reliable and teams confident.
+
+If you want to go deeper into exploratory testing, including how to make it effective and even fun, check out my course:
+👉 [How to Perform Exploratory Testing That Doesn't Suck](https://www.udemy.com/course/how-to-do-exploratory-testing-that-doesnt-suck/?referralCode=DBCFBDD542A0459E099D)
