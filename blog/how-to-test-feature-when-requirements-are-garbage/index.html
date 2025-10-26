@@ -1,0 +1,147 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-4sn4zg3r> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/png" sizes="48x48" href="/images/sbecagolfav48.png"><title>How to Test a Feature When the Requirements Are Garbage | Strahinja Becagol - QA Courses</title><meta name="description" content="Every tester has been there. You open the ticket, read the description, and instantly feel your eye twitch. Here's how to survive (and even shine) when requirements are a complete mess."><link rel="canonical" href="https://sbecagol.com/blog/how-to-test-feature-when-requirements-are-garbage"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><!-- Open Graph tags --><meta property="og:title" content="How to Test a Feature When the Requirements Are Garbage | Strahinja Becagol - QA Courses"><meta property="og:description" content="Every tester has been there. You open the ticket, read the description, and instantly feel your eye twitch. Here's how to survive (and even shine) when requirements are a complete mess."><meta property="og:url" content="https://sbecagol.com/blog/how-to-test-feature-when-requirements-are-garbage"><meta property="og:type" content="article"><meta property="og:image" content="https://sbecagol.com/requirementsMissing.png"><!-- Twitter Card tags --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to Test a Feature When the Requirements Are Garbage | Strahinja Becagol - QA Courses"><meta name="twitter:description" content="Every tester has been there. You open the ticket, read the description, and instantly feel your eye twitch. Here's how to survive (and even shine) when requirements are a complete mess."><meta name="twitter:image" content="https://sbecagol.com/requirementsMissing.png"><!-- Structured Data / Schema Markup for Blog Post --><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"How to Test a Feature When the Requirements Are Garbage","description":"Every tester has been there. You open the ticket, read the description, and instantly feel your eye twitch. Here's how to survive (and even shine) when requirements are a complete mess.","image":"https://sbecagol.com/requirementsMissing.png","datePublished":"2025-10-26T00:00:00.000Z","author":{"@type":"Person","name":"Strahinja Becagol","url":"https://sbecagol.com"},"publisher":{"@type":"Person","name":"Strahinja Becagol","url":"https://sbecagol.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://sbecagol.com/blog/how-to-test-feature-when-requirements-are-garbage"}}</script><!-- Google Analytics will be loaded via cookie consent --><!-- MailerLite Universal --><script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '1684695');
+    </script><!-- End MailerLite Universal --><!-- Global styles so MDX-rendered content links are affected --><style>.cookie-consent[data-astro-cid-garwan2p]{position:fixed;bottom:2rem;left:50%;transform:translate(-50%);width:90%;max-width:36rem;background-color:var(--bg-accent, #1e293b);border:1px solid var(--border-color, #334155);border-radius:8px;padding:1.25rem;z-index:1000;box-shadow:0 10px 25px -5px #0000004d;transition:opacity .3s,transform .4s}.cookie-consent[data-astro-cid-garwan2p].hidden{opacity:0;transform:translate(-50%,5rem);pointer-events:none}.cookie-content[data-astro-cid-garwan2p]{display:flex;flex-direction:column;gap:1rem}.cookie-text[data-astro-cid-garwan2p] h3[data-astro-cid-garwan2p]{font-size:1.125rem;margin-bottom:.5rem;color:var(--text-color, #e2e8f0)}.cookie-text[data-astro-cid-garwan2p] p[data-astro-cid-garwan2p]{font-size:.9375rem;color:var(--text-light, #94a3b8);margin:0}.cookie-buttons[data-astro-cid-garwan2p]{display:flex;gap:.75rem}.cookie-btn[data-astro-cid-garwan2p]{padding:.5rem 1.25rem;border-radius:6px;font-weight:500;font-size:.875rem;cursor:pointer;transition:all .2s;border:none}.cookie-btn[data-astro-cid-garwan2p].accept{background-color:var(--primary-color, #10b981);color:#fff}.cookie-btn[data-astro-cid-garwan2p].accept:hover{background-color:var(--primary-hover, #059669)}.cookie-btn[data-astro-cid-garwan2p].decline{background-color:transparent;color:var(--text-color, #e2e8f0);border:1px solid var(--border-color, #334155)}.cookie-btn[data-astro-cid-garwan2p].decline:hover{background-color:#ffffff0d}@media (min-width: 640px){.cookie-content[data-astro-cid-garwan2p]{flex-direction:row;align-items:center;justify-content:space-between}.cookie-text[data-astro-cid-garwan2p]{flex:1}}
+</style>
+<link rel="stylesheet" href="/_assets/_slug_.lj-QJPV8.css"></head> <body data-astro-cid-4sn4zg3r> <header data-astro-cid-4sn4zg3r> <div class="container" data-astro-cid-4sn4zg3r> <a href="/" class="logo" data-astro-cid-4sn4zg3r>Strahinja Bećagol</a> <nav data-astro-cid-4sn4zg3r> <ul data-astro-cid-4sn4zg3r> <li data-astro-cid-4sn4zg3r><a href="/" data-astro-cid-4sn4zg3r>Home</a></li> <li data-astro-cid-4sn4zg3r><a href="/#courses" data-astro-cid-4sn4zg3r>Courses</a></li> <li data-astro-cid-4sn4zg3r><a href="/#ebook" class="nav-link-highlight" data-astro-cid-4sn4zg3r>Free eBook</a></li> <li data-astro-cid-4sn4zg3r><a href="/blog" data-astro-cid-4sn4zg3r>Blog</a></li> <li data-astro-cid-4sn4zg3r><a href="/test-apps" data-astro-cid-4sn4zg3r>Test Apps</a></li> </ul> </nav> </div> </header> <main class="container" data-astro-cid-4sn4zg3r> <a href="/blog" class="back-link" data-astro-cid-4sn4zg3r>← Back to Blog</a> <article data-astro-cid-4sn4zg3r> <div class="blog-header" data-astro-cid-4sn4zg3r> <h1 class="blog-title" data-astro-cid-4sn4zg3r>How to Test a Feature When the Requirements Are Garbage</h1> <div class="blog-meta" data-astro-cid-4sn4zg3r> <span class="blog-date" data-astro-cid-4sn4zg3r>October 26, 2025</span> <span class="blog-author" data-astro-cid-4sn4zg3r>By Strahinja Becagol</span> <div class="blog-tags" data-astro-cid-4sn4zg3r> <span class="blog-tag" data-astro-cid-4sn4zg3r>software testing</span><span class="blog-tag" data-astro-cid-4sn4zg3r>test strategy</span><span class="blog-tag" data-astro-cid-4sn4zg3r>requirements</span><span class="blog-tag" data-astro-cid-4sn4zg3r>exploratory testing</span><span class="blog-tag" data-astro-cid-4sn4zg3r>QA</span> </div> </div> </div> <img src="/requirementsMissing.png" alt="How to Test a Feature When the Requirements Are Garbage" class="blog-featured-image" onerror="this.src='/placeholder-image.jpg'; this.onerror=null;" data-astro-cid-4sn4zg3r> <div class="blog-content" data-astro-cid-4sn4zg3r> <p>Every tester has been there.
+You open the ticket, read the description, and instantly feel your eye twitch. The title says something vague like “Implement new feature for user flow enhancement” and the description? A single line: “We need this done ASAP.”</p>
+<p>Welcome to the wonderful world of testing when the requirements are garbage.
+It’s not ideal, but it’s real life. And the truth is, this is where testers prove their real value, not when everything is perfectly written, but when it’s a complete mess.</p>
+<p>Let’s talk about how to survive (and even shine) in those situations.</p>
+<h2 id="1-dont-accept-that-garbage-requirements-are-common">1. (Don’t) Accept That Garbage Requirements Are Common</h2>
+<p>Before we jump into tactics, it’s worth accepting something: bad requirements aren’t rare.
+Sometimes, product managers are in a rush. Sometimes developers write their own tickets. Sometimes, no one actually knows what the “feature” should do, it’s just “something like what the competitor has.”
+If you expect every ticket to come with clear acceptance criteria, user flows, and mockups, you’ll burn out fast.
+Instead, start by mentally reframing the situation: “Okay, this isn’t clear  but that’s my opportunity to bring clarity.”
+So don’t just blindly accept it and close the ticket without trying the following.</p>
+<h2 id="2-find-out-who-actually-knows-what-this-feature-is">2. Find Out Who Actually Knows What This Feature Is</h2>
+<p>When the ticket doesn’t tell you what’s going on, talk to humans.
+Find the person who had the idea, the one who coded it, or the one who’s supposed to approve it. Usually, these three people exist they just haven’t talked to each other properly.</p>
+<p>Here’s a simple trick I use:</p>
+<ul>
+<li><strong>Ask the developer</strong>: “Can you walk me through what you built?”</li>
+<li><strong>Ask the product owner or PM</strong>: “What problem is this supposed to solve?”</li>
+<li><strong>Ask the designer</strong> (if one exists): “Do you have any visuals or behavior references?”</li>
+<li><strong>Ask the customer support person</strong>: “Did anyone complain about this before?”</li>
+</ul>
+<p>The goal is not to find perfect requirements. It’s to piece together context.
+Once you understand the “why,” the “how” starts to make more sense.
+And, make sure to write down what you found in the ticket so everyone understands!</p>
+<h2 id="3-write-down-what-you-think-the-requirements-should-be">3. Write Down What You Think the Requirements Should Be</h2>
+<p>Now that you’ve gathered scraps of information, it’s time to organize them.
+Open the ticket and write your own version of the requirements. Don’t make it fancy; a simple list or a few bullet points will do:</p>
+<p><strong>My understanding of the feature:</strong></p>
+<ul>
+<li>When the user clicks “Add to cart,” the product should appear on the cart page.</li>
+<li>Quantity should default to 1.</li>
+<li>If the product is already in the cart, clicking again increases the quantity.</li>
+<li>The user should see a confirmation toast message.</li>
+<li>The sky is blue unless it is red, which happens only when there is an abandoned cart</li>
+</ul>
+<p>Then, share it. Send it to the dev, PM, or whoever seems responsible and say something like:</p>
+<p><em>“This is how I’m planning to test the feature. Can you confirm if this aligns with your expectations?”</em></p>
+<p>And that’s it, you just created living acceptance criteria.
+Even if no one replies, you’ve documented your assumptions and covered yourself later if someone says, “That’s not what we wanted.”</p>
+<h2 id="4-test-based-on-behavior-not-words">4. Test Based on Behavior, Not Words</h2>
+<p>When requirements are bad, the product itself becomes your source of truth.
+Run the feature. Click around. Observe what it actually does. From there, start forming hypotheses:</p>
+<ul>
+<li>“If I do X, it should do Y.”</li>
+<li>“What happens if I skip step two?”</li>
+<li>“Can I break this by using an unexpected input?”</li>
+<li>“The email notification should be sent after the pop-up is dismissed. Why is my inbox empty?”</li>
+</ul>
+<p>Exploratory testing becomes your best friend here. You’re learning the system through experimentation.</p>
+<p>You’re not just checking “does it match the document,” because the document is useless anyway.
+You are checking if it makes sense, works properly, and doesn’t break the rest of the app.
+In a way, you’re reverse-engineering the requirements from the behavior.
+And when you do this, it is extremely important to write it down again in the task or a document, an email, or a clay tablet if you like, but just make sure that there is an artefact left, for example:</p>
+<p><em>“When I enter the new value into the field, the sum is not automatically recalculated. Is this expected behavior @thePersonWhoIsResponsibleForTheFeature, please confirm this is expected.”</em></p>
+<h2 id="5-think-in-terms-of-risks">5. Think in Terms of Risks</h2>
+<p>When information is unclear, fall back to the universal language of testing: risk.</p>
+<p>Ask yourself:</p>
+<ul>
+<li>What could go wrong here?</li>
+<li>Which parts of this feature affect the rest of the system?</li>
+<li>What would be the biggest embarrassment if it failed in production?</li>
+<li>What would bring the largest negative financial impact to the client?</li>
+</ul>
+<p>This mindset helps you prioritize.</p>
+<p>You may not know the “expected behavior” down to the pixel, but you can know what would cause major pain if it’s broken.
+Focus first on critical paths, saving data, payment flows, logins, permissions, areas that already had issues in the past, etc.
+Then go wider into edge cases and user experience.
+When requirements are garbage, risk is your compass.
+I live and die by this, and you should probably do so too!</p>
+<h2 id="6-document-what-you-found-even-the-garbage">6. Document What You Found (Even the Garbage)</h2>
+<p>Testing a feature with unclear requirements is half investigation, half documentation.</p>
+<p>Keep notes on everything:</p>
+<ul>
+<li>What was unclear?</li>
+<li>What you asked and who responded.</li>
+<li>What assumptions did you make?</li>
+<li>What the system actually did.</li>
+<li>Bugs or unexpected results.</li>
+<li>What was confusing</li>
+<li>And ESPECIALLY what you considered to be clear (This is where most of us fail!)</li>
+</ul>
+<p>This documentation serves three purposes:</p>
+<ol>
+<li>It helps your future self (or the next tester) understand what really happened.</li>
+<li>It helps the team realize how unclear the feature was.</li>
+<li>It protects you when someone says, “Why didn’t we test X?”</li>
+</ol>
+<p>Your notes might even evolve into proper test cases or requirements later; many good QA processes are born this way, but don’t get your hopes too high :) and make sure you are covering enough by your tests so YOU feel comfortable letting such feature go for now.</p>
+<h2 id="7-be-honest-in-your-report">7. Be Honest in Your Report</h2>
+<p>When you finish testing, don’t just write “Tested and passed.”</p>
+<p>Be transparent:</p>
+<p><em>“Testing completed based on current understanding of the feature. Requirements were not clearly defined; testing covered the main user flows and observed behavior. Potential gaps remain in [list them].”</em></p>
+<p>That line alone can save you countless hours later.
+You’re signaling to the team that the testing scope was based on available information, not perfection.
+And most importantly, you’re not blaming anyone, you’re communicating risk.</p>
+<h2 id="8-use-this-as-leverage-for-improvement">8. Use This as Leverage for Improvement</h2>
+<p>Once the dust settles, use the situation as a learning opportunity.
+Bring it up in a retro:</p>
+<p><em>“We spent two days clarifying requirements that could’ve been written in ten minutes.”</em>
+Keep it factual, not emotional. The goal isn’t to shame anyone, it’s to make sure the next feature doesn’t start the same way, so keep your ego in check. No one is perfect!
+Sometimes people don’t realize how much time bad requirements waste until someone shows them.
+And if you’re in a position to influence the process, suggest lightweight templates for tickets:</p>
+<ul>
+<li>“User story”</li>
+<li>“Acceptance criteria”</li>
+<li>“Out of scope”</li>
+<li>“Test notes”</li>
+</ul>
+<p>The simpler it is, the more likely people will fill it out.</p>
+<h2 id="9-it-is-not-all-bad-this-strengthens-your-tester-instincts">9. It IS Not All Bad This Strengthens Your Tester Instincts</h2>
+<p>Testing vague features forces you to rely on your intuition, experience, and curiosity. That’s not a bad thing. I wouldn’t be half the tester I am if I hadn’t been in a situation to test a one-liner ticket.</p>
+<p>It trains you to:</p>
+<ul>
+<li>Ask better questions.</li>
+<li>Notice subtle issues others miss.</li>
+<li>Anticipate risks before they happen.</li>
+<li>Think from the user’s perspective.</li>
+</ul>
+<p>You become less dependent on documentation and more capable of thinking like a product expert.
+That’s what separates an average tester from a great one.</p>
+<hr/>
+<p>This all being said, there is just another small detail you need to remember!
+If you work in a team where this is a regular thing, one-liners and chasing requirements, it is easy for you to get used to working like that.
+After a while, you will understand the oneliner, same like everyone else.</p>
+<p>This DOES NOT mean you can just test it and be done with it.
+You MUST, for your own sake, keep doing everything I mentioned here, that is imperative! There is nothing to be gained for you in working that way. If something goes wrong 3-6  months from now, no one will remember what the oneliner was and what it was supposed to do, or why it was implemented the may it was, and you will catch heat for “not testing it properly”, so</p>
+<p><strong>DOCUMENT STUFF!</strong></p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>Testing with garbage requirements may be frustrating, there is no sugarcoating it.
+But it is also one of the best ways to show your value as a tester.
+Almost anyone can follow a perfect checklist. A nicely written test case. Read the Acceptance criteria and requirements
+It takes skill to find clarity in chaos, identify risks without specs, and communicate effectively when no one else can.
+The next time you get a vague ticket that makes you sigh, remember this:
+You’re not just testing a feature, you’re testing the team’s ability to think clearly!
+And by doing your job well, you make everyone else’s work a little easier next time.</p> </div> <div id="lead-magnet-popup" class="lead-magnet-container" data-astro-cid-krvppkqb> <div class="lead-magnet-content" data-astro-cid-krvppkqb> <h3 data-astro-cid-krvppkqb>Grab the free ebook:</h3> <p class="lead-magnet-description" data-astro-cid-krvppkqb>
+"Software Testing for Beginners" is packed with real-world tips on writing bug reports, test cases, and surviving chaotic projects.
+</p> <div class="lead-magnet-features" data-astro-cid-krvppkqb> <h4 data-astro-cid-krvppkqb>💡 What's inside:</h4> <ul data-astro-cid-krvppkqb> <li data-astro-cid-krvppkqb>Smart test case templates</li> <li data-astro-cid-krvppkqb>Bug reports devs actually respect</li> <li data-astro-cid-krvppkqb>Tools, tips, and tactics that work</li> </ul> <p class="lead-magnet-tagline" data-astro-cid-krvppkqb>No fluff. No BS. Just stuff every tester should know.</p> </div> <button class="lead-magnet-button ml-onclick-form" onclick="ml('show', 'rGtm8o', true)" data-astro-cid-krvppkqb>
+👉 Send Me the Free Ebook
+</button> <p class="lead-magnet-footer" data-astro-cid-krvppkqb>Pop it in your inbox. Learn something useful. Go break stuff (intentionally).</p> </div> </div>  <script type="module">function e(){const n=document.getElementById("lead-magnet-popup");window.innerHeight+window.scrollY>=document.body.offsetHeight-300&&n.classList.add("visible")}document.addEventListener("DOMContentLoaded",()=>{window.addEventListener("scroll",e),setTimeout(e,1e3)});</script> </article> </main> <footer data-astro-cid-4sn4zg3r> <div class="container" data-astro-cid-4sn4zg3r> <p data-astro-cid-4sn4zg3r>&copy; 2025 Strahinja Becagol. All rights reserved.</p> </div> </footer> <div id="cookie-consent" class="cookie-consent hidden" data-astro-cid-garwan2p> <div class="cookie-content" data-astro-cid-garwan2p> <div class="cookie-text" data-astro-cid-garwan2p> <h3 data-astro-cid-garwan2p>Cookie Notice</h3> <p data-astro-cid-garwan2p>This website uses cookies for analytics to improve your experience. We won't set non-essential cookies until you accept.</p> </div> <div class="cookie-buttons" data-astro-cid-garwan2p> <button id="cookie-accept" class="cookie-btn accept" data-astro-cid-garwan2p>Accept</button> <button id="cookie-decline" class="cookie-btn decline" data-astro-cid-garwan2p>Decline</button> </div> </div> </div>  <script type="module">document.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("cookie-consent"),t=document.getElementById("cookie-accept"),o=document.getElementById("cookie-decline"),c=localStorage.getItem("cookie-consent");c?c==="accepted"&&n():setTimeout(()=>{e?.classList.remove("hidden")},1e3),t?.addEventListener("click",()=>{localStorage.setItem("cookie-consent","accepted"),e?.classList.add("hidden"),n()}),o?.addEventListener("click",()=>{localStorage.setItem("cookie-consent","declined"),e?.classList.add("hidden")})});function n(){const e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-HDYYD92WHW",document.head.appendChild(e),window.dataLayer=window.dataLayer||[];function t(){dataLayer.push(arguments)}t("js",new Date),t("config","G-HDYYD92WHW")}</script> </body></html>
