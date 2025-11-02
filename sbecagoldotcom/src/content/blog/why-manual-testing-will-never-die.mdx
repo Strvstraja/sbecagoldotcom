@@ -1,0 +1,158 @@
+---
+title: "Why Manual Testing Will Never Die"
+description: "Every few years, someone declares manual testing dead. Yet here we are, still clicking buttons, still finding bugs automation missed. Let's settle this once and for all."
+pubDate: 2025-11-02
+author: "Strahinja Becagol"
+image: "/manualTestingWillLIve.png"
+tags: ["manual testing", "automation", "QA", "software testing", "AI"]
+draft: false
+---
+
+Let's settle this once and for all.
+
+Every few years, someone in the industry declares manual testing dead. "Automation is here!" they shout. "AI can do it all!" And yet, here we are, still clicking buttons, still testing edge cases, still finding bugs that automation happily sailed past. Still looking at broken features that Playwright MCP powered by the latest and greatest shiny LLM by this great AI bubble company, missed or hallucinated requirements for.
+
+So what is this? Why is manual testing still around? Why does every company, even the ones with massive automation suites, all the budget in the world, still need manual testers?
+
+Because manual testing isn't going anywhere. And if when you understand why, you'll never worry about your career in QA.
+
+## Automation Can't Think Like a Human (Yet)
+
+Automation is brilliant at doing the same thing over and over. Run the same test 1,000 times? No problem. Check if a button still works after every code change? Perfect.
+
+But automation doesn't wonder, "What if someone does this weird thing?" It doesn't get curious. It doesn't notice that something feels... off.
+
+A human tester will. You'll see a typo in an error message. You'll notice the loading spinner feels slower than yesterday. You'll try entering an emoji into a field just to see what happens, that's what you want, you want to see the servers burn :) And boom, you've found a bug in a place no one thought to automate.
+
+Automation follows scripts. Manual testers follow instincts.
+
+And instincts matter.
+
+## Not Everything Can (or Should) Be Automated
+
+Some things just don't make sense to automate.
+
+Visual bugs. Layout issues. Whether a page "feels" right. Color contrast. Whether the spacing is weird. If the user experience is confusing. These are judgment calls, not binary pass/fail checks.
+
+Sure, you can write visual regression tests, but they won't tell you if the design is ugly or if the flow feels awkward. Only a human can say, "This button placement is stupid and users will hate it."
+
+And here's the kicker: not every feature lives long enough to justify automation.
+
+If you're testing a quick prototype or a one-time experiment, automating it is overkill. By the time you write and maintain the test, the feature might be gone. Manual testing is fast, flexible, and good enough for those situations.
+
+## Exploratory Testing Is Where Manual Testing Shines
+
+Automation is great for regression testing, checking that old stuff still works. But it's terrible at discovery.
+
+Exploratory testing is where manual testers prove their worth. You're not following a script. You're actively thinking, experimenting, and learning the system. You're asking, "What could break here?" and then trying to break it.
+
+This is how you find the weird bugs, the ones no one thought to write test cases for. The ones that happen when a user does three things in the wrong order, or when the API returns an unexpected response, or when someone tries to upload a 10GB file because why not?
+
+Automation can't explore. It can only execute. AI can "explore" but ONLY what you tell it to! And that's why manual testing will always have a place. It is, in a way, contracted to assure quality!
+
+Now, an AI agent can try to think, and, being honest, some of those are quite smart. I am not here to start a philosophical debate of what thinking and smart are. But here's my point: would you drive a car that has all embedded code written and tested by another machine? And don't even start me on who is testing the code that is powering LLMs?
+
+## Developers Write Code - Testers Question It
+
+Here's a truth bomb: developers are optimists. They write code assuming it'll work. They think in happy paths. They build for the 90% use case and move on. And I am not saying that they should do any different! Otherwise, nothing would get shipped ever!
+
+Testers? We're pessimists. We assume nothing works until we prove it does. We think in edge cases, error conditions, and weird user behavior. Worst-case scenario is our bread and butter, and we go straight in the deep end. We do stuff that keeps developers scratching their heads and asking a valid question: "But why did you do that? Who in the right mind would do that?"
+
+I have been doing this testing thing for over a decade now, and honestly, I wonder sometimes if some of the users are in the right state of mind. Some of the bugs I've reproduced in production made me scratch my head. I've had crazy ideas like "Let's stick a screwdriver in the keyboard, go for a break, and see what happens when I come back."
+
+It crashed horribly. Coworkers got annoyed. The server needed to be restarted. But the issue with field validation was fixed!
+
+That mindset difference is valuable. A developer might think, "If the user enters their email, it'll validate fine." A tester thinks, "What if they paste 5,000 characters? What if they use Cyrillic letters? What if they leave it blank and hit submit 10 times?"
+
+You can't automate that kind of thinking. Not yet, anyway. Not in a way that provides real value to your team!
+
+## Automation Is Only as Good as the Person Writing It
+
+Let's be real: automated tests are written by humans. And humans make mistakes.
+
+I've seen automation suites that pass 100% of tests while the app is completely broken. Why? Because someone wrote bad assertions, tested the wrong thing, or automated a flow that didn't matter.
+
+Testing manually can catch those gaps. They're the safety net. They're the ones who say, "Wait, this test says it passed, but I just tried it and the whole thing crashes."
+
+Automation is a tool. It doesn't replace judgment. It amplifies it when used correctly.
+
+## Manual Testing Adapts Faster
+
+Software changes constantly. Features get added, removed, and redesigned. Requirements shift mid-sprint. Priorities change overnight.
+
+Automation? It's rigid. Every time something changes, you have to update the tests. And if your team is moving fast, that maintenance becomes a full-time job. The larger the automation test suite, the less reliable it gets—no matter the coverage, it's bound to fail you because it simply does not have instincts. The same goes for AI tools.
+
+Manual testing adapts instantly. The feature changed? Cool, I'll test the new version. The design team added a button? No problem, I'll click it and see what happens. Is the button even there? You don't need to refactor test scripts. You don't need to wait for the CI/CD pipeline. You just... test.
+
+## Users Are Unpredictable - Automation Isn't
+
+Automation tests what you tell it to test. It follows a predefined path. Users? They do whatever they want. They click things in random order. They ignore instructions. They use the app on a crappy internet connection while their phone is at 2% battery.
+
+Manual testers can simulate that chaos. We can think like a frustrated user who's had a long day and just wants the damn thing to work. We can test on real devices, in real conditions, with real impatience. Automation can't replicate human unpredictability. And that's exactly why it can't replace us.
+
+You can train an AI model to do unpredictable stuff and try to behave like a user, but I have two questions for you:
+
+- Do you have a data center?
+- Do you have almost unlimited budget and time to tweak it to do what you would do in a blink of an eye?
+
+If the answers are no, then yeah, keep reading…
+
+## The Future: Manual + Automation + AI, Not One or the Other
+
+Here's the truth no one wants to admit: the best QA teams use every tool at their disposal.
+
+Automation handles the repetitive stuff, the regression suites, the smoke tests. It runs in the background and catches regressions fast. Manual testing handles the new features, the exploratory sessions, and the "does this actually make sense?" checks. AI tools like Playwright MCP can be given a task and a link, but you must spend time to validate its findings.
+
+Chat GPT can write your test cases based on the requirements you gave it, but you have to validate those test cases and check for the gaps. THERE ALWAYS ARE GAPS, even when you are using the latest and greatest version of whatever model is the best and shiniest today.
+
+The three complement each other.
+
+**Trying to do everything manually?** You'll drown in repetition.
+
+**Trying to automate everything?** You'll miss the bugs that matter.
+
+**Leaving it to AI?** Really? Do you really want your career to depend on someone else's SOFTWARE? Do you want the plane you are on to run autopilot that was coded by another autopilot and tested with a third one? Didn't think so…
+
+Smart testers know this. They automate what makes sense and manually test what doesn't. They use AI tools, but they don't rely on them blindly. Most of the testing is thinking about "what happens if [fill in the blank]"
+
+## Manual Testing Trains Better Testers
+
+Here's something people forget: manual testing makes you better at automation. When you've tested manually, you understand what actually matters. You know which flows are critical. You know where bugs hide. You've seen how users interact with the system.
+
+That knowledge makes you write better automated tests. You know what to automate, what to skip, and what assertions actually matter. Jumping straight into automation without manual testing experience? You'll automate the wrong things. You'll write flaky tests. You'll miss the point.
+
+Manual testing teaches you to think like a tester. Automation teaches you to scale that thinking. AI can speed up the process, and you can rubber duck debug most of your issues with an AI chatbot. Using AI to write your test cases can speed up the process, but there is serious effort required to clean up the mess it can hallucinate in your test suite!
+
+But the time when your chatbot can do your job for you is still not here!
+
+## The Real Threat Isn't Automation or AI
+
+Manual testing isn't dying. But manual testers who refuse to evolve? They might. Not literally die, but more like... die out of the industry.
+
+If you only do manual testing and refuse to learn automation, you'll limit your career. If you treat manual testing as "clicking around aimlessly," you won't last long. If you don't use AI tools, quite soon, you will become obsolete.
+
+The testers who thrive are the ones who:
+
+- Understand when to test manually and when to automate
+- Use exploratory testing strategically, not randomly
+- Combine manual insights with automated coverage
+- Keep learning new tools, but don't forget the fundamentals
+- Use AI, but treat it like just another tool in your tool belt, not a plugin replacement for effort and thinking
+
+Manual testing isn't going away. It's just evolving. And if you evolve with it, you'll always have a place in this industry.
+
+## Final Thoughts
+
+Manual testing will never die because software will never be perfect, users will never be predictable, and automation will never replace human judgment, nor will AI, not any time soon.
+
+The companies that figure this out, the ones that value testers in the broadest sense of the word, and don't segregate manual from automated and treat AI as a tool, not as a plug-in replacement for any problem, are the ones building better software and are going to thrive in the future!
+
+So if you're a manual tester wondering if you're obsolete: you're not. You're essential.
+
+Just make sure you stay sharp, stay curious, and keep evolving.
+
+Because the future of testing isn't manual vs. automation. It's not OMG AI IS REPLACING US ALL.
+
+It's manual and automation, working together, with AI tools for speed.
+
+And if you understand that, you'll never be out of a job!
