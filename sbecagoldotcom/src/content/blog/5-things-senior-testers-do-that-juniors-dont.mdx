@@ -1,0 +1,144 @@
+---
+title: "5 Things Senior Testers Do That Juniors Don't (And It's Not What You Think)"
+description: "The real difference between junior and senior testers has almost nothing to do with technical skills. It's about mindset, timing, and knowing where to focus your energy."
+pubDate: 2025-11-16
+author: "Strahinja Becagol"
+image: "/junior-senior.png"
+tags: ["QA", "career", "software testing", "senior tester", "testing strategy"]
+draft: false
+---
+
+You may think that Senior testers are just people who know more tools. They can write Selenium scripts in their sleep, know Postman like the back of their hands, and have memorized the entire ISTQB syllabus.
+
+You would be wrong.
+
+The real difference between junior and senior testers has almost nothing to do with technical skills. It's about mindset, timing, and knowing where to focus your energy. A senior tester with basic SQL knowledge will outperform a junior tester who's a Playwright wizard, every single time.
+
+Here are five things senior testers do differently, and none of them require a certification. And honestly, the majority of the best stuff seldom does.
+
+## 1. They Test the Requirements Before They Test the Code
+
+Junior testers wait for the feature to land in the test environment, then start "clicking around". Senior testers start testing the moment they read the ticket.
+
+And by "testing," I mean they're already finding bugs.
+
+Vague acceptance criteria? That's "a bug". Contradictory requirements? "Bug". A user story that says "should be intuitive" without defining what that means? Oh, that's a whole nest of future bugs.
+
+Senior testers ask the uncomfortable questions early:
+
+- "What happens if the user does X in the middle of Y?"
+- "How does this interact with that other feature we shipped last month?"
+- "Who actually asked for this, and what problem are we solving?"
+
+They do this BEFORE anyone writes a single line of code. Because finding a gap in requirements takes 5 minutes and saves 5 days or even weeks of rework…
+
+Junior testers think their job starts when the code is ready. Senior testers know their job is to make sure the code is ready to be written correctly in the first place. Senior tester questions everything all the time and everywhere, in meetings, while reading requirements, and chatting about the progress with their coworkers! 
+
+## 2. They Know When NOT to Test
+
+This is the big one nobody talks about.
+
+Junior testers test everything because "it's my job" or "what if something breaks?" They'll spend three hours regression testing a form that hasn't been touched in four years and has 200 automated tests covering it.
+
+Senior testers? They skip it.
+
+Not because they're lazy. Because they understand risk.
+
+They look at what changed, what could realistically be affected, and where the actual danger zones are. Then they focus their limited time on the stuff that matters.
+
+When a PM says, "Can you do a full regression pass before we ship?" a junior tester says, "Okay," and works the weekend. 
+
+A senior tester says, "No."
+
+And then proceeds to point out the automated regression test suite of 400 or more tests that ran without an issue for months, and suggests spending the time productively, for example, testing that two features we just completed and are the whole point of this deployment, next Monday…
+
+Then a senior also tests the critical parts of the app, which can and will bring reputational and financial problems to the software and its users, including payments, email/push notifications, reports, or perhaps things that USUALLY BREAK, after a big update like this.
+
+Senior testers have learned the hard way that testing everything means testing nothing well. They'd rather deeply test the 20% that matters than superficially test 100% and miss the critical bugs anyway. 
+
+There is no bugless code, and seniors know where and when it's ok to have a bug in production.
+
+"No" is a complete sentence. Senior testers know when to use it.
+
+## 3. They Make Bugs Expensive to Ignore
+
+Here's how a junior tester reports a bug:
+
+"The submit button is misaligned by 3 pixels on the checkout page."
+
+Here's how a senior tester reports the same bug:
+
+"The submit button on checkout appears below the fold on mobile devices (iPhone 12 and below, ~40% of our user base). Users will need to scroll to complete their purchase, which will likely increase cart abandonment. Our last UX study showed every extra tap/scroll in checkout costs us ~8% conversion."
+
+See the difference?
+
+Junior testers report what they found. Senior testers report why it matters.
+
+They connect bugs to business impact: revenue, user experience, support tickets, and brand reputation. They speak the language of product managers and executives, not just developers.
+
+When you write a bug report that says "this will cost us money," it doesn't get marked as "low priority" and forgotten. It gets fixed. 
+
+The caveat here is that if a tester overdoes this, they will be considered a "Drama Queen" XD and will get ignored, so a senior tester does this kind of stuff ONLY when there is real risk to be dealt with!
+
+Senior testers don't just find bugs, they make them impossible to ignore.
+
+## 4. They Build Relationships Before They Need Them
+
+Junior testers only interact with developers when they're filing bugs. Then they wonder why devs are defensive and so "unapproachable".
+
+Senior testers grab coffee with developers. They ask about the architecture. They learn what keeps the dev team up at night. They offer to pair up to understand a complex feature.
+
+They build trust when things are calm, so when production explodes at 11 PM on a Friday, they're not just "that person who files annoying bugs" but "that person who saved us from working through the weekend"(Assuming the issue was detected before going to prod, look, seniors are not perfect, no one is)
+
+Testing isn't a solo activity. It's a team sport. Senior testers know that finding bugs is only half the job;  getting them fixed is the other half. And that requires relationships. They also know when to praise. When a dev writes beautiful, testable code? Senior testers notice and say something. When automation catches a regression before it ships? They thank whoever wrote that test. When the new feature deployment goes without snags, they say GOOD JOB EVERYONE, while secretly obsessing about what they may have missed :) 
+
+Junior testers see testing as adversarial: us vs. them. Senior testers see it as collaborative: all of us vs. the bugs. Or even better, all of us FOR a quality product!
+
+The best senior testers I know are the ones developers actually WANT in code reviews and planning meetings. That doesn't happen by accident.
+
+## 5. They Document What Matters (And Skip What Doesn't)
+
+Junior testers either:
+
+- Document nothing because they're too busy testing, or
+- Document everything in excruciating detail that nobody will ever read
+
+Senior testers document strategically.
+
+They write down:
+
+- Why we decided NOT to test something (risk accepted)
+- Weird edge cases that bit us before and might again
+- The tribal knowledge that only lives in someone's head
+- Decisions made in Slack that will be forgotten in two weeks
+
+They DON'T write:
+
+- 50-page test plans that become outdated the day they're finished
+- Step-by-step test cases for every obvious scenario
+- Test reports full of metrics nobody looks at
+
+Senior testers ask: "If I get hit by a bus tomorrow, what does the next person need to know?" Then they document that. Everything else is noise.
+
+Their documentation is minimal, but when you need it, it's exactly what you need. And it's actually maintained because it's not overwhelming to keep updated.
+
+## The Real Secret
+
+None of these things requires years of experience to start doing. You don't need to be a senior tester to test requirements early, to think about risk, or to write bugs that connect to business impact.
+
+You just need to realize that being a good tester isn't about finding the most bugs. It's about finding the right bugs, at the right time, and helping the team actually fix them.
+
+Junior testers focus on coverage. Senior testers focus on impact.
+
+Junior testers test in isolation. Senior testers test as part of a team.
+
+Junior testers follow the process. Senior testers know when to break it.
+
+The good news? You can start doing all of these things tomorrow. Pick one, just one, and focus on it this week.
+
+And then keep adding, check requirements this week, then start working on lean documentation next week, alongside constant scrutiny of incoming requirements, then the week after that, start being friendly with the devs, ask questions, show genuine interest in the problems they experience, and so on…
+
+I guarantee you'll level up faster than any certification course could ever teach you.
+
+Which one are you going to try first? 
+Let me know in the comments or hit me up on LinkedIn I'd love to hear how it goes!
