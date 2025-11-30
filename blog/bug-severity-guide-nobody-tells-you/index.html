@@ -1,0 +1,246 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-4sn4zg3r> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/png" sizes="48x48" href="/images/sbecagolfav48.png"><title>The Bug Severity Guide Nobody Tells You About | Strahinja Becagol - QA Courses</title><meta name="description" content="Learn the real bug severity levels that actually matter in QA. After a decade in testing, here's what Critical, High, Medium, and Low really mean in practice."><link rel="canonical" href="https://sbecagol.com/blog/bug-severity-guide-nobody-tells-you"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><!-- Open Graph tags --><meta property="og:title" content="The Bug Severity Guide Nobody Tells You About | Strahinja Becagol - QA Courses"><meta property="og:description" content="Learn the real bug severity levels that actually matter in QA. After a decade in testing, here's what Critical, High, Medium, and Low really mean in practice."><meta property="og:url" content="https://sbecagol.com/blog/bug-severity-guide-nobody-tells-you"><meta property="og:type" content="article"><meta property="og:image" content="https://sbecagol.com/severityguide.png"><!-- Twitter Card tags --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="The Bug Severity Guide Nobody Tells You About | Strahinja Becagol - QA Courses"><meta name="twitter:description" content="Learn the real bug severity levels that actually matter in QA. After a decade in testing, here's what Critical, High, Medium, and Low really mean in practice."><meta name="twitter:image" content="https://sbecagol.com/severityguide.png"><!-- Structured Data / Schema Markup for Blog Post --><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"The Bug Severity Guide Nobody Tells You About","description":"Learn the real bug severity levels that actually matter in QA. After a decade in testing, here's what Critical, High, Medium, and Low really mean in practice.","image":"https://sbecagol.com/severityguide.png","datePublished":"2025-11-30T00:00:00.000Z","author":{"@type":"Person","name":"Strahinja Becagol","url":"https://sbecagol.com"},"publisher":{"@type":"Person","name":"Strahinja Becagol","url":"https://sbecagol.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://sbecagol.com/blog/bug-severity-guide-nobody-tells-you"}}</script><!-- Google Analytics will be loaded via cookie consent --><!-- MailerLite Universal --><script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '1684695');
+    </script><!-- End MailerLite Universal --><!-- Global styles so MDX-rendered content links are affected --><style>.cookie-consent[data-astro-cid-garwan2p]{position:fixed;bottom:2rem;left:50%;transform:translate(-50%);width:90%;max-width:36rem;background-color:var(--bg-accent, #1e293b);border:1px solid var(--border-color, #334155);border-radius:8px;padding:1.25rem;z-index:1000;box-shadow:0 10px 25px -5px #0000004d;transition:opacity .3s,transform .4s}.cookie-consent[data-astro-cid-garwan2p].hidden{opacity:0;transform:translate(-50%,5rem);pointer-events:none}.cookie-content[data-astro-cid-garwan2p]{display:flex;flex-direction:column;gap:1rem}.cookie-text[data-astro-cid-garwan2p] h3[data-astro-cid-garwan2p]{font-size:1.125rem;margin-bottom:.5rem;color:var(--text-color, #e2e8f0)}.cookie-text[data-astro-cid-garwan2p] p[data-astro-cid-garwan2p]{font-size:.9375rem;color:var(--text-light, #94a3b8);margin:0}.cookie-buttons[data-astro-cid-garwan2p]{display:flex;gap:.75rem}.cookie-btn[data-astro-cid-garwan2p]{padding:.5rem 1.25rem;border-radius:6px;font-weight:500;font-size:.875rem;cursor:pointer;transition:all .2s;border:none}.cookie-btn[data-astro-cid-garwan2p].accept{background-color:var(--primary-color, #10b981);color:#fff}.cookie-btn[data-astro-cid-garwan2p].accept:hover{background-color:var(--primary-hover, #059669)}.cookie-btn[data-astro-cid-garwan2p].decline{background-color:transparent;color:var(--text-color, #e2e8f0);border:1px solid var(--border-color, #334155)}.cookie-btn[data-astro-cid-garwan2p].decline:hover{background-color:#ffffff0d}@media (min-width: 640px){.cookie-content[data-astro-cid-garwan2p]{flex-direction:row;align-items:center;justify-content:space-between}.cookie-text[data-astro-cid-garwan2p]{flex:1}}
+</style>
+<link rel="stylesheet" href="/_assets/_slug_.lj-QJPV8.css"></head> <body data-astro-cid-4sn4zg3r> <header data-astro-cid-4sn4zg3r> <div class="container" data-astro-cid-4sn4zg3r> <a href="/" class="logo" data-astro-cid-4sn4zg3r>Strahinja Bećagol</a> <nav data-astro-cid-4sn4zg3r> <ul data-astro-cid-4sn4zg3r> <li data-astro-cid-4sn4zg3r><a href="/" data-astro-cid-4sn4zg3r>Home</a></li> <li data-astro-cid-4sn4zg3r><a href="/#courses" data-astro-cid-4sn4zg3r>Courses</a></li> <li data-astro-cid-4sn4zg3r><a href="/#ebook" class="nav-link-highlight" data-astro-cid-4sn4zg3r>Free eBook</a></li> <li data-astro-cid-4sn4zg3r><a href="/blog" data-astro-cid-4sn4zg3r>Blog</a></li> <li data-astro-cid-4sn4zg3r><a href="/test-apps" data-astro-cid-4sn4zg3r>Test Apps</a></li> </ul> </nav> </div> </header> <main class="container" data-astro-cid-4sn4zg3r> <a href="/blog" class="back-link" data-astro-cid-4sn4zg3r>← Back to Blog</a> <article data-astro-cid-4sn4zg3r> <div class="blog-header" data-astro-cid-4sn4zg3r> <h1 class="blog-title" data-astro-cid-4sn4zg3r>The Bug Severity Guide Nobody Tells You About</h1> <div class="blog-meta" data-astro-cid-4sn4zg3r> <span class="blog-date" data-astro-cid-4sn4zg3r>November 30, 2025</span> <span class="blog-author" data-astro-cid-4sn4zg3r>By Strahinja Becagol</span> <div class="blog-tags" data-astro-cid-4sn4zg3r> <span class="blog-tag" data-astro-cid-4sn4zg3r>bug severity</span><span class="blog-tag" data-astro-cid-4sn4zg3r>bug reports</span><span class="blog-tag" data-astro-cid-4sn4zg3r>QA tips</span><span class="blog-tag" data-astro-cid-4sn4zg3r>software testing</span><span class="blog-tag" data-astro-cid-4sn4zg3r>bug prioritization</span> </div> </div> </div> <img src="/severityguide.png" alt="The Bug Severity Guide Nobody Tells You About" class="blog-featured-image" onerror="this.src='/placeholder-image.jpg'; this.onerror=null;" data-astro-cid-4sn4zg3r> <div class="blog-content" data-astro-cid-4sn4zg3r> <h1 id="the-bug-severity-guide-nobody-tells-you-about">The Bug Severity Guide Nobody Tells You About</h1>
+<p>Every QA course teaches you the “official” bug severity levels:</p>
+<ul>
+<li><strong>Critical:</strong> System is down, nobody can work</li>
+<li><strong>High:</strong> Major functionality broken</li>
+<li><strong>Medium:</strong> Some features affected</li>
+<li><strong>Low:</strong> Minor issues, cosmetic problems</li>
+</ul>
+<p>Looks clean on paper, right?</p>
+<p>Here’s what nobody tells you: that’s not how it actually works.</p>
+<p>After over a decade in QA, I’ve learned that bug severity has very little to do with technical impact and sometimes has everything to do with who notices it.</p>
+<p>Let me show you the REAL bug severity guide.</p>
+<h2 id="critical-aka-everything-is-on-fire">Critical (AKA “Everything Is On Fire”)</h2>
+<p><strong>Official definition:</strong> Complete system failure, all users affected, business cannot operate.</p>
+<p><strong>What it actually means:</strong> The business literally cannot function right now.</p>
+<p>This is the real deal. Money isn’t flowing. Users can’t log in. Data is corrupted. The entire system is down. Production is broken and customers are screaming.</p>
+<p>Critical doesn’t mean “bad” or “embarrassing” or “the CEO noticed.” Critical means “stop everything and address this NOW because we’re actively losing money/users/data… and probably our jobs too…”</p>
+<p>If you can still operate, even badly, it’s not Critical (Not really).</p>
+<h3 id="how-to-spot-it">How to spot it:</h3>
+<ul>
+<li>Complete system outage (nobody can access the app)</li>
+<li>Payment processing is completely broken (money is not flowing)</li>
+<li>Data loss or corruption (customer data being destroyed)</li>
+<li>Security breach is actively happening (unauthorized access right now)</li>
+<li>Core functionality is dead for ALL users (not just some edge case)</li>
+</ul>
+<h3 id="real-examples">Real examples:</h3>
+<ul>
+<li>“Production database crashed, all users getting 500 errors” (Critical: business is down)</li>
+<li>“Payment gateway returning errors for 100% of transactions” (Critical: no money coming in)</li>
+<li>“User authentication broken, nobody can log in” (Critical: system unusable)</li>
+<li>“API endpoint exposing user passwords in plain text” (Critical: active security breach)</li>
+<li>“Data migration script deleted production customer records” (Critical: data loss)</li>
+</ul>
+<h3 id="whats-not-critical-even-though-people-say-it-is">What’s NOT Critical (even though people say it is):</h3>
+<ul>
+<li>“The logo is off-center on homepage” (Not Critical: annoying, not business-stopping)</li>
+<li>“CEO saw a typo in the email template” (Not Critical: embarrassing, not broken)</li>
+<li>“One specific workflow broken for 5% of users” (High, not Critical: some users affected, not all)</li>
+<li>“Mobile app crashes on iPhone 6” (High, not Critical: old device, workaround exists: use newer phone or web)</li>
+</ul>
+<h2 id="high-aka-this-will-cost-us-money">High (AKA “This Will Cost Us Money”)</h2>
+<p><strong>Official definition:</strong> Major functionality broken, significant user impact.</p>
+<p><strong>What it actually means:</strong> Someone can connect it to revenue or a contract obligation.</p>
+<p>Not all payment bugs are High. The payment bug that affects enterprise customers paying $50K/year? High. The payment bug that only happens when you use a specific combination of discount codes? Medium at best.</p>
+<p>If you can put a dollar amount on it, or if Legal is asking questions, it’s High.</p>
+<h3 id="how-to-spot-it-1">How to spot it:</h3>
+<ul>
+<li>Directly affects paid features</li>
+<li>Blocks a workflow that customers pay for</li>
+<li>Mentioned in an SLA or contract</li>
+<li>Support tickets piling up (costs money to handle)</li>
+<li>Violates compliance requirements (costs money to fix later)</li>
+</ul>
+<h3 id="real-examples-1">Real examples:</h3>
+<ul>
+<li>“Premium users can’t access premium features” (High: we’re literally not delivering what they paid for)</li>
+<li>“Free tier users see a loading spinner for 0.5 seconds longer” (Low: nobody’s paying for speed on free tier)</li>
+<li>“Data export feature returns corrupted files” (High: customers depend on this for their business)</li>
+</ul>
+<h2 id="medium-aka-well-fix-it-eventually">Medium (AKA “We’ll Fix It Eventually”)</h2>
+<p><strong>Official definition:</strong> Moderate functionality issues; workarounds exist.</p>
+<p><strong>What it actually means:</strong> It’s annoying, but nobody’s yelling about it yet.</p>
+<p>This is where most bugs live and die. Medium is the purgatory of bug priorities. It’s important enough to log but not important enough to interrupt anyone’s sprint.</p>
+<p>If there’s a workaround, even a terrible one, it’s probably Medium. “Just refresh the page three times” counts as a workaround.</p>
+<h3 id="how-to-spot-it-2">How to spot it:</h3>
+<ul>
+<li>Affects a feature people use but don’t rely on</li>
+<li>Has a workaround (even if it’s annoying)</li>
+<li>Only happens in specific edge cases</li>
+<li>Been in the backlog for 4+ months</li>
+<li>Gets discussed in every planning meeting but never makes the cut</li>
+</ul>
+<h3 id="real-examples-2">Real examples:</h3>
+<ul>
+<li>“Search doesn’t work with special characters” (Medium: just don’t use special characters, duh)</li>
+<li>“Mobile app crashes when you rotate the screen 6 times quickly” (Medium: who does that?)</li>
+<li>“Notification settings reset after logout” (Medium: you can just re-set them, right?)</li>
+</ul>
+<h2 id="low-aka-nice-to-have-a-record-of-this">Low (AKA “Nice to Have a Record of This”)</h2>
+<p><strong>Official definition:</strong> Minor cosmetic issues, no functional impact.</p>
+<p><strong>What it actually means:</strong> We’re logging this so you stop bringing it up.</p>
+<p>Low-priority bugs are filed for documentation purposes. They might get fixed if a developer is bored, or if they’re touching that code anyway for something else, or never.</p>
+<p>If it’s visual, inconsistent, or “technically wrong but nobody cares,” it’s Low.</p>
+<h3 id="how-to-spot-it-3">How to spot it:</h3>
+<ul>
+<li>Starts with “It would be nice if…”</li>
+<li>Cosmetic or visual inconsistencies</li>
+<li>Affects 0.1% of users in a weird scenario</li>
+<li>Works, but not the way you expected</li>
+<li>Has been “Low” for 3+ years</li>
+</ul>
+<h3 id="real-examples-3">Real examples:</h3>
+<ul>
+<li>“Button text is #333333 instead of #000000” (Low: can you even tell?)</li>
+<li>“Error message has a typo: ‘occured’ instead of ‘occurred’” (Low: you understood it, right?)</li>
+<li>“Tooltip appears 2 pixels to the left of where it should” (Low: why are you measuring tooltip positions? Stop please, we have designers to obsess over this! :) )</li>
+</ul>
+<h2 id="the-hidden-categories-nobody-talks-about">The Hidden Categories Nobody Talks About</h2>
+<h3 id="executive-critical-aka-the-ceo-saw-it">”Executive Critical” (AKA “The CEO Saw It”)</h3>
+<p>This isn’t a real severity level, but you’ll see it constantly.</p>
+<p><strong>What it means:</strong> Someone important noticed something, and now it’s treated like the world is ending, even though technically it’s Low or Medium.</p>
+<p>The misaligned logo becomes “Critical” because the CEO mentioned it. The typo in the marketing email became “drop everything” because an investor saw it.</p>
+<p>This is a political priority, not a technical severity. And yes, you still have to fix it immediately.</p>
+<p><strong>How to handle it:</strong></p>
+<ul>
+<li>Log it with proper documentation (arguing won’t help)</li>
+<li>Note the actual severity in the ticket comments</li>
+<li>Use it as an example later when advocating for actual critical bugs</li>
+<li>Remember: perception is reality in business</li>
+</ul>
+<p><strong>Real examples:</strong></p>
+<ul>
+<li>“Logo is 3 pixels off-center” (Low severity, Executive Critical priority: CEO noticed during investor demo)</li>
+<li>“Typo on homepage: ‘their’ instead of ‘there’” (Low severity, Executive Critical priority: board member pointed it out)</li>
+<li>“Button color doesn’t match brand guidelines” (Low severity, Executive Critical priority: CMO is particular about brand)</li>
+</ul>
+<h3 id="wont-fix-aka-its-a-feature-now">“Won’t Fix” (AKA “It’s a Feature Now”)</h3>
+<p>This isn’t technically a severity level, but it’s a hole where a lot of bugs end up.</p>
+<p><strong>What it means:</strong> We’ve decided this behavior is acceptable, even if it’s weird.</p>
+<p>Sometimes it’s because the fix would break something else. Sometimes it’s because users have adapted to it. Sometimes it’s because the PM just doesn’t want to deal with it.</p>
+<p><strong>Real examples:</strong></p>
+<ul>
+<li>“Date picker defaults to 1/1/1970 on first load” (Won’t Fix: users just click the date they want)</li>
+<li>“Password field doesn’t show strength indicator” (Won’t Fix: rebuilding the auth flow isn’t worth it)</li>
+<li>“System allows passwords with spaces” (Won’t Fix: technically valid, and changing it would break existing users)</li>
+</ul>
+<p>But remember, you MUST document this stuff just in case…</p>
+<h3 id="cannot-reproduce-aka-it-works-on-my-machine">”Cannot Reproduce” (AKA “It Works on My Machine”)</h3>
+<p>The most frustrating category. The bug exists, you’ve seen it, but nobody else can “make it happen”.</p>
+<p><strong>What it means:</strong> Either your reproduction steps are incomplete, or there’s some environmental factor you haven’t figured out, ooooor, just orrrrrr there are some situations when a dev is really not in the mood to deal with your “ideas”</p>
+<p><strong>How to avoid it:</strong></p>
+<ul>
+<li>Better reproduction steps (be obsessive about details)</li>
+<li>Screen recordings</li>
+<li>Logs, network traces, anything that proves it happened</li>
+<li>Test on the exact same setup that the user reported from</li>
+</ul>
+<h3 id="by-design-aka-we-built-it-wrong-on-purpose">”By Design” (AKA “We Built It Wrong on Purpose”)</h3>
+<p>The system is doing exactly what it was designed to do. The design is just terrible.</p>
+<p><strong>What it means:</strong> This isn’t a bug, it’s a feature request. Good luck getting anyone to prioritize that.</p>
+<p><strong>Real examples:</strong></p>
+<ul>
+<li>“Why does logout require two clicks?” (By Design: prevents accidental logouts)</li>
+<li>“Why can’t I delete my account?” (By Design: retention strategy)</li>
+<li>“Why does this form have 47 required fields?” (By Design: someone in legal demanded it)</li>
+</ul>
+<p>And my favourite is a cashier’s application that logs out after a sale is complete, as 2 cashiers were working on one computer and kept interrupting each other’s work, so “logged in” someone else is working, stay away and wait your turn. I kid you not, there is a piece of software out there with this feature…</p>
+<h2 id="the-politics-of-bug-severity">The Politics of Bug Severity</h2>
+<p>Here’s the uncomfortable truth: bug severity can get political…</p>
+<p>The same bug can be Critical on Monday and Low on Friday, depending on:</p>
+<ul>
+<li>Who reported it</li>
+<li>What else is on fire</li>
+<li>How close are we to a deadline</li>
+<li>Whether the PM is in a good mood</li>
+<li>If the fix is easy or hard</li>
+</ul>
+<p>I’ve seen developers argue a critical payment bug down to Medium because “it’s complicated and we have a release tomorrow.”</p>
+<p>I’ve seen PMs escalate a cosmetic issue to Critical because “the client demo is in an hour and this looks unprofessional.”</p>
+<p>Your job as a QA engineer isn’t just to find bugs. It’s to advocate for the right severity level based on actual impact.</p>
+<h2 id="how-to-fight-for-the-right-severity">How to Fight for the Right Severity</h2>
+<h3 id="when-escalating-up">When escalating UP:</h3>
+<p><strong>Connect it to business impact:</strong></p>
+<ul>
+<li>“This affects 40% of our user base” (data)</li>
+<li>“We’re in breach of our SLA with Customer X” (legal)</li>
+<li>“Support is getting 50 tickets/day about this” (cost)</li>
+<li>“This violates GDPR requirements” (compliance)</li>
+</ul>
+<p><strong>Show evidence:</strong></p>
+<ul>
+<li>User reports</li>
+<li>Analytics data</li>
+<li>Screen recordings</li>
+<li>Financial impact calculations</li>
+</ul>
+<h3 id="when-arguing-down">When arguing DOWN:</h3>
+<p><strong>Provide context:</strong></p>
+<ul>
+<li>“Only happens in Safari 12, which is 0.02% of our traffic.”</li>
+<li>“There’s a workaround: users can just click ‘retry’”</li>
+<li>“This component is being replaced next sprint anyway.”</li>
+<li>“We shipped this behavior 2 years ago, and nobody’s complaining.”</li>
+</ul>
+<p><strong>Offer alternatives:</strong></p>
+<ul>
+<li>“Can we document the workaround while we plan a proper solution?”</li>
+<li>“What if we hide this feature temporarily?”</li>
+<li>“Should we just remove this rather than address it?”</li>
+</ul>
+<h2 id="red-flags-that-severity-is-wrong">Red Flags That Severity Is Wrong</h2>
+<h3 id="when-critical-might-actually-be-medium">When “Critical” might actually be Medium:</h3>
+<ul>
+<li>Only happens in one specific scenario</li>
+<li>Affects internal tools, not customer-facing features</li>
+<li>Has existed for months without anyone noticing</li>
+<li>Resolution requires major architectural changes</li>
+</ul>
+<h3 id="when-low-might-actually-be-high">When “Low” might actually be High:</h3>
+<ul>
+<li>Happens frequently but in different ways (pattern not recognized)</li>
+<li>Affects new users more than existing ones (they don’t know the workarounds)</li>
+<li>Slowly degrading over time (performance, data quality)</li>
+<li>Causes workaround behaviors that introduce other risks</li>
+</ul>
+<h2 id="the-real-severity-matrix">The Real Severity Matrix</h2>
+<p>Here’s what actually determines priority:</p>
+<ul>
+<li><strong>Critical</strong> = Visible + Important Person Noticed</li>
+<li><strong>High</strong> = Money + Measurable Impact</li>
+<li><strong>Medium</strong> = Annoying + Has Workaround</li>
+<li><strong>Low</strong> = Technically Wrong + Nobody Cares</li>
+</ul>
+<p>And the secret level: <strong>Ignored</strong> = True Impact Unknown</p>
+<h2 id="what-this-means-for-you">What This Means for You</h2>
+<p>Stop treating severity as an objective technical truth. It’s a negotiation tool.</p>
+<p><strong>As a junior tester:</strong> Learn to speak the language of business impact. “The button is broken” gets ignored. “40% of mobile users can’t complete checkout” gets attention.</p>
+<p><strong>As a senior tester:</strong> Pick your battles. Not every bug deserves a fight. Save your credibility for the bugs that actually matter.</p>
+<p><strong>As a test lead:</strong> Teach your team that severity isn’t about the bug, it’s about the impact. And impact is measured in money, users, and reputation.</p>
+<p>The companies that get this right are the ones where:</p>
+<ul>
+<li>Testers understand business priorities</li>
+<li>Developers trust tester’s judgment on severity</li>
+<li>Product managers actually look at the data</li>
+<li>Everyone agrees on what “critical” really means</li>
+</ul>
+<p>The companies that get it wrong spend all their time fighting about priority levels instead of addressing bugs.</p>
+<h2 id="one-last-thing">One Last Thing</h2>
+<p>I’ve logged bugs marked Critical that still aren’t resolved years later, and I don’t even work there anymore :) .</p>
+<p>I’ve logged bugs marked Low that got hotfixed within an hour.</p>
+<p>Severity levels are guidelines, not gospel. Your job is to provide the information that helps the team make good decisions.</p>
+<p>Find the bugs. Document the impact. Argue for the right priority. Then let the team decide.</p>
+<p>And when a bug marked “Low” blows up in production six months later? Well, you’ve got receipts.</p> </div> <div id="lead-magnet-popup" class="lead-magnet-container" data-astro-cid-krvppkqb> <div class="lead-magnet-content" data-astro-cid-krvppkqb> <h3 data-astro-cid-krvppkqb>Grab the free ebook:</h3> <p class="lead-magnet-description" data-astro-cid-krvppkqb>
+"Software Testing for Beginners" is packed with real-world tips on writing bug reports, test cases, and surviving chaotic projects.
+</p> <div class="lead-magnet-features" data-astro-cid-krvppkqb> <h4 data-astro-cid-krvppkqb>💡 What's inside:</h4> <ul data-astro-cid-krvppkqb> <li data-astro-cid-krvppkqb>Smart test case templates</li> <li data-astro-cid-krvppkqb>Bug reports devs actually respect</li> <li data-astro-cid-krvppkqb>Tools, tips, and tactics that work</li> </ul> <p class="lead-magnet-tagline" data-astro-cid-krvppkqb>No fluff. No BS. Just stuff every tester should know.</p> </div> <button class="lead-magnet-button ml-onclick-form" onclick="ml('show', 'rGtm8o', true)" data-astro-cid-krvppkqb>
+👉 Send Me the Free Ebook
+</button> <p class="lead-magnet-footer" data-astro-cid-krvppkqb>Pop it in your inbox. Learn something useful. Go break stuff (intentionally).</p> </div> </div>  <script type="module">function e(){const n=document.getElementById("lead-magnet-popup");window.innerHeight+window.scrollY>=document.body.offsetHeight-300&&n.classList.add("visible")}document.addEventListener("DOMContentLoaded",()=>{window.addEventListener("scroll",e),setTimeout(e,1e3)});</script> </article> </main> <footer data-astro-cid-4sn4zg3r> <div class="container" data-astro-cid-4sn4zg3r> <p data-astro-cid-4sn4zg3r>&copy; 2025 Strahinja Becagol. All rights reserved.</p> </div> </footer> <div id="cookie-consent" class="cookie-consent hidden" data-astro-cid-garwan2p> <div class="cookie-content" data-astro-cid-garwan2p> <div class="cookie-text" data-astro-cid-garwan2p> <h3 data-astro-cid-garwan2p>Cookie Notice</h3> <p data-astro-cid-garwan2p>This website uses cookies for analytics to improve your experience. We won't set non-essential cookies until you accept.</p> </div> <div class="cookie-buttons" data-astro-cid-garwan2p> <button id="cookie-accept" class="cookie-btn accept" data-astro-cid-garwan2p>Accept</button> <button id="cookie-decline" class="cookie-btn decline" data-astro-cid-garwan2p>Decline</button> </div> </div> </div>  <script type="module">document.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("cookie-consent"),t=document.getElementById("cookie-accept"),o=document.getElementById("cookie-decline"),c=localStorage.getItem("cookie-consent");c?c==="accepted"&&n():setTimeout(()=>{e?.classList.remove("hidden")},1e3),t?.addEventListener("click",()=>{localStorage.setItem("cookie-consent","accepted"),e?.classList.add("hidden"),n()}),o?.addEventListener("click",()=>{localStorage.setItem("cookie-consent","declined"),e?.classList.add("hidden")})});function n(){const e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-HDYYD92WHW",document.head.appendChild(e),window.dataLayer=window.dataLayer||[];function t(){dataLayer.push(arguments)}t("js",new Date),t("config","G-HDYYD92WHW")}</script> </body></html>
