@@ -1,0 +1,310 @@
+---
+title: "The Bug Severity Guide Nobody Tells You About"
+description: "Learn the real bug severity levels that actually matter in QA. After a decade in testing, here's what Critical, High, Medium, and Low really mean in practice."
+pubDate: 2025-11-30
+author: "Strahinja Becagol"
+image: "/severityguide.png"
+tags: ["bug severity", "bug reports", "QA tips", "software testing", "bug prioritization"]
+draft: false
+---
+
+# The Bug Severity Guide Nobody Tells You About
+
+Every QA course teaches you the "official" bug severity levels:
+
+- **Critical:** System is down, nobody can work
+- **High:** Major functionality broken
+- **Medium:** Some features affected
+- **Low:** Minor issues, cosmetic problems
+
+Looks clean on paper, right?
+
+Here's what nobody tells you: that's not how it actually works.
+
+After over a decade in QA, I've learned that bug severity has very little to do with technical impact and sometimes has everything to do with who notices it.
+
+Let me show you the REAL bug severity guide.
+
+## Critical (AKA "Everything Is On Fire")
+
+**Official definition:** Complete system failure, all users affected, business cannot operate.
+
+**What it actually means:** The business literally cannot function right now.
+
+This is the real deal. Money isn't flowing. Users can't log in. Data is corrupted. The entire system is down. Production is broken and customers are screaming.
+
+Critical doesn't mean "bad" or "embarrassing" or "the CEO noticed." Critical means "stop everything and address this NOW because we're actively losing money/users/data… and probably our jobs too..."
+
+If you can still operate, even badly, it's not Critical (Not really).
+
+### How to spot it:
+
+- Complete system outage (nobody can access the app)
+- Payment processing is completely broken (money is not flowing)
+- Data loss or corruption (customer data being destroyed)
+- Security breach is actively happening (unauthorized access right now)
+- Core functionality is dead for ALL users (not just some edge case)
+
+### Real examples:
+
+- "Production database crashed, all users getting 500 errors" (Critical: business is down)
+- "Payment gateway returning errors for 100% of transactions" (Critical: no money coming in)
+- "User authentication broken, nobody can log in" (Critical: system unusable)
+- "API endpoint exposing user passwords in plain text" (Critical: active security breach)
+- "Data migration script deleted production customer records" (Critical: data loss)
+
+### What's NOT Critical (even though people say it is):
+
+- "The logo is off-center on homepage" (Not Critical: annoying, not business-stopping)
+- "CEO saw a typo in the email template" (Not Critical: embarrassing, not broken)
+- "One specific workflow broken for 5% of users" (High, not Critical: some users affected, not all)
+- "Mobile app crashes on iPhone 6" (High, not Critical: old device, workaround exists: use newer phone or web)
+
+## High (AKA "This Will Cost Us Money")
+
+**Official definition:** Major functionality broken, significant user impact.
+
+**What it actually means:** Someone can connect it to revenue or a contract obligation.
+
+Not all payment bugs are High. The payment bug that affects enterprise customers paying $50K/year? High. The payment bug that only happens when you use a specific combination of discount codes? Medium at best.
+
+If you can put a dollar amount on it, or if Legal is asking questions, it's High.
+
+### How to spot it:
+
+- Directly affects paid features
+- Blocks a workflow that customers pay for
+- Mentioned in an SLA or contract
+- Support tickets piling up (costs money to handle)
+- Violates compliance requirements (costs money to fix later)
+
+### Real examples:
+
+- "Premium users can't access premium features" (High: we're literally not delivering what they paid for)
+- "Free tier users see a loading spinner for 0.5 seconds longer" (Low: nobody's paying for speed on free tier)
+- "Data export feature returns corrupted files" (High: customers depend on this for their business)
+
+## Medium (AKA "We'll Fix It Eventually")
+
+**Official definition:** Moderate functionality issues; workarounds exist.
+
+**What it actually means:** It's annoying, but nobody's yelling about it yet.
+
+This is where most bugs live and die. Medium is the purgatory of bug priorities. It's important enough to log but not important enough to interrupt anyone's sprint.
+
+If there's a workaround, even a terrible one, it's probably Medium. "Just refresh the page three times" counts as a workaround.
+
+### How to spot it:
+
+- Affects a feature people use but don't rely on
+- Has a workaround (even if it's annoying)
+- Only happens in specific edge cases
+- Been in the backlog for 4+ months
+- Gets discussed in every planning meeting but never makes the cut
+
+### Real examples:
+
+- "Search doesn't work with special characters" (Medium: just don't use special characters, duh)
+- "Mobile app crashes when you rotate the screen 6 times quickly" (Medium: who does that?)
+- "Notification settings reset after logout" (Medium: you can just re-set them, right?)
+
+## Low (AKA "Nice to Have a Record of This")
+
+**Official definition:** Minor cosmetic issues, no functional impact.
+
+**What it actually means:** We're logging this so you stop bringing it up.
+
+Low-priority bugs are filed for documentation purposes. They might get fixed if a developer is bored, or if they're touching that code anyway for something else, or never.
+
+If it's visual, inconsistent, or "technically wrong but nobody cares," it's Low.
+
+### How to spot it:
+
+- Starts with "It would be nice if..."
+- Cosmetic or visual inconsistencies
+- Affects 0.1% of users in a weird scenario
+- Works, but not the way you expected
+- Has been "Low" for 3+ years
+
+### Real examples:
+
+- "Button text is #333333 instead of #000000" (Low: can you even tell?)
+- "Error message has a typo: 'occured' instead of 'occurred'" (Low: you understood it, right?)
+- "Tooltip appears 2 pixels to the left of where it should" (Low: why are you measuring tooltip positions? Stop please, we have designers to obsess over this! :) )
+
+## The Hidden Categories Nobody Talks About
+
+### "Executive Critical" (AKA "The CEO Saw It")
+
+This isn't a real severity level, but you'll see it constantly.
+
+**What it means:** Someone important noticed something, and now it's treated like the world is ending, even though technically it's Low or Medium.
+
+The misaligned logo becomes "Critical" because the CEO mentioned it. The typo in the marketing email became "drop everything" because an investor saw it.
+
+This is a political priority, not a technical severity. And yes, you still have to fix it immediately.
+
+**How to handle it:**
+
+- Log it with proper documentation (arguing won't help)
+- Note the actual severity in the ticket comments
+- Use it as an example later when advocating for actual critical bugs
+- Remember: perception is reality in business
+
+**Real examples:**
+
+- "Logo is 3 pixels off-center" (Low severity, Executive Critical priority: CEO noticed during investor demo)
+- "Typo on homepage: 'their' instead of 'there'" (Low severity, Executive Critical priority: board member pointed it out)
+- "Button color doesn't match brand guidelines" (Low severity, Executive Critical priority: CMO is particular about brand)
+
+### "Won't Fix" (AKA "It's a Feature Now")
+
+This isn't technically a severity level, but it's a hole where a lot of bugs end up.
+
+**What it means:** We've decided this behavior is acceptable, even if it's weird.
+
+Sometimes it's because the fix would break something else. Sometimes it's because users have adapted to it. Sometimes it's because the PM just doesn't want to deal with it.
+
+**Real examples:**
+
+- "Date picker defaults to 1/1/1970 on first load" (Won't Fix: users just click the date they want)
+- "Password field doesn't show strength indicator" (Won't Fix: rebuilding the auth flow isn't worth it)
+- "System allows passwords with spaces" (Won't Fix: technically valid, and changing it would break existing users)
+
+But remember, you MUST document this stuff just in case…
+
+### "Cannot Reproduce" (AKA "It Works on My Machine")
+
+The most frustrating category. The bug exists, you've seen it, but nobody else can "make it happen".
+
+**What it means:** Either your reproduction steps are incomplete, or there's some environmental factor you haven't figured out, ooooor, just orrrrrr there are some situations when a dev is really not in the mood to deal with your "ideas"
+
+**How to avoid it:**
+
+- Better reproduction steps (be obsessive about details)
+- Screen recordings
+- Logs, network traces, anything that proves it happened
+- Test on the exact same setup that the user reported from
+
+### "By Design" (AKA "We Built It Wrong on Purpose")
+
+The system is doing exactly what it was designed to do. The design is just terrible.
+
+**What it means:** This isn't a bug, it's a feature request. Good luck getting anyone to prioritize that.
+
+**Real examples:**
+
+- "Why does logout require two clicks?" (By Design: prevents accidental logouts)
+- "Why can't I delete my account?" (By Design: retention strategy)
+- "Why does this form have 47 required fields?" (By Design: someone in legal demanded it)
+
+And my favourite is a cashier's application that logs out after a sale is complete, as 2 cashiers were working on one computer and kept interrupting each other's work, so "logged in" someone else is working, stay away and wait your turn. I kid you not, there is a piece of software out there with this feature…
+
+## The Politics of Bug Severity
+
+Here's the uncomfortable truth: bug severity can get political…
+
+The same bug can be Critical on Monday and Low on Friday, depending on:
+
+- Who reported it
+- What else is on fire
+- How close are we to a deadline
+- Whether the PM is in a good mood
+- If the fix is easy or hard
+
+I've seen developers argue a critical payment bug down to Medium because "it's complicated and we have a release tomorrow."
+
+I've seen PMs escalate a cosmetic issue to Critical because "the client demo is in an hour and this looks unprofessional."
+
+Your job as a QA engineer isn't just to find bugs. It's to advocate for the right severity level based on actual impact.
+
+## How to Fight for the Right Severity
+
+### When escalating UP:
+
+**Connect it to business impact:**
+
+- "This affects 40% of our user base" (data)
+- "We're in breach of our SLA with Customer X" (legal)
+- "Support is getting 50 tickets/day about this" (cost)
+- "This violates GDPR requirements" (compliance)
+
+**Show evidence:**
+
+- User reports
+- Analytics data
+- Screen recordings
+- Financial impact calculations
+
+### When arguing DOWN:
+
+**Provide context:**
+
+- "Only happens in Safari 12, which is 0.02% of our traffic."
+- "There's a workaround: users can just click 'retry'"
+- "This component is being replaced next sprint anyway."
+- "We shipped this behavior 2 years ago, and nobody's complaining."
+
+**Offer alternatives:**
+
+- "Can we document the workaround while we plan a proper solution?"
+- "What if we hide this feature temporarily?"
+- "Should we just remove this rather than address it?"
+
+## Red Flags That Severity Is Wrong
+
+### When "Critical" might actually be Medium:
+
+- Only happens in one specific scenario
+- Affects internal tools, not customer-facing features
+- Has existed for months without anyone noticing
+- Resolution requires major architectural changes
+
+### When "Low" might actually be High:
+
+- Happens frequently but in different ways (pattern not recognized)
+- Affects new users more than existing ones (they don't know the workarounds)
+- Slowly degrading over time (performance, data quality)
+- Causes workaround behaviors that introduce other risks
+
+## The Real Severity Matrix
+
+Here's what actually determines priority:
+
+- **Critical** = Visible + Important Person Noticed
+- **High** = Money + Measurable Impact
+- **Medium** = Annoying + Has Workaround
+- **Low** = Technically Wrong + Nobody Cares
+
+And the secret level: **Ignored** = True Impact Unknown
+
+## What This Means for You
+
+Stop treating severity as an objective technical truth. It's a negotiation tool.
+
+**As a junior tester:** Learn to speak the language of business impact. "The button is broken" gets ignored. "40% of mobile users can't complete checkout" gets attention.
+
+**As a senior tester:** Pick your battles. Not every bug deserves a fight. Save your credibility for the bugs that actually matter.
+
+**As a test lead:** Teach your team that severity isn't about the bug, it's about the impact. And impact is measured in money, users, and reputation.
+
+The companies that get this right are the ones where:
+
+- Testers understand business priorities
+- Developers trust tester's judgment on severity
+- Product managers actually look at the data
+- Everyone agrees on what "critical" really means
+
+The companies that get it wrong spend all their time fighting about priority levels instead of addressing bugs.
+
+## One Last Thing
+
+I've logged bugs marked Critical that still aren't resolved years later, and I don't even work there anymore :) .
+
+I've logged bugs marked Low that got hotfixed within an hour.
+
+Severity levels are guidelines, not gospel. Your job is to provide the information that helps the team make good decisions.
+
+Find the bugs. Document the impact. Argue for the right priority. Then let the team decide.
+
+And when a bug marked "Low" blows up in production six months later? Well, you've got receipts.
