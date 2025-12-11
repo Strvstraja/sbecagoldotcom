@@ -670,6 +670,41 @@ import CookieConsent from '../components/CookieConsent.astro';
         color: var(--gradient-end);
       }
       
+      .course-title-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        flex: 1;
+      }
+      
+      .students-enrolled {
+        font-size: 0.9rem;
+        color: var(--text-light);
+        font-weight: 500;
+      }
+      
+      .courses-intro {
+        margin-bottom: 2rem;
+        padding: 1.5rem;
+        background-color: rgba(0, 0, 0, 0.15);
+        border-radius: 8px;
+        border-left: 3px solid var(--primary-color);
+      }
+      
+      .courses-intro h3 {
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+      }
+      
+      .courses-intro p {
+        margin-bottom: 0.75rem;
+      }
+      
+      .courses-intro p:last-child {
+        margin-bottom: 0;
+      }
+      
       footer {
         text-align: center;
         padding: 2rem 0;
@@ -749,11 +784,22 @@ import CookieConsent from '../components/CookieConsent.astro';
 
       <section id="courses" class="section">
         <h2>🎓 My Courses</h2>
+        
+        <div class="courses-intro">
+          <h3>Not Sure Where to Start?</h3>
+          <p>Most students begin with <strong>Test Cases That Don't Suck</strong> - it's the foundation everything else builds on.</p>
+          <p>Already comfortable with test cases? Jump to <strong>Bug Reports</strong> or <strong>Exploratory Testing</strong>.</p>
+          <p>Want all three? They complement each other perfectly and cover the core skills every tester needs.</p>
+        </div>
+        
         <ul class="course-list">
           <li class="course-card">
             <div class="course-header">
               <Image src={coverTestCases} alt="Test Cases Course Cover" class="course-cover" width={150} height={150} />
-              <a class="course-link" href="https://www.udemy.com/course/how-to-write-test-cases-that-dont-suck/?referralCode=8914C6D9F0373B3952B9">How to Write Test Cases That Don't Suck</a>
+              <div class="course-title-wrapper">
+                <a class="course-link" href="https://www.udemy.com/course/how-to-write-test-cases-that-dont-suck/?referralCode=8914C6D9F0373B3952B9">How to Write Test Cases That Don't Suck</a>
+                <span class="students-enrolled">1,250+ students enrolled</span>
+              </div>
             </div>
             <div class="course-details">
               <p class="course-highlight">Are you tired of vague, confusing test cases that cause more problems than they solve?</p>
@@ -798,7 +844,7 @@ import CookieConsent from '../components/CookieConsent.astro';
               
               <div class="course-cta-badge-row" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem;">
                 <div class="course-cta">
-                  <a href="https://www.udemy.com/course/how-to-write-test-cases-that-dont-suck/?referralCode=8914C6D9F0373B3952B9" class="btn-secondary">View Course Details</a>
+                  <a href="https://www.udemy.com/course/how-to-write-test-cases-that-dont-suck/?referralCode=8914C6D9F0373B3952B9" class="btn-secondary">Enroll Now</a>
                 </div>
                 <div class="shapo-badge" style="display: flex; align-items: center; gap: 0.75rem;">
                   <div id="shapo-widget-f60fbe17bd485f9bfecf"></div>
@@ -810,7 +856,10 @@ import CookieConsent from '../components/CookieConsent.astro';
           <li class="course-card">
             <div class="course-header">
               <Image src={coverBugReports} alt="Bug Reports Course Cover" class="course-cover" width={150} height={150} />
-              <a class="course-link" href="https://www.udemy.com/course/how-to-write-bug-reports-that-dont-suck/?referralCode=645D71A53EE949028617">How to Write Bug Reports That Don't Suck</a>
+              <div class="course-title-wrapper">
+                <a class="course-link" href="https://www.udemy.com/course/how-to-write-bug-reports-that-dont-suck/?referralCode=645D71A53EE949028617">How to Write Bug Reports That Don't Suck</a>
+                <span class="students-enrolled">1,180+ students enrolled</span>
+              </div>
             </div>
             <div class="course-details">
               <p class="course-highlight">"I can't reproduce this" or "It works on my machine" - Sound familiar?</p>
@@ -855,7 +904,7 @@ import CookieConsent from '../components/CookieConsent.astro';
               
               <div class="course-cta-badge-row" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-top: 1.5rem;">
                 <div class="course-cta">
-                  <a href="https://www.udemy.com/course/how-to-write-bug-reports-that-dont-suck/?referralCode=645D71A53EE949028617" class="btn-secondary">View Course Details</a>
+                  <a href="https://www.udemy.com/course/how-to-write-bug-reports-that-dont-suck/?referralCode=645D71A53EE949028617" class="btn-secondary">Enroll Now</a>
                 </div>
                 <div class="shapo-badge" style="display: flex; align-items: center; gap: 0.75rem;">
                   <div id="shapo-widget-f60fbe17bd485f9bfecf"></div>
@@ -866,7 +915,10 @@ import CookieConsent from '../components/CookieConsent.astro';
           <li class="course-card">
             <div class="course-header">
               <img src="/images/exploratoryTestingcover.png" alt="Exploratory Testing Course Cover" class="course-cover" width="150" height="150" />
-              <a class="course-link" href="https://www.udemy.com/course/how-to-do-exploratory-testing-that-doesnt-suck/?referralCode=DBCFBDD542A0459E099D">How to Do Exploratory Testing That Doesn't Suck</a>
+              <div class="course-title-wrapper">
+                <a class="course-link" href="https://www.udemy.com/course/how-to-do-exploratory-testing-that-doesnt-suck/?referralCode=DBCFBDD542A0459E099D">How to Do Exploratory Testing That Doesn't Suck</a>
+                <span class="students-enrolled">858+ students enrolled</span>
+              </div>
             </div>
             <div class="course-details">
               <p class="course-highlight">Master exploratory testing to uncover hidden bugs and add real value beyond scripted test cases.</p>
@@ -913,7 +965,7 @@ import CookieConsent from '../components/CookieConsent.astro';
               </div>
 
               <div class="course-cta" style="margin-top: 1.5rem;">
-                <a href="https://www.udemy.com/course/how-to-do-exploratory-testing-that-doesnt-suck/?referralCode=DBCFBDD542A0459E099D" class="btn-secondary">View Course Details</a>
+                <a href="https://www.udemy.com/course/how-to-do-exploratory-testing-that-doesnt-suck/?referralCode=DBCFBDD542A0459E099D" class="btn-secondary">Enroll Now</a>
               </div>
             </div>
           </li>
