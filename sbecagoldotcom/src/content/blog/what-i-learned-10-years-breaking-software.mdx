@@ -1,0 +1,276 @@
+---
+title: "What I Learned in 10+ Years of Breaking Software"
+description: "After a decade in QA, here's what nobody tells you about testing software, working with developers, and learning not to be a jerk while doing your job."
+pubDate: 2025-12-22
+author: "Strahinja Becagol"
+image: "/itWastTherewhenIgotHere.png"
+tags: ["QA career", "software testing", "lessons learned", "developer relations", "QA tips"]
+draft: false
+---
+
+First of all, I didn't break anything. It was already broken when I got here.
+
+You know that classic scene? Kid playing with a ball near a house. Ball goes through window. Glass shatters everywhere. Kid looks around nervously and says "It was like that when I got here!"
+
+That's basically my entire QA career in one image.
+
+Except in this case, the window actually WAS cracked before I showed up. I just happened to be the one who pointed it out. Loudly. Repeatedly. Sometimes rudely.
+
+After 10+ years in software testing, I've learned a lot. Some of it technical. Most of it about how not to be a complete jerk while doing your job.
+
+Here's what nobody tells you when you start in QA.
+
+---
+
+## Years 1-3: The "Why Are You So Dumb?" Phase
+
+Let me start with a confession: I was kind of a nightmare to work with in my early years.
+
+Not because I was bad at testing. I actually found some pretty good bugs. The problem was HOW I communicated what I found.
+
+Picture this: Junior Strahinja finds a bug. A real, reproducible, "this will definitely break in production" bug.
+
+What did I do? I marched over to the developer's desk (or fired off a Slack message) with the energy of someone who just caught a criminal red-handed.
+
+*"Why would you even CODE it like this? Obviously if you do [insert absurdly complicated 47-step edge case that nobody would ever actually do], the entire application crashes. How did you not TEST this?"*
+
+I treated every bug like proof that the developer was incompetent.
+
+I thought my job was to find mistakes and make sure everyone KNEW I found them. I thought QA vs Dev was a competition. And I was determined to win.
+
+Spoiler alert: that's not how any of this works.
+
+### What I Thought I Was Doing
+
+- Finding bugs (correct)
+- Protecting product quality (noble)
+- Holding developers accountable (sure, buddy)
+
+### What I Was Actually Doing
+
+- Finding bugs (still correct)
+- Being an insufferable ass about it (accurate)
+- Making developers hate me (mission accomplished)
+- Ensuring my bug reports got deprioritized out of spite (oops)
+
+The technical work was fine. The communication was garbage.
+
+And here's the thing: being RIGHT doesn't matter if you're an asshole about it.
+
+You can find the best bug in the world, document it perfectly, and explain exactly why it's critical. But if you deliver it with a side of condescension and a "how could you be so stupid" attitude, guess what happens?
+
+It gets marked "Low Priority" and sits in the backlog forever.
+
+Turns out, people don't like fixing bugs reported by jerks. Who knew?
+
+---
+
+## Years 4-7: The Humbling
+
+Somewhere around year 4, I started noticing a pattern.
+
+The developers whose code I was testing were not, in fact, idiots. They were actually pretty smart. They knew things I didn't know. They were solving problems I didn't understand.
+
+And when I pointed out bugs with a little less aggression and a little more respect, they actually FIXED them. Sometimes even quickly.
+
+Revolutionary concept, I know.
+
+I started realizing that developers aren't sitting around writing bad code on purpose. They're juggling:
+
+- Tight deadlines
+- Changing requirements
+- Technical debt from decisions made 5 years ago by people who no longer work there
+- That one function nobody understands but everyone's afraid to touch
+- A backlog that grows faster than they can possibly work through it
+
+They're not dumb. They're busy. And stressed. And doing their best with what they have.
+
+Just like I was doing my best with testing.
+
+### The Lightbulb Moment
+
+It happened during a particularly nasty bug. The kind where the application just completely falls apart under a specific set of conditions.
+
+I wrote up the bug report. I was about to hit send with my usual "this is broken, fix it" energy.
+
+But I stopped.
+
+I walked over to the developer's desk. I said, "Hey, I found something weird. Not sure if it's a bug or if I'm missing something, but here's what's happening. Can you take a look?"
+
+He looked at my reproduction steps. He pulled up the code. We figured it out together in about 10 minutes.
+
+And then he said, "Thanks for catching this before it hit production. That would've been bad."
+
+No defensiveness. No pushback. No "it works on my machine."
+
+Just two people solving a problem together.
+
+That's when I realized: this isn't Tester VS Developer. It's Tester WITH Developer.
+
+We're on the same team. We have the same goal. Ship software that doesn't suck.
+
+I'm not there to catch developers making mistakes. I'm there to find problems before customers do. That's it. That's the job.
+
+---
+
+## Years 8-10+: The (Slightly) Wiser Era
+
+I'd love to tell you I'm now a zen master of communication and empathy.
+
+I'm not.
+
+I'm still kind of an ass. I just know better than to show it every single day.
+
+But here's what I've actually learned to do:
+
+### 1. Start with "We have a problem" not "You made a mistake"
+
+Instead of: "Why did you write this code like this? It's completely broken."
+
+I say: "Hey, I'm seeing some unexpected behavior here. Want to take a look together?"
+
+Same bug. Different delivery. Wildly different results.
+
+### 2. Assume good intent
+
+Developers aren't trying to ship garbage. They're trying to ship SOMETHING in an impossible timeline with incomplete requirements.
+
+If the code is broken, it's usually because:
+
+- Requirements changed halfway through development
+- There's a legacy system interaction nobody documented
+- The edge case I found is genuinely edge-y
+- They didn't have time to test everything
+
+Not because they're incompetent.
+
+### 3. Provide context, not just criticism
+
+Instead of: "This button doesn't work."
+
+I write: "When clicking the Submit button after entering a phone number with dashes, the form fails to validate. Here's the exact steps, here's what I expected, here's what happened. Logs attached. Let me know if you need anything else."
+
+I'm making it EASY for them to fix it. Not making them feel bad for writing it.
+
+### 4. Respect goes both ways
+
+If I want developers to take my bug reports seriously, I need to take their constraints seriously.
+
+"Can you test this by end of day?" might be unrealistic, but "I know you're slammed, what CAN we test by end of day?" opens a conversation.
+
+We're both trying to do our jobs. Respect that.
+
+### 5. Pick your battles
+
+Not every bug is worth fighting over. Not every edge case deserves a Critical severity label.
+
+Save your credibility for the bugs that actually matter.
+
+If you mark everything Critical, nothing is Critical.
+
+---
+
+## The Plot Twist Nobody Saw Coming
+
+Here's the funny part.
+
+Somewhere around year 5, something magical happened.
+
+Me and the developers stopped fighting each other and realized we had a common enemy: management.
+
+Just kidding, managers! This is a joke. A completely hypothetical, definitely-not-based-on-real-workplace-dynamics joke.
+
+But seriously, once testers and developers start working together instead of against each other, you start noticing that a LOT of the problems aren't technical. They're organizational.
+
+The impossible deadlines. The changing requirements. The "just ship it, we'll fix it later" mentality. The prioritization of flashy features over stability.
+
+That's not a dev problem. That's not a tester problem. That's a "process decision" problem.
+
+And when you're working WITH your developers instead of fighting them, you can actually start advocating TOGETHER for better processes, more realistic timelines, and fewer 2 AM production incidents.
+
+Turns out, the real treasure was the collaborative relationships we built along the way.
+
+(Managers, I promise I'm joking. Mostly.)
+
+---
+
+## What I Wish I Knew 10 Years Ago
+
+If I could go back and talk to Junior Strahinja, here's what I'd say:
+
+**Your job is not to prove you're smarter than developers.**
+Your job is to find problems before customers do. That's it.
+
+**Being right doesn't matter if you're an asshole about it.**
+You can find the best bug in the world, but if you deliver it like a condescending jerk, it won't get fixed. And you'll burn relationships you need.
+
+**Communication is 80% of the job.**
+Finding bugs is maybe 20% technical skill and 80% knowing how to talk to people. Learn to communicate with respect. It matters more than you think.
+
+**You're on the same team as the developers.**
+This is not a competition. This is not adversarial. You both want to ship good software. Act like it.
+
+**Pick your battles.**
+Not every bug is worth fighting over. Save your credibility for the ones that actually matter.
+
+**Document everything.**
+Not because you're trying to cover your ass (though that helps). But because when production breaks and everyone's pointing fingers, documentation shows what you flagged and when.
+
+**Failed releases are team failures, not individual failures.**
+When something breaks in production, it's not just your fault. It's not just the developer's fault. Multiple people made decisions that led to that moment. Learn from it and move on.
+
+**You will miss bugs. Accept it now.**
+You're not going to catch everything. Nobody does. The goal is to catch the important stuff and provide good information for decision-making.
+
+**The job is about helping, not proving you're smart.**
+If your goal is to look smart, you're doing it wrong. If your goal is to help ship better software, you're doing it right.
+
+---
+
+## The Real Lesson
+
+After 10+ years, here's what I've learned:
+
+**Testing software is easy. Working with people is hard.**
+
+You can learn all the technical skills. You can master test automation, performance testing, security testing, whatever. That stuff is learnable.
+
+But learning to communicate respectfully, to work collaboratively, to pick your battles, to advocate without being aggressive? That takes years. And humility. And a willingness to admit you were kind of a jerk in your early career.
+
+I still find bugs. I'm still pretty good at it. I still catch things before they hit production.
+
+But now I do it without making people hate me.
+
+Most days, anyway.
+
+I'm still kind of an ass. I just know better than to show it every single day now.
+
+And honestly? That's progress.
+
+---
+
+## One Last Thing
+
+To all the developers I worked with in my first 3 years: I'm sorry. You didn't deserve that energy. You were doing your best, and I was being a jerk about it.
+
+To all the junior testers reading this: learn from my mistakes. You can be good at your job AND be respectful. You don't have to choose.
+
+And to all the managers reading this: the joke about you being the common enemy? That was definitely a joke. We love you. Your prioritization decisions are flawless. Please don't fire me.
+
+Happy testing. And happy holidays.
+
+Try not to break anything.
+
+(But if you do find something broken, remember: it was like that when you got here.)
+
+---
+
+## Want more real-world QA advice?
+
+I send a weekly newsletter with practical testing tips, career advice, and lessons from the trenches.
+
+**Plus:** Free ebook "Software Testing for Beginners" when you subscribe.
+
+[Get it here](https://subscribepage.io/software-testing-ebook)
+
+Until next time, happy testing.
