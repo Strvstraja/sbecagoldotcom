@@ -1,0 +1,267 @@
+---
+title: "The Five Stages of Grief: A QA's Journey Through a Failed Release"
+description: "Every QA engineer will experience a failed release. Here's what happens when production catches fire, and how to survive the denial, anger, bargaining, depression, and acceptance that follows."
+pubDate: 2025-12-15
+author: "Strahinja Becagol"
+image: "/grief.png"
+tags: ["QA life", "failed release", "production bugs", "software testing", "QA career"]
+draft: false
+---
+
+It's 2 AM on a Saturday.
+
+Your phone won't stop buzzing. Slack is exploding. The production monitoring dashboard looks like a Christmas tree, if Christmas trees were made entirely of red alerts and sadness.
+
+The release you signed off on yesterday? It's on fire.
+
+Users can't log in. Payments are failing. The support team is drowning in tickets. And somewhere, a product manager is drafting an email with "post-mortem" in the subject line.
+
+Welcome to every QA engineer's worst nightmare: the failed release.
+
+And just like any traumatic experience, you're about to go through the five stages of grief. Except this time, it's not about loss. It's about bugs, blame, and the desperate hope that you'll still have a job on Monday.
+
+Let me walk you through what's about to happen. I've been through this enough times to know the pattern.
+
+---
+
+## Stage 1: Denial
+
+**"This can't be happening. I tested this. I KNOW I tested this."**
+
+The first messages hit your phone. You ignore them. It's probably just noise. A small hiccup. Maybe someone fat-fingered a config change in production.
+
+You refresh the monitoring dashboard. Everything's red.
+
+You check Slack. 47 unread messages in the last 3 minutes.
+
+*"No, no, no. This is fine. This has to be fine."*
+
+You open your test case documentation. You scroll through your test execution logs. You literally tested the login flow yesterday. You KNOW you did. You have screenshots. You have notes. You have a video recording, for crying out loud.
+
+But production is burning.
+
+### What's actually happening
+
+Your brain is protecting you from the horrible reality that something you approved is now destroying the company's reputation in real-time. So it invents excuses:
+
+- "This must be a different issue, not related to my testing"
+- "Someone must have deployed something else after I signed off"
+- "The staging environment didn't match production" (it never does)
+- "This worked perfectly in UAT" (it always does)
+
+You're frantically checking your emails, looking for proof that you warned someone about something. Anything. A single line in a bug report from three weeks ago that maybe, possibly, could have predicted this disaster.
+
+### Reality check
+
+Denial doesn't last long. Usually about 10 minutes, or until your manager calls you.
+
+---
+
+## Stage 2: Anger
+
+**"WHY DIDN'T ANYONE LISTEN TO ME?"**
+
+The denial fades. Now you're mad.
+
+You scroll back through your bug reports. And there it is. The ticket you logged two weeks ago. Marked "Low Priority" by the product manager. Closed as "Won't Fix" by the tech lead.
+
+The EXACT issue that's now taking down production.
+
+You want to scream. You want to forward that ticket to everyone on the call with "I TOLD YOU SO" in 72-point font.
+
+*"I FLAGGED THIS. I documented the risk. I explained what could happen. And NOBODY LISTENED."*
+
+You start mentally composing your resignation letter. You imagine walking into Monday's meeting and just saying everything you've been holding back for months.
+
+### The targets of your rage
+
+- The developer who said "it works on my machine" and refused to investigate further
+- The PM who prioritized flashy features over stability
+- The tech lead who pushed the release despite your concerns
+- The manager who said "we'll monitor it closely" instead of delaying
+- The exec who asked "why do we even need QA if we have automated tests?"
+
+And honestly? You're not entirely wrong to be angry.
+
+### Reality check
+
+Anger feels good. It's righteous. But it doesn't fix production. And when the post-mortem happens, "I told you so" doesn't look as good on paper as you think it will.
+
+---
+
+## Stage 3: Bargaining
+
+**"If I can just fix this one thing, maybe it'll all be okay."**
+
+The emergency call starts. Everyone's on. Developers, DevOps, product, support, probably some executives who have no idea what's happening but want "visibility."
+
+You're frantically trying to figure out what broke. Maybe if you can identify the exact bug, the exact code change, the exact scenario, they can hotfix it before Monday morning.
+
+*"If we roll back to the previous version..."*
+*"If we just disable this one feature..."*
+*"If we could patch this one API endpoint..."*
+*"If I had just tested that ONE edge case..."*
+
+You're making deals with the universe. Promises you can't keep.
+
+### The bargaining thoughts
+
+- "If we get through this, I'll write better test cases"
+- "If they don't fire me, I'll implement that automation framework I've been putting off"
+- "If this somehow gets fixed, I'll never sign off on a release on a Friday again"
+- "If I can just find the root cause, maybe I'll look like the hero who saved the day"
+
+You're digging through logs. Reproducing issues. Writing up detailed bug reports at 3 AM with a level of thoroughness that would've been really useful two weeks ago.
+
+### Reality check
+
+Bargaining is you trying to regain control in a situation that's completely out of your hands. The release failed. Production is broken. No amount of "if only" will change that.
+
+But here's the thing: your detailed analysis right now? That's actually useful. Keep doing that. Just don't expect it to undo what already happened.
+
+---
+
+## Stage 4: Depression
+
+**"I'm a terrible tester. I should've caught this. This is all my fault."**
+
+It's Sunday morning. The hotfix is deployed. Production is stable-ish. The fires are mostly out.
+
+Now comes the crash.
+
+You lie in bed, staring at the ceiling, replaying every decision you made during testing. Every corner you cut. Every test case you skipped because "we were running out of time."
+
+The guilt hits hard.
+
+*"I should've pushed back harder."*
+*"I should've refused to sign off."*
+*"I should've tested that specific scenario."*
+*"I should've... I should've... I should've..."*
+
+You start questioning everything:
+
+- Am I even good at this job?
+- Did I miss other bugs that haven't exploded yet?
+- Should I have caught this in the first round of testing?
+- Am I the reason the company lost money this weekend?
+
+You check LinkedIn. You look at job postings. You wonder if it's time to switch careers. Maybe farming. Chickens don't have production incidents.
+
+### What's really happening
+
+You're internalizing all the blame. Even the parts that aren't yours. Even the parts that were systemic failures, process problems, or management decisions.
+
+Because it's easier to blame yourself than to accept that sometimes, software just breaks. And sometimes, teams make collective bad decisions. And sometimes, bugs slip through no matter how good you are.
+
+### Reality check
+
+You're not a terrible tester. You're a human being working in an imperfect system. One failed release doesn't define your career.
+
+Also, chickens are harder than they look. Trust me.
+
+---
+
+## Stage 5: Acceptance
+
+**"Okay. This happened. What do we learn from it?"**
+
+It's Monday. You walk into the post-mortem meeting with your documentation ready. You've got timelines. You've got the bug report you filed two weeks ago. You've got logs. You've got receipts.
+
+But something's shifted.
+
+You're not here to defend yourself. You're not here to point fingers. You're here to figure out what broke, why it broke, and how to prevent it from happening again.
+
+### The acceptance mindset
+
+- The release failed. It happens.
+- Multiple people made decisions that led to this. Not just you.
+- There were systemic issues, not just a single bug.
+- You did your job. You flagged risks. What happened after that was out of your control.
+
+You present your findings calmly. You don't say "I told you so," even though you really, really want to. You focus on facts:
+
+*"Here's what broke. Here's when I flagged it. Here's why it was deprioritized. Here's what we can do differently next time."*
+
+### What you've learned
+
+- Document everything. Not because you're paranoid, but because you'll need it.
+- Saying "I told you so" feels good for 5 seconds and makes you look unprofessional for 5 years.
+- Failed releases are team failures, not individual failures.
+- Your job isn't to prevent every bug. Your job is to provide information so the team can make informed decisions.
+- Sometimes they'll make bad decisions anyway. That's on them, not you.
+
+You survived. The company survived. You learned something. Production is stable again.
+
+And honestly? You're a little bit better at your job now than you were on Friday.
+
+---
+
+## The Bonus Stage: Dark Humor
+
+**"Remember that time production caught fire and we all thought we were getting fired? Good times."**
+
+Give it a few weeks, maybe a month. The failed release becomes a war story. Something you joke about in retrospect.
+
+*"Oh, you think THIS bug is bad? Let me tell you about the time we took down the entire payment system on Black Friday."*
+
+You'll laugh about it. The team will laugh about it. It becomes part of the company lore.
+
+Because if you can't laugh about the disasters, you'll never survive the next one. And there will be a next one. There's always a next one.
+
+---
+
+## What Actually Matters
+
+Here's the truth nobody tells junior testers: every single QA engineer will experience a failed release at some point in their career.
+
+You will sign off on something that breaks in production. You will miss a bug that seems obvious in hindsight. You will be on that 2 AM emergency call, wondering how it all went wrong.
+
+It's not a question of if. It's a question of when.
+
+And how you handle it matters more than the failure itself.
+
+### Do this
+
+- Document your testing thoroughly, every time
+- Flag risks clearly and get acknowledgment in writing
+- Learn from the failure without drowning in guilt
+- Focus on systemic improvements, not individual blame
+- Build relationships so when things break, people trust you to help fix them
+
+### Don't do this
+
+- Blame yourself for decisions that weren't yours to make
+- Say "I told you so" in the post-mortem (even if you did)
+- Let one failed release convince you you're a bad tester
+- Carry the guilt of every bug like it's a personal failing
+- Quit your job in the depression stage (at least wait until acceptance)
+
+---
+
+## One Last Thing
+
+If you're reading this because you just lived through a failed release: I'm sorry. It sucks. It's stressful. It's scary. You probably didn't sleep well this weekend.
+
+But you're going to be okay.
+
+You did your job. You tested the software. You reported the bugs. You flagged the risks. What happened after that (the prioritization, the release decision, the deployment) involved a lot of people and a lot of decisions that weren't just yours.
+
+Failed releases are team sports. The blame doesn't sit on your shoulders alone, even if it feels like it does.
+
+Take a breath. Document what happened. Learn from it. And then move on.
+
+Because there's another release coming next week. And this time, you'll know a little bit more about what to watch out for.
+
+You've survived your QA baptism by fire. Welcome to the club. We meet every 2 AM on weekends when production breaks.
+
+---
+
+## Want more real-world QA advice?
+
+I send a weekly newsletter with practical testing tips, career advice, and lessons from the trenches.
+
+**Plus:** Free ebook "Software Testing for Beginners" when you subscribe.
+
+[Get it here](https://subscribepage.io/software-testing-ebook)
+
+Until next time, happy testing.
