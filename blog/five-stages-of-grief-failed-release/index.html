@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-4sn4zg3r> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/png" sizes="48x48" href="/images/sbecagolfav48.png"><title>The Five Stages of Grief: A QA&#39;s Journey Through a Failed Release | Strahinja Becagol - QA Courses</title><meta name="description" content="Every QA engineer will experience a failed release. Here's what happens when production catches fire, and how to survive the denial, anger, bargaining, depression, and acceptance that follows."><link rel="canonical" href="https://sbecagol.com/blog/five-stages-of-grief-failed-release"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><!-- Open Graph tags --><meta property="og:title" content="The Five Stages of Grief: A QA's Journey Through a Failed Release | Strahinja Becagol - QA Courses"><meta property="og:description" content="Every QA engineer will experience a failed release. Here's what happens when production catches fire, and how to survive the denial, anger, bargaining, depression, and acceptance that follows."><meta property="og:url" content="https://sbecagol.com/blog/five-stages-of-grief-failed-release"><meta property="og:type" content="article"><meta property="og:image" content="https://sbecagol.com/grief.png"><!-- Twitter Card tags --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="The Five Stages of Grief: A QA's Journey Through a Failed Release | Strahinja Becagol - QA Courses"><meta name="twitter:description" content="Every QA engineer will experience a failed release. Here's what happens when production catches fire, and how to survive the denial, anger, bargaining, depression, and acceptance that follows."><meta name="twitter:image" content="https://sbecagol.com/grief.png"><!-- Structured Data / Schema Markup for Blog Post --><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"The Five Stages of Grief: A QA's Journey Through a Failed Release","description":"Every QA engineer will experience a failed release. Here's what happens when production catches fire, and how to survive the denial, anger, bargaining, depression, and acceptance that follows.","image":"https://sbecagol.com/grief.png","datePublished":"2025-12-15T00:00:00.000Z","author":{"@type":"Person","name":"Strahinja Becagol","url":"https://sbecagol.com"},"publisher":{"@type":"Person","name":"Strahinja Becagol","url":"https://sbecagol.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://sbecagol.com/blog/five-stages-of-grief-failed-release"}}</script><!-- Google Analytics will be loaded via cookie consent --><!-- MailerLite Universal --><script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '1684695');
+    </script><!-- End MailerLite Universal --><!-- Global styles so MDX-rendered content links are affected --><style>.cookie-consent[data-astro-cid-garwan2p]{position:fixed;bottom:2rem;left:50%;transform:translate(-50%);width:90%;max-width:36rem;background-color:var(--bg-accent, #1e293b);border:1px solid var(--border-color, #334155);border-radius:8px;padding:1.25rem;z-index:1000;box-shadow:0 10px 25px -5px #0000004d;transition:opacity .3s,transform .4s}.cookie-consent[data-astro-cid-garwan2p].hidden{opacity:0;transform:translate(-50%,5rem);pointer-events:none}.cookie-content[data-astro-cid-garwan2p]{display:flex;flex-direction:column;gap:1rem}.cookie-text[data-astro-cid-garwan2p] h3[data-astro-cid-garwan2p]{font-size:1.125rem;margin-bottom:.5rem;color:var(--text-color, #e2e8f0)}.cookie-text[data-astro-cid-garwan2p] p[data-astro-cid-garwan2p]{font-size:.9375rem;color:var(--text-light, #94a3b8);margin:0}.cookie-buttons[data-astro-cid-garwan2p]{display:flex;gap:.75rem}.cookie-btn[data-astro-cid-garwan2p]{padding:.5rem 1.25rem;border-radius:6px;font-weight:500;font-size:.875rem;cursor:pointer;transition:all .2s;border:none}.cookie-btn[data-astro-cid-garwan2p].accept{background-color:var(--primary-color, #10b981);color:#fff}.cookie-btn[data-astro-cid-garwan2p].accept:hover{background-color:var(--primary-hover, #059669)}.cookie-btn[data-astro-cid-garwan2p].decline{background-color:transparent;color:var(--text-color, #e2e8f0);border:1px solid var(--border-color, #334155)}.cookie-btn[data-astro-cid-garwan2p].decline:hover{background-color:#ffffff0d}@media (min-width: 640px){.cookie-content[data-astro-cid-garwan2p]{flex-direction:row;align-items:center;justify-content:space-between}.cookie-text[data-astro-cid-garwan2p]{flex:1}}
+</style>
+<link rel="stylesheet" href="/_assets/_slug_.lj-QJPV8.css"></head> <body data-astro-cid-4sn4zg3r> <header data-astro-cid-4sn4zg3r> <div class="container" data-astro-cid-4sn4zg3r> <a href="/" class="logo" data-astro-cid-4sn4zg3r>Strahinja Bećagol</a> <nav data-astro-cid-4sn4zg3r> <ul data-astro-cid-4sn4zg3r> <li data-astro-cid-4sn4zg3r><a href="/" data-astro-cid-4sn4zg3r>Home</a></li> <li data-astro-cid-4sn4zg3r><a href="/#courses" data-astro-cid-4sn4zg3r>Courses</a></li> <li data-astro-cid-4sn4zg3r><a href="/#ebook" class="nav-link-highlight" data-astro-cid-4sn4zg3r>Free eBook</a></li> <li data-astro-cid-4sn4zg3r><a href="/blog" data-astro-cid-4sn4zg3r>Blog</a></li> <li data-astro-cid-4sn4zg3r><a href="/test-apps" data-astro-cid-4sn4zg3r>Test Apps</a></li> </ul> </nav> </div> </header> <main class="container" data-astro-cid-4sn4zg3r> <a href="/blog" class="back-link" data-astro-cid-4sn4zg3r>← Back to Blog</a> <article data-astro-cid-4sn4zg3r> <div class="blog-header" data-astro-cid-4sn4zg3r> <h1 class="blog-title" data-astro-cid-4sn4zg3r>The Five Stages of Grief: A QA&#39;s Journey Through a Failed Release</h1> <div class="blog-meta" data-astro-cid-4sn4zg3r> <span class="blog-date" data-astro-cid-4sn4zg3r>December 15, 2025</span> <span class="blog-author" data-astro-cid-4sn4zg3r>By Strahinja Becagol</span> <div class="blog-tags" data-astro-cid-4sn4zg3r> <span class="blog-tag" data-astro-cid-4sn4zg3r>QA life</span><span class="blog-tag" data-astro-cid-4sn4zg3r>failed release</span><span class="blog-tag" data-astro-cid-4sn4zg3r>production bugs</span><span class="blog-tag" data-astro-cid-4sn4zg3r>software testing</span><span class="blog-tag" data-astro-cid-4sn4zg3r>QA career</span> </div> </div> </div> <img src="/grief.png" alt="The Five Stages of Grief: A QA's Journey Through a Failed Release" class="blog-featured-image" onerror="this.src='/placeholder-image.jpg'; this.onerror=null;" data-astro-cid-4sn4zg3r> <div class="blog-content" data-astro-cid-4sn4zg3r> <p>It’s 2 AM on a Saturday.</p>
+<p>Your phone won’t stop buzzing. Slack is exploding. The production monitoring dashboard looks like a Christmas tree, if Christmas trees were made entirely of red alerts and sadness.</p>
+<p>The release you signed off on yesterday? It’s on fire.</p>
+<p>Users can’t log in. Payments are failing. The support team is drowning in tickets. And somewhere, a product manager is drafting an email with “post-mortem” in the subject line.</p>
+<p>Welcome to every QA engineer’s worst nightmare: the failed release.</p>
+<p>And just like any traumatic experience, you’re about to go through the five stages of grief. Except this time, it’s not about loss. It’s about bugs, blame, and the desperate hope that you’ll still have a job on Monday.</p>
+<p>Let me walk you through what’s about to happen. I’ve been through this enough times to know the pattern.</p>
+<hr/>
+<h2 id="stage-1-denial">Stage 1: Denial</h2>
+<p><strong>“This can’t be happening. I tested this. I KNOW I tested this.”</strong></p>
+<p>The first messages hit your phone. You ignore them. It’s probably just noise. A small hiccup. Maybe someone fat-fingered a config change in production.</p>
+<p>You refresh the monitoring dashboard. Everything’s red.</p>
+<p>You check Slack. 47 unread messages in the last 3 minutes.</p>
+<p><em>“No, no, no. This is fine. This has to be fine.”</em></p>
+<p>You open your test case documentation. You scroll through your test execution logs. You literally tested the login flow yesterday. You KNOW you did. You have screenshots. You have notes. You have a video recording, for crying out loud.</p>
+<p>But production is burning.</p>
+<h3 id="whats-actually-happening">What’s actually happening</h3>
+<p>Your brain is protecting you from the horrible reality that something you approved is now destroying the company’s reputation in real-time. So it invents excuses:</p>
+<ul>
+<li>“This must be a different issue, not related to my testing”</li>
+<li>“Someone must have deployed something else after I signed off”</li>
+<li>“The staging environment didn’t match production” (it never does)</li>
+<li>“This worked perfectly in UAT” (it always does)</li>
+</ul>
+<p>You’re frantically checking your emails, looking for proof that you warned someone about something. Anything. A single line in a bug report from three weeks ago that maybe, possibly, could have predicted this disaster.</p>
+<h3 id="reality-check">Reality check</h3>
+<p>Denial doesn’t last long. Usually about 10 minutes, or until your manager calls you.</p>
+<hr/>
+<h2 id="stage-2-anger">Stage 2: Anger</h2>
+<p><strong>“WHY DIDN’T ANYONE LISTEN TO ME?”</strong></p>
+<p>The denial fades. Now you’re mad.</p>
+<p>You scroll back through your bug reports. And there it is. The ticket you logged two weeks ago. Marked “Low Priority” by the product manager. Closed as “Won’t Fix” by the tech lead.</p>
+<p>The EXACT issue that’s now taking down production.</p>
+<p>You want to scream. You want to forward that ticket to everyone on the call with “I TOLD YOU SO” in 72-point font.</p>
+<p><em>“I FLAGGED THIS. I documented the risk. I explained what could happen. And NOBODY LISTENED.”</em></p>
+<p>You start mentally composing your resignation letter. You imagine walking into Monday’s meeting and just saying everything you’ve been holding back for months.</p>
+<h3 id="the-targets-of-your-rage">The targets of your rage</h3>
+<ul>
+<li>The developer who said “it works on my machine” and refused to investigate further</li>
+<li>The PM who prioritized flashy features over stability</li>
+<li>The tech lead who pushed the release despite your concerns</li>
+<li>The manager who said “we’ll monitor it closely” instead of delaying</li>
+<li>The exec who asked “why do we even need QA if we have automated tests?”</li>
+</ul>
+<p>And honestly? You’re not entirely wrong to be angry.</p>
+<h3 id="reality-check-1">Reality check</h3>
+<p>Anger feels good. It’s righteous. But it doesn’t fix production. And when the post-mortem happens, “I told you so” doesn’t look as good on paper as you think it will.</p>
+<hr/>
+<h2 id="stage-3-bargaining">Stage 3: Bargaining</h2>
+<p><strong>“If I can just fix this one thing, maybe it’ll all be okay.”</strong></p>
+<p>The emergency call starts. Everyone’s on. Developers, DevOps, product, support, probably some executives who have no idea what’s happening but want “visibility.”</p>
+<p>You’re frantically trying to figure out what broke. Maybe if you can identify the exact bug, the exact code change, the exact scenario, they can hotfix it before Monday morning.</p>
+<p><em>“If we roll back to the previous version…”</em>
+<em>“If we just disable this one feature…”</em>
+<em>“If we could patch this one API endpoint…”</em>
+<em>“If I had just tested that ONE edge case…”</em></p>
+<p>You’re making deals with the universe. Promises you can’t keep.</p>
+<h3 id="the-bargaining-thoughts">The bargaining thoughts</h3>
+<ul>
+<li>“If we get through this, I’ll write better test cases”</li>
+<li>“If they don’t fire me, I’ll implement that automation framework I’ve been putting off”</li>
+<li>“If this somehow gets fixed, I’ll never sign off on a release on a Friday again”</li>
+<li>“If I can just find the root cause, maybe I’ll look like the hero who saved the day”</li>
+</ul>
+<p>You’re digging through logs. Reproducing issues. Writing up detailed bug reports at 3 AM with a level of thoroughness that would’ve been really useful two weeks ago.</p>
+<h3 id="reality-check-2">Reality check</h3>
+<p>Bargaining is you trying to regain control in a situation that’s completely out of your hands. The release failed. Production is broken. No amount of “if only” will change that.</p>
+<p>But here’s the thing: your detailed analysis right now? That’s actually useful. Keep doing that. Just don’t expect it to undo what already happened.</p>
+<hr/>
+<h2 id="stage-4-depression">Stage 4: Depression</h2>
+<p><strong>“I’m a terrible tester. I should’ve caught this. This is all my fault.”</strong></p>
+<p>It’s Sunday morning. The hotfix is deployed. Production is stable-ish. The fires are mostly out.</p>
+<p>Now comes the crash.</p>
+<p>You lie in bed, staring at the ceiling, replaying every decision you made during testing. Every corner you cut. Every test case you skipped because “we were running out of time.”</p>
+<p>The guilt hits hard.</p>
+<p><em>“I should’ve pushed back harder.”</em>
+<em>“I should’ve refused to sign off.”</em>
+<em>“I should’ve tested that specific scenario.”</em>
+<em>“I should’ve… I should’ve… I should’ve…”</em></p>
+<p>You start questioning everything:</p>
+<ul>
+<li>Am I even good at this job?</li>
+<li>Did I miss other bugs that haven’t exploded yet?</li>
+<li>Should I have caught this in the first round of testing?</li>
+<li>Am I the reason the company lost money this weekend?</li>
+</ul>
+<p>You check LinkedIn. You look at job postings. You wonder if it’s time to switch careers. Maybe farming. Chickens don’t have production incidents.</p>
+<h3 id="whats-really-happening">What’s really happening</h3>
+<p>You’re internalizing all the blame. Even the parts that aren’t yours. Even the parts that were systemic failures, process problems, or management decisions.</p>
+<p>Because it’s easier to blame yourself than to accept that sometimes, software just breaks. And sometimes, teams make collective bad decisions. And sometimes, bugs slip through no matter how good you are.</p>
+<h3 id="reality-check-3">Reality check</h3>
+<p>You’re not a terrible tester. You’re a human being working in an imperfect system. One failed release doesn’t define your career.</p>
+<p>Also, chickens are harder than they look. Trust me.</p>
+<hr/>
+<h2 id="stage-5-acceptance">Stage 5: Acceptance</h2>
+<p><strong>“Okay. This happened. What do we learn from it?”</strong></p>
+<p>It’s Monday. You walk into the post-mortem meeting with your documentation ready. You’ve got timelines. You’ve got the bug report you filed two weeks ago. You’ve got logs. You’ve got receipts.</p>
+<p>But something’s shifted.</p>
+<p>You’re not here to defend yourself. You’re not here to point fingers. You’re here to figure out what broke, why it broke, and how to prevent it from happening again.</p>
+<h3 id="the-acceptance-mindset">The acceptance mindset</h3>
+<ul>
+<li>The release failed. It happens.</li>
+<li>Multiple people made decisions that led to this. Not just you.</li>
+<li>There were systemic issues, not just a single bug.</li>
+<li>You did your job. You flagged risks. What happened after that was out of your control.</li>
+</ul>
+<p>You present your findings calmly. You don’t say “I told you so,” even though you really, really want to. You focus on facts:</p>
+<p><em>“Here’s what broke. Here’s when I flagged it. Here’s why it was deprioritized. Here’s what we can do differently next time.”</em></p>
+<h3 id="what-youve-learned">What you’ve learned</h3>
+<ul>
+<li>Document everything. Not because you’re paranoid, but because you’ll need it.</li>
+<li>Saying “I told you so” feels good for 5 seconds and makes you look unprofessional for 5 years.</li>
+<li>Failed releases are team failures, not individual failures.</li>
+<li>Your job isn’t to prevent every bug. Your job is to provide information so the team can make informed decisions.</li>
+<li>Sometimes they’ll make bad decisions anyway. That’s on them, not you.</li>
+</ul>
+<p>You survived. The company survived. You learned something. Production is stable again.</p>
+<p>And honestly? You’re a little bit better at your job now than you were on Friday.</p>
+<hr/>
+<h2 id="the-bonus-stage-dark-humor">The Bonus Stage: Dark Humor</h2>
+<p><strong>“Remember that time production caught fire and we all thought we were getting fired? Good times.”</strong></p>
+<p>Give it a few weeks, maybe a month. The failed release becomes a war story. Something you joke about in retrospect.</p>
+<p><em>“Oh, you think THIS bug is bad? Let me tell you about the time we took down the entire payment system on Black Friday.”</em></p>
+<p>You’ll laugh about it. The team will laugh about it. It becomes part of the company lore.</p>
+<p>Because if you can’t laugh about the disasters, you’ll never survive the next one. And there will be a next one. There’s always a next one.</p>
+<hr/>
+<h2 id="what-actually-matters">What Actually Matters</h2>
+<p>Here’s the truth nobody tells junior testers: every single QA engineer will experience a failed release at some point in their career.</p>
+<p>You will sign off on something that breaks in production. You will miss a bug that seems obvious in hindsight. You will be on that 2 AM emergency call, wondering how it all went wrong.</p>
+<p>It’s not a question of if. It’s a question of when.</p>
+<p>And how you handle it matters more than the failure itself.</p>
+<h3 id="do-this">Do this</h3>
+<ul>
+<li>Document your testing thoroughly, every time</li>
+<li>Flag risks clearly and get acknowledgment in writing</li>
+<li>Learn from the failure without drowning in guilt</li>
+<li>Focus on systemic improvements, not individual blame</li>
+<li>Build relationships so when things break, people trust you to help fix them</li>
+</ul>
+<h3 id="dont-do-this">Don’t do this</h3>
+<ul>
+<li>Blame yourself for decisions that weren’t yours to make</li>
+<li>Say “I told you so” in the post-mortem (even if you did)</li>
+<li>Let one failed release convince you you’re a bad tester</li>
+<li>Carry the guilt of every bug like it’s a personal failing</li>
+<li>Quit your job in the depression stage (at least wait until acceptance)</li>
+</ul>
+<hr/>
+<h2 id="one-last-thing">One Last Thing</h2>
+<p>If you’re reading this because you just lived through a failed release: I’m sorry. It sucks. It’s stressful. It’s scary. You probably didn’t sleep well this weekend.</p>
+<p>But you’re going to be okay.</p>
+<p>You did your job. You tested the software. You reported the bugs. You flagged the risks. What happened after that (the prioritization, the release decision, the deployment) involved a lot of people and a lot of decisions that weren’t just yours.</p>
+<p>Failed releases are team sports. The blame doesn’t sit on your shoulders alone, even if it feels like it does.</p>
+<p>Take a breath. Document what happened. Learn from it. And then move on.</p>
+<p>Because there’s another release coming next week. And this time, you’ll know a little bit more about what to watch out for.</p>
+<p>You’ve survived your QA baptism by fire. Welcome to the club. We meet every 2 AM on weekends when production breaks.</p>
+<hr/>
+<h2 id="want-more-real-world-qa-advice">Want more real-world QA advice?</h2>
+<p>I send a weekly newsletter with practical testing tips, career advice, and lessons from the trenches.</p>
+<p><strong>Plus:</strong> Free ebook “Software Testing for Beginners” when you subscribe.</p>
+<p><a href="https://subscribepage.io/software-testing-ebook">Get it here</a></p>
+<p>Until next time, happy testing.</p> </div> <div id="lead-magnet-popup" class="lead-magnet-container" data-astro-cid-krvppkqb> <div class="lead-magnet-content" data-astro-cid-krvppkqb> <h3 data-astro-cid-krvppkqb>Grab the free ebook:</h3> <p class="lead-magnet-description" data-astro-cid-krvppkqb>
+"Software Testing for Beginners" is packed with real-world tips on writing bug reports, test cases, and surviving chaotic projects.
+</p> <div class="lead-magnet-features" data-astro-cid-krvppkqb> <h4 data-astro-cid-krvppkqb>💡 What's inside:</h4> <ul data-astro-cid-krvppkqb> <li data-astro-cid-krvppkqb>Smart test case templates</li> <li data-astro-cid-krvppkqb>Bug reports devs actually respect</li> <li data-astro-cid-krvppkqb>Tools, tips, and tactics that work</li> </ul> <p class="lead-magnet-tagline" data-astro-cid-krvppkqb>No fluff. No BS. Just stuff every tester should know.</p> </div> <button class="lead-magnet-button ml-onclick-form" onclick="ml('show', 'rGtm8o', true)" data-astro-cid-krvppkqb>
+👉 Send Me the Free Ebook
+</button> <p class="lead-magnet-footer" data-astro-cid-krvppkqb>Pop it in your inbox. Learn something useful. Go break stuff (intentionally).</p> </div> </div>  <script type="module">function e(){const n=document.getElementById("lead-magnet-popup");window.innerHeight+window.scrollY>=document.body.offsetHeight-300&&n.classList.add("visible")}document.addEventListener("DOMContentLoaded",()=>{window.addEventListener("scroll",e),setTimeout(e,1e3)});</script> </article> </main> <footer data-astro-cid-4sn4zg3r> <div class="container" data-astro-cid-4sn4zg3r> <p data-astro-cid-4sn4zg3r>&copy; 2025 Strahinja Becagol. All rights reserved.</p> </div> </footer> <div id="cookie-consent" class="cookie-consent hidden" data-astro-cid-garwan2p> <div class="cookie-content" data-astro-cid-garwan2p> <div class="cookie-text" data-astro-cid-garwan2p> <h3 data-astro-cid-garwan2p>Cookie Notice</h3> <p data-astro-cid-garwan2p>This website uses cookies for analytics to improve your experience. We won't set non-essential cookies until you accept.</p> </div> <div class="cookie-buttons" data-astro-cid-garwan2p> <button id="cookie-accept" class="cookie-btn accept" data-astro-cid-garwan2p>Accept</button> <button id="cookie-decline" class="cookie-btn decline" data-astro-cid-garwan2p>Decline</button> </div> </div> </div>  <script type="module">document.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("cookie-consent"),t=document.getElementById("cookie-accept"),o=document.getElementById("cookie-decline"),c=localStorage.getItem("cookie-consent");c?c==="accepted"&&n():setTimeout(()=>{e?.classList.remove("hidden")},1e3),t?.addEventListener("click",()=>{localStorage.setItem("cookie-consent","accepted"),e?.classList.add("hidden"),n()}),o?.addEventListener("click",()=>{localStorage.setItem("cookie-consent","declined"),e?.classList.add("hidden")})});function n(){const e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-HDYYD92WHW",document.head.appendChild(e),window.dataLayer=window.dataLayer||[];function t(){dataLayer.push(arguments)}t("js",new Date),t("config","G-HDYYD92WHW")}</script> </body></html>
