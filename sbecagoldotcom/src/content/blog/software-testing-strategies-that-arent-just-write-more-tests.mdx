@@ -1,0 +1,374 @@
+---
+title: "Software Testing Strategies (That Aren't Just 'Write More Tests')"
+description: "Practical testing strategies for small teams and solo testers who don't have infinite time or resources. Test smart, not hard."
+pubDate: 2026-01-12
+author: "Strahinja Becagol"
+image: "/images/testingStrategy.png"
+tags: ["qa", "software testing", "strategy", "manual testing"]
+---
+
+*"We need better test coverage."*
+
+Cool. Write more tests.
+
+*"We're missing too many bugs."*
+
+Okay. Test more thoroughly.
+
+*"Why didn't QA catch this before production?"*
+
+I don't know, maybe write better test cases?
+
+---
+
+If I had a dollar for every time someone's "testing strategy" boiled down to "just do more testing," I could retire and buy that chicken farm everyone keeps threatening me with.
+
+Here's the reality: most teams don't have a testing problem. They have a strategy problem.
+
+You can write a thousand test cases. You can automate everything. You can test 18 hours a day. But if your strategy is garbage, you're just working harder to find the wrong bugs.
+
+After 10+ years breaking software (that was already broken when I got there), here are the testing strategies that actually work for small teams and solo testers who don't have infinite time or resources.
+
+## Strategy #1: Test What Breaks, Not What Works
+
+Most testers spend 80% of their time verifying that things work correctly.
+
+Login works. Checkout works. Search works. Great. We knew that yesterday.
+
+Meanwhile, the edge cases—the weird scenarios, the unusual workflows, the "nobody would ever do that" situations—those get maybe 20% of attention. If that.
+
+Then production breaks. And it's always the edge case.
+
+### The better strategy:
+
+Flip it. Spend 20% of your time verifying happy paths work. Spend 80% of your time trying to break things.
+
+### What this looks like:
+
+Instead of testing: *"User logs in with correct credentials."*
+
+**Test:**
+- User logs in with password that expired yesterday
+- User logs in from two devices simultaneously
+- User changes password mid-session
+- User logs in with old password after reset
+- User's account gets deleted while they're logged in
+
+These are the scenarios that break. These are the bugs customers hit. These are the production incidents that wake you up at 2 AM.
+
+Happy path testing is important. But it's not where the interesting bugs live.
+
+### For small teams:
+
+You don't have time to test everything. So test the stuff that's most likely to break. The new features. The integrations. The code that three different developers touched last sprint.
+
+Let the stuff that's been stable for two years stay stable. Focus your energy on the fragile parts.
+
+## Strategy #2: Stop Writing Test Cases Like You're Getting Paid Per Word
+
+I've seen test cases that are 47 steps long.
+
+Step 1: Open browser.  
+Step 2: Navigate to homepage.  
+Step 3: Locate login button in top right corner.  
+Step 4: Click login button using mouse cursor.
+
+By step 12, I've lost the will to live.
+
+Here's the thing: detailed test cases are good. But there's a difference between "detailed" and "excruciating."
+
+### The better strategy:
+
+Write test cases that get to the point.
+
+### What this looks like:
+
+**Bad test case:**
+1. Launch application
+2. Click on the menu icon in the upper left corner
+3. From the dropdown menu, select "Settings"
+4. In the Settings panel, locate the "Profile" section
+5. Click on "Edit Profile"
+6. In the "Email" field, clear existing text
+7. Enter new email address
+8. Click "Save Changes" button  
+*[20 more steps...]*
+
+**Good test case:**
+
+**Scenario:** User updates email address
+
+**Setup:** Log in as test@example.com
+
+**Steps:**
+1. Settings → Profile → Edit
+2. Change email to newemail@example.com
+3. Save
+
+**Expected:** 
+- Confirmation email sent to NEW address
+- User can log in with new email
+- Old email no longer works
+
+See the difference? The second one gets to the point. It doesn't waste time describing how to click a button.
+
+If your tester doesn't know how to navigate a menu, the problem isn't your test case. The problem is your tester.
+
+### For solo testers:
+
+You're the only one executing these test cases. Don't write them like you're explaining computers to your grandmother. Write them like you're leaving notes for yourself.
+
+Future you will thank you.
+
+## Strategy #3: Automate the Boring Stuff, Explore the Interesting Stuff
+
+"We need to automate all our testing!"
+
+No. You don't.
+
+You need to automate the repetitive, time-consuming, brain-dead stuff so you can spend more time on the interesting testing that requires a human brain.
+
+### The better strategy:
+
+Automate strategically, not religiously.
+
+### What to automate:
+- **Smoke tests** - is the build fundamentally broken?
+- **Regression tests for stable features** - login, checkout, core workflows
+- **Data setup** - getting the system into the right state for testing
+- **Tests that need to run constantly** - on every commit, every deploy
+
+### What NOT to automate:
+- **New features** - they change too fast, automation breaks constantly
+- **Complex user workflows** - automation misses the "this works but feels wrong" bugs
+- **Visual/UX issues** - automation doesn't notice the button is ugly
+- **Anything that takes longer to automate than to test manually**
+
+I've seen teams spend six months building a comprehensive automation suite that covers every possible scenario.
+
+Then a major refactor happens. The entire suite breaks. Now they're spending more time fixing tests than actually testing.
+
+Meanwhile, bugs are shipping because nobody's doing exploratory testing anymore. Everyone's too busy maintaining the automation.
+
+### For small teams:
+
+You don't have time to automate everything. Pick the stuff that's:
+- Repetitive
+- Time-consuming
+- Needs to run frequently
+- Unlikely to change
+
+Automate that. Test everything else manually.
+
+And when someone asks "why isn't this automated?" the answer is "because I can test it manually in 5 minutes and automating it would take 3 days."
+
+That's a strategy, not laziness.
+
+## Strategy #4: Know What You're NOT Testing
+
+Here's a question most testers can't answer: "What are you NOT testing?"
+
+You can tell me what you ARE testing. You've got test cases. You've got coverage reports. You've got dashboards showing how many tests passed.
+
+But what are you deliberately NOT testing? And why?
+
+### The better strategy:
+
+Document what you're skipping and why.
+
+### What this looks like:
+
+**"We are NOT testing:**
+- IE11 support *(less than 0.1% of users, officially unsupported)*
+- Mobile Safari on iOS 12 *(below our minimum supported version)*
+- Edge cases involving 10+ simultaneous users *(enterprise feature, tested separately)*
+- Integration with deprecated API v1 *(being sunset in Q2)*
+- Performance under 10,000+ concurrent users *(handled by load testing team)*"
+
+Now when production breaks and someone asks "why didn't you test this?", you can point to your documented decisions.
+
+"We made a conscious choice not to test that because [reason]. If that's a problem, we can reprioritize."
+
+### For solo testers:
+
+You literally cannot test everything. There aren't enough hours in the day.
+
+So make conscious decisions about what you're NOT testing. Document them. Get agreement from stakeholders.
+
+Then when something breaks, you're not the one who "missed" it. You're the one who flagged the risk and was overruled.
+
+That's called covering your ass. It's also called being professional.
+
+## Strategy #5: Test Integration Points Like They're Trying to Kill You
+
+You know where most bugs actually live? Not in your code. In the places where your code talks to other code.
+
+The API integration. The payment gateway. The third-party service. The webhook. The data sync between systems.
+
+These are the places where everything goes wrong. Because you're not just testing your system anymore. You're testing how your system handles it when someone else's system does something weird.
+
+### The better strategy:
+
+Assume every external system is actively trying to break yours.
+
+### What to test:
+
+Not just *"does the integration work?"*
+
+**Test:**
+- What happens when the external API is **slow**? *(timeout scenarios)*
+- What happens when it returns a **500 error**?
+- What happens when it returns success but the **data is malformed**?
+- What happens when it **times out mid-request**?
+- What happens when it returns success but **doesn't actually do the thing**?
+- What happens when the webhook arrives **5 minutes late**?
+- What happens when the webhook arrives **twice**?
+- What happens when the webhook **never arrives**?
+
+These are the scenarios that break in production. Because external systems are unpredictable. They go down. They change their API without telling you. They rate-limit you unexpectedly.
+
+Your code might be perfect. But if you're relying on someone else's API, you're one outage away from a production incident.
+
+### For small teams:
+
+You don't need to test every possible integration scenario. But you DO need to test the failure scenarios.
+
+Mock the external service. Make it return errors. Make it time out. Make it send bad data.
+
+Then verify your system handles it gracefully instead of exploding.
+
+## Strategy #6: Stop Chasing 100% Test Coverage
+
+"We need 100% test coverage!"
+
+No. You need test coverage where it matters.
+
+I've seen codebases with 95% test coverage that are absolute disasters. I've seen codebases with 60% coverage that are rock solid.
+
+Test coverage is a metric. It tells you which lines of code are executed during tests. It doesn't tell you if those tests are any good.
+
+### The better strategy:
+
+Focus on coverage where it matters, ignore coverage where it doesn't.
+
+### High-priority coverage:
+- **Core business logic** - payment processing, user authentication, data validation
+- **Features customers actually use** - not the admin panel only you touch
+- **Code that changes frequently** - new features, active development
+- **Code with a history of bugs** - that one function everyone's afraid to touch
+
+### Low-priority coverage:
+- **Boilerplate code** - getters, setters, constructors
+- **UI components that are purely visual**
+- **Code that hasn't changed in 2 years** and never breaks
+- **Internal tools nobody uses**
+
+### For solo testers:
+
+You don't have time to test everything to the same depth. Prioritize.
+
+Spend your time on the code that's most likely to break and most important to the business.
+
+Let the stable, low-risk stuff have lower coverage. That's not lazy. That's strategic.
+
+## Strategy #7: Talk to Developers BEFORE They Write Code
+
+Most testers get involved after the code is written.
+
+Developer finishes feature. Hands it to QA. QA finds bugs. Developer fixes bugs. Repeat until it ships.
+
+This is the slowest, most expensive way to build software.
+
+### The better strategy:
+
+Get involved earlier.
+
+### What this looks like:
+
+**Sit in on design discussions:**  
+*"How is this supposed to work when [edge case]?"*
+
+**Review requirements before development:**  
+*"This spec doesn't mention what happens if the user already exists."*
+
+**Ask questions early:**  
+*"Are we supporting mobile for this feature?"*
+
+**Pair with developers during development:**  
+*"Can I test this on your branch before you merge?"*
+
+When you catch problems in the design phase, they take 5 minutes to fix. When you catch them in production, they take 5 days.
+
+### For small teams:
+
+You're probably already doing this because you don't have formal processes. Keep doing it.
+
+The more you can prevent bugs instead of just detecting them, the better your life gets.
+
+## Strategy #8: Document the Stupid Stuff
+
+"Why would we test that? Nobody would ever do that."
+
+And yet, someone will. In production. On a Friday afternoon.
+
+### The better strategy:
+
+Document the weird edge cases you found, even if they seem stupid.
+
+### What this looks like:
+
+**Keep a running list of:**
+- Bugs that seemed impossible but happened anyway
+- Edge cases you discovered by accident
+- Scenarios that broke in production
+- Things that "nobody would ever do" but someone did
+
+Then, when the next similar feature gets built, check your list.
+
+"Last time we built a form like this, users pasted emojis in the email field and it broke the database. Should we handle that?"
+
+This is how you go from junior tester to senior tester. Not by memorizing theory. By remembering the weird shit that actually broke.
+
+### For solo testers:
+
+You are the institutional knowledge. When you leave, all that context leaves with you.
+
+Write it down. Future you (or your replacement) will thank you.
+
+## What Actually Matters
+
+Here's what nobody tells you about testing strategies:
+
+The tools don't matter. The methodology doesn't matter. The test management platform doesn't matter.
+
+**What matters is:**
+- Testing the stuff that's most likely to break
+- Spending your time where it has the most impact
+- Preventing bugs instead of just finding them
+- Documenting your decisions so you can defend them later
+
+You're not paid to find every bug. You're paid to find the important bugs before customers do.
+
+That requires strategy, not just effort.
+
+## One Last Thing
+
+If your testing strategy is "work harder and test more," you're going to burn out.
+
+Small teams and solo testers don't have infinite time or resources. You have to be strategic. You have to prioritize. You have to make conscious decisions about what you're NOT testing.
+
+That's not cutting corners. That's being professional.
+
+Test smart. Not hard.
+
+---
+
+**Want more practical QA advice?**
+
+I send a weekly newsletter with testing tips, career advice, and lessons from the trenches.
+
+Plus: Free ebook "Software Testing for Beginners" when you subscribe.
+
+Get it here: https://subscribepage.io/software-testing-ebook
+
+Until next time, happy testing.
