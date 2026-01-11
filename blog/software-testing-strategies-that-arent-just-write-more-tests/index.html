@@ -1,0 +1,255 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-4sn4zg3r> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="icon" type="image/png" sizes="48x48" href="/images/sbecagolfav48.png"><title>Software Testing Strategies (That Aren&#39;t Just &#39;Write More Tests&#39;) | Strahinja Becagol - QA Courses</title><meta name="description" content="Practical testing strategies for small teams and solo testers who don't have infinite time or resources. Test smart, not hard."><link rel="canonical" href="https://sbecagol.com/blog/software-testing-strategies-that-arent-just-write-more-tests"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><!-- Open Graph tags --><meta property="og:title" content="Software Testing Strategies (That Aren't Just 'Write More Tests') | Strahinja Becagol - QA Courses"><meta property="og:description" content="Practical testing strategies for small teams and solo testers who don't have infinite time or resources. Test smart, not hard."><meta property="og:url" content="https://sbecagol.com/blog/software-testing-strategies-that-arent-just-write-more-tests"><meta property="og:type" content="article"><meta property="og:image" content="https://sbecagol.com/images/testingStrategy.png"><!-- Twitter Card tags --><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Software Testing Strategies (That Aren't Just 'Write More Tests') | Strahinja Becagol - QA Courses"><meta name="twitter:description" content="Practical testing strategies for small teams and solo testers who don't have infinite time or resources. Test smart, not hard."><meta name="twitter:image" content="https://sbecagol.com/images/testingStrategy.png"><!-- Structured Data / Schema Markup for Blog Post --><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"Software Testing Strategies (That Aren't Just 'Write More Tests')","description":"Practical testing strategies for small teams and solo testers who don't have infinite time or resources. Test smart, not hard.","image":"https://sbecagol.com/images/testingStrategy.png","datePublished":"2026-01-12T00:00:00.000Z","author":{"@type":"Person","name":"Strahinja Becagol","url":"https://sbecagol.com"},"publisher":{"@type":"Person","name":"Strahinja Becagol","url":"https://sbecagol.com"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://sbecagol.com/blog/software-testing-strategies-that-arent-just-write-more-tests"}}</script><!-- Google Analytics will be loaded via cookie consent --><!-- MailerLite Universal --><script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '1684695');
+    </script><!-- End MailerLite Universal --><!-- Global styles so MDX-rendered content links are affected --><style>.cookie-consent[data-astro-cid-garwan2p]{position:fixed;bottom:2rem;left:50%;transform:translate(-50%);width:90%;max-width:36rem;background-color:var(--bg-accent, #1e293b);border:1px solid var(--border-color, #334155);border-radius:8px;padding:1.25rem;z-index:1000;box-shadow:0 10px 25px -5px #0000004d;transition:opacity .3s,transform .4s}.cookie-consent[data-astro-cid-garwan2p].hidden{opacity:0;transform:translate(-50%,5rem);pointer-events:none}.cookie-content[data-astro-cid-garwan2p]{display:flex;flex-direction:column;gap:1rem}.cookie-text[data-astro-cid-garwan2p] h3[data-astro-cid-garwan2p]{font-size:1.125rem;margin-bottom:.5rem;color:var(--text-color, #e2e8f0)}.cookie-text[data-astro-cid-garwan2p] p[data-astro-cid-garwan2p]{font-size:.9375rem;color:var(--text-light, #94a3b8);margin:0}.cookie-buttons[data-astro-cid-garwan2p]{display:flex;gap:.75rem}.cookie-btn[data-astro-cid-garwan2p]{padding:.5rem 1.25rem;border-radius:6px;font-weight:500;font-size:.875rem;cursor:pointer;transition:all .2s;border:none}.cookie-btn[data-astro-cid-garwan2p].accept{background-color:var(--primary-color, #10b981);color:#fff}.cookie-btn[data-astro-cid-garwan2p].accept:hover{background-color:var(--primary-hover, #059669)}.cookie-btn[data-astro-cid-garwan2p].decline{background-color:transparent;color:var(--text-color, #e2e8f0);border:1px solid var(--border-color, #334155)}.cookie-btn[data-astro-cid-garwan2p].decline:hover{background-color:#ffffff0d}@media (min-width: 640px){.cookie-content[data-astro-cid-garwan2p]{flex-direction:row;align-items:center;justify-content:space-between}.cookie-text[data-astro-cid-garwan2p]{flex:1}}
+</style>
+<link rel="stylesheet" href="/_assets/_slug_.lj-QJPV8.css"></head> <body data-astro-cid-4sn4zg3r> <header data-astro-cid-4sn4zg3r> <div class="container" data-astro-cid-4sn4zg3r> <a href="/" class="logo" data-astro-cid-4sn4zg3r>Strahinja Bećagol</a> <nav data-astro-cid-4sn4zg3r> <ul data-astro-cid-4sn4zg3r> <li data-astro-cid-4sn4zg3r><a href="/" data-astro-cid-4sn4zg3r>Home</a></li> <li data-astro-cid-4sn4zg3r><a href="/#courses" data-astro-cid-4sn4zg3r>Courses</a></li> <li data-astro-cid-4sn4zg3r><a href="/#ebook" class="nav-link-highlight" data-astro-cid-4sn4zg3r>Free eBook</a></li> <li data-astro-cid-4sn4zg3r><a href="/blog" data-astro-cid-4sn4zg3r>Blog</a></li> <li data-astro-cid-4sn4zg3r><a href="/test-apps" data-astro-cid-4sn4zg3r>Test Apps</a></li> </ul> </nav> </div> </header> <main class="container" data-astro-cid-4sn4zg3r> <a href="/blog" class="back-link" data-astro-cid-4sn4zg3r>← Back to Blog</a> <article data-astro-cid-4sn4zg3r> <div class="blog-header" data-astro-cid-4sn4zg3r> <h1 class="blog-title" data-astro-cid-4sn4zg3r>Software Testing Strategies (That Aren&#39;t Just &#39;Write More Tests&#39;)</h1> <div class="blog-meta" data-astro-cid-4sn4zg3r> <span class="blog-date" data-astro-cid-4sn4zg3r>January 12, 2026</span> <span class="blog-author" data-astro-cid-4sn4zg3r>By Strahinja Becagol</span> <div class="blog-tags" data-astro-cid-4sn4zg3r> <span class="blog-tag" data-astro-cid-4sn4zg3r>qa</span><span class="blog-tag" data-astro-cid-4sn4zg3r>software testing</span><span class="blog-tag" data-astro-cid-4sn4zg3r>strategy</span><span class="blog-tag" data-astro-cid-4sn4zg3r>manual testing</span> </div> </div> </div> <img src="/images/testingStrategy.png" alt="Software Testing Strategies (That Aren't Just 'Write More Tests')" class="blog-featured-image" onerror="this.src='/placeholder-image.jpg'; this.onerror=null;" data-astro-cid-4sn4zg3r> <div class="blog-content" data-astro-cid-4sn4zg3r> <p><em>“We need better test coverage.”</em></p>
+<p>Cool. Write more tests.</p>
+<p><em>“We’re missing too many bugs.”</em></p>
+<p>Okay. Test more thoroughly.</p>
+<p><em>“Why didn’t QA catch this before production?”</em></p>
+<p>I don’t know, maybe write better test cases?</p>
+<hr/>
+<p>If I had a dollar for every time someone’s “testing strategy” boiled down to “just do more testing,” I could retire and buy that chicken farm everyone keeps threatening me with.</p>
+<p>Here’s the reality: most teams don’t have a testing problem. They have a strategy problem.</p>
+<p>You can write a thousand test cases. You can automate everything. You can test 18 hours a day. But if your strategy is garbage, you’re just working harder to find the wrong bugs.</p>
+<p>After 10+ years breaking software (that was already broken when I got there), here are the testing strategies that actually work for small teams and solo testers who don’t have infinite time or resources.</p>
+<h2 id="strategy-1-test-what-breaks-not-what-works">Strategy #1: Test What Breaks, Not What Works</h2>
+<p>Most testers spend 80% of their time verifying that things work correctly.</p>
+<p>Login works. Checkout works. Search works. Great. We knew that yesterday.</p>
+<p>Meanwhile, the edge cases—the weird scenarios, the unusual workflows, the “nobody would ever do that” situations—those get maybe 20% of attention. If that.</p>
+<p>Then production breaks. And it’s always the edge case.</p>
+<h3 id="the-better-strategy">The better strategy:</h3>
+<p>Flip it. Spend 20% of your time verifying happy paths work. Spend 80% of your time trying to break things.</p>
+<h3 id="what-this-looks-like">What this looks like:</h3>
+<p>Instead of testing: <em>“User logs in with correct credentials.”</em></p>
+<p><strong>Test:</strong></p>
+<ul>
+<li>User logs in with password that expired yesterday</li>
+<li>User logs in from two devices simultaneously</li>
+<li>User changes password mid-session</li>
+<li>User logs in with old password after reset</li>
+<li>User’s account gets deleted while they’re logged in</li>
+</ul>
+<p>These are the scenarios that break. These are the bugs customers hit. These are the production incidents that wake you up at 2 AM.</p>
+<p>Happy path testing is important. But it’s not where the interesting bugs live.</p>
+<h3 id="for-small-teams">For small teams:</h3>
+<p>You don’t have time to test everything. So test the stuff that’s most likely to break. The new features. The integrations. The code that three different developers touched last sprint.</p>
+<p>Let the stuff that’s been stable for two years stay stable. Focus your energy on the fragile parts.</p>
+<h2 id="strategy-2-stop-writing-test-cases-like-youre-getting-paid-per-word">Strategy #2: Stop Writing Test Cases Like You’re Getting Paid Per Word</h2>
+<p>I’ve seen test cases that are 47 steps long.</p>
+<p>Step 1: Open browser.<br/>
+Step 2: Navigate to homepage.<br/>
+Step 3: Locate login button in top right corner.<br/>
+Step 4: Click login button using mouse cursor.</p>
+<p>By step 12, I’ve lost the will to live.</p>
+<p>Here’s the thing: detailed test cases are good. But there’s a difference between “detailed” and “excruciating.”</p>
+<h3 id="the-better-strategy-1">The better strategy:</h3>
+<p>Write test cases that get to the point.</p>
+<h3 id="what-this-looks-like-1">What this looks like:</h3>
+<p><strong>Bad test case:</strong></p>
+<ol>
+<li>Launch application</li>
+<li>Click on the menu icon in the upper left corner</li>
+<li>From the dropdown menu, select “Settings”</li>
+<li>In the Settings panel, locate the “Profile” section</li>
+<li>Click on “Edit Profile”</li>
+<li>In the “Email” field, clear existing text</li>
+<li>Enter new email address</li>
+<li>Click “Save Changes” button<br/>
+<em>[20 more steps…]</em></li>
+</ol>
+<p><strong>Good test case:</strong></p>
+<p><strong>Scenario:</strong> User updates email address</p>
+<p><strong>Setup:</strong> Log in as <a href="mailto:test@example.com">test@example.com</a></p>
+<p><strong>Steps:</strong></p>
+<ol>
+<li>Settings → Profile → Edit</li>
+<li>Change email to <a href="mailto:newemail@example.com">newemail@example.com</a></li>
+<li>Save</li>
+</ol>
+<p><strong>Expected:</strong></p>
+<ul>
+<li>Confirmation email sent to NEW address</li>
+<li>User can log in with new email</li>
+<li>Old email no longer works</li>
+</ul>
+<p>See the difference? The second one gets to the point. It doesn’t waste time describing how to click a button.</p>
+<p>If your tester doesn’t know how to navigate a menu, the problem isn’t your test case. The problem is your tester.</p>
+<h3 id="for-solo-testers">For solo testers:</h3>
+<p>You’re the only one executing these test cases. Don’t write them like you’re explaining computers to your grandmother. Write them like you’re leaving notes for yourself.</p>
+<p>Future you will thank you.</p>
+<h2 id="strategy-3-automate-the-boring-stuff-explore-the-interesting-stuff">Strategy #3: Automate the Boring Stuff, Explore the Interesting Stuff</h2>
+<p>“We need to automate all our testing!”</p>
+<p>No. You don’t.</p>
+<p>You need to automate the repetitive, time-consuming, brain-dead stuff so you can spend more time on the interesting testing that requires a human brain.</p>
+<h3 id="the-better-strategy-2">The better strategy:</h3>
+<p>Automate strategically, not religiously.</p>
+<h3 id="what-to-automate">What to automate:</h3>
+<ul>
+<li><strong>Smoke tests</strong> - is the build fundamentally broken?</li>
+<li><strong>Regression tests for stable features</strong> - login, checkout, core workflows</li>
+<li><strong>Data setup</strong> - getting the system into the right state for testing</li>
+<li><strong>Tests that need to run constantly</strong> - on every commit, every deploy</li>
+</ul>
+<h3 id="what-not-to-automate">What NOT to automate:</h3>
+<ul>
+<li><strong>New features</strong> - they change too fast, automation breaks constantly</li>
+<li><strong>Complex user workflows</strong> - automation misses the “this works but feels wrong” bugs</li>
+<li><strong>Visual/UX issues</strong> - automation doesn’t notice the button is ugly</li>
+<li><strong>Anything that takes longer to automate than to test manually</strong></li>
+</ul>
+<p>I’ve seen teams spend six months building a comprehensive automation suite that covers every possible scenario.</p>
+<p>Then a major refactor happens. The entire suite breaks. Now they’re spending more time fixing tests than actually testing.</p>
+<p>Meanwhile, bugs are shipping because nobody’s doing exploratory testing anymore. Everyone’s too busy maintaining the automation.</p>
+<h3 id="for-small-teams-1">For small teams:</h3>
+<p>You don’t have time to automate everything. Pick the stuff that’s:</p>
+<ul>
+<li>Repetitive</li>
+<li>Time-consuming</li>
+<li>Needs to run frequently</li>
+<li>Unlikely to change</li>
+</ul>
+<p>Automate that. Test everything else manually.</p>
+<p>And when someone asks “why isn’t this automated?” the answer is “because I can test it manually in 5 minutes and automating it would take 3 days.”</p>
+<p>That’s a strategy, not laziness.</p>
+<h2 id="strategy-4-know-what-youre-not-testing">Strategy #4: Know What You’re NOT Testing</h2>
+<p>Here’s a question most testers can’t answer: “What are you NOT testing?”</p>
+<p>You can tell me what you ARE testing. You’ve got test cases. You’ve got coverage reports. You’ve got dashboards showing how many tests passed.</p>
+<p>But what are you deliberately NOT testing? And why?</p>
+<h3 id="the-better-strategy-3">The better strategy:</h3>
+<p>Document what you’re skipping and why.</p>
+<h3 id="what-this-looks-like-2">What this looks like:</h3>
+<p><strong>“We are NOT testing:</strong></p>
+<ul>
+<li>IE11 support <em>(less than 0.1% of users, officially unsupported)</em></li>
+<li>Mobile Safari on iOS 12 <em>(below our minimum supported version)</em></li>
+<li>Edge cases involving 10+ simultaneous users <em>(enterprise feature, tested separately)</em></li>
+<li>Integration with deprecated API v1 <em>(being sunset in Q2)</em></li>
+<li>Performance under 10,000+ concurrent users <em>(handled by load testing team)</em>”</li>
+</ul>
+<p>Now when production breaks and someone asks “why didn’t you test this?”, you can point to your documented decisions.</p>
+<p>“We made a conscious choice not to test that because [reason]. If that’s a problem, we can reprioritize.”</p>
+<h3 id="for-solo-testers-1">For solo testers:</h3>
+<p>You literally cannot test everything. There aren’t enough hours in the day.</p>
+<p>So make conscious decisions about what you’re NOT testing. Document them. Get agreement from stakeholders.</p>
+<p>Then when something breaks, you’re not the one who “missed” it. You’re the one who flagged the risk and was overruled.</p>
+<p>That’s called covering your ass. It’s also called being professional.</p>
+<h2 id="strategy-5-test-integration-points-like-theyre-trying-to-kill-you">Strategy #5: Test Integration Points Like They’re Trying to Kill You</h2>
+<p>You know where most bugs actually live? Not in your code. In the places where your code talks to other code.</p>
+<p>The API integration. The payment gateway. The third-party service. The webhook. The data sync between systems.</p>
+<p>These are the places where everything goes wrong. Because you’re not just testing your system anymore. You’re testing how your system handles it when someone else’s system does something weird.</p>
+<h3 id="the-better-strategy-4">The better strategy:</h3>
+<p>Assume every external system is actively trying to break yours.</p>
+<h3 id="what-to-test">What to test:</h3>
+<p>Not just <em>“does the integration work?”</em></p>
+<p><strong>Test:</strong></p>
+<ul>
+<li>What happens when the external API is <strong>slow</strong>? <em>(timeout scenarios)</em></li>
+<li>What happens when it returns a <strong>500 error</strong>?</li>
+<li>What happens when it returns success but the <strong>data is malformed</strong>?</li>
+<li>What happens when it <strong>times out mid-request</strong>?</li>
+<li>What happens when it returns success but <strong>doesn’t actually do the thing</strong>?</li>
+<li>What happens when the webhook arrives <strong>5 minutes late</strong>?</li>
+<li>What happens when the webhook arrives <strong>twice</strong>?</li>
+<li>What happens when the webhook <strong>never arrives</strong>?</li>
+</ul>
+<p>These are the scenarios that break in production. Because external systems are unpredictable. They go down. They change their API without telling you. They rate-limit you unexpectedly.</p>
+<p>Your code might be perfect. But if you’re relying on someone else’s API, you’re one outage away from a production incident.</p>
+<h3 id="for-small-teams-2">For small teams:</h3>
+<p>You don’t need to test every possible integration scenario. But you DO need to test the failure scenarios.</p>
+<p>Mock the external service. Make it return errors. Make it time out. Make it send bad data.</p>
+<p>Then verify your system handles it gracefully instead of exploding.</p>
+<h2 id="strategy-6-stop-chasing-100-test-coverage">Strategy #6: Stop Chasing 100% Test Coverage</h2>
+<p>“We need 100% test coverage!”</p>
+<p>No. You need test coverage where it matters.</p>
+<p>I’ve seen codebases with 95% test coverage that are absolute disasters. I’ve seen codebases with 60% coverage that are rock solid.</p>
+<p>Test coverage is a metric. It tells you which lines of code are executed during tests. It doesn’t tell you if those tests are any good.</p>
+<h3 id="the-better-strategy-5">The better strategy:</h3>
+<p>Focus on coverage where it matters, ignore coverage where it doesn’t.</p>
+<h3 id="high-priority-coverage">High-priority coverage:</h3>
+<ul>
+<li><strong>Core business logic</strong> - payment processing, user authentication, data validation</li>
+<li><strong>Features customers actually use</strong> - not the admin panel only you touch</li>
+<li><strong>Code that changes frequently</strong> - new features, active development</li>
+<li><strong>Code with a history of bugs</strong> - that one function everyone’s afraid to touch</li>
+</ul>
+<h3 id="low-priority-coverage">Low-priority coverage:</h3>
+<ul>
+<li><strong>Boilerplate code</strong> - getters, setters, constructors</li>
+<li><strong>UI components that are purely visual</strong></li>
+<li><strong>Code that hasn’t changed in 2 years</strong> and never breaks</li>
+<li><strong>Internal tools nobody uses</strong></li>
+</ul>
+<h3 id="for-solo-testers-2">For solo testers:</h3>
+<p>You don’t have time to test everything to the same depth. Prioritize.</p>
+<p>Spend your time on the code that’s most likely to break and most important to the business.</p>
+<p>Let the stable, low-risk stuff have lower coverage. That’s not lazy. That’s strategic.</p>
+<h2 id="strategy-7-talk-to-developers-before-they-write-code">Strategy #7: Talk to Developers BEFORE They Write Code</h2>
+<p>Most testers get involved after the code is written.</p>
+<p>Developer finishes feature. Hands it to QA. QA finds bugs. Developer fixes bugs. Repeat until it ships.</p>
+<p>This is the slowest, most expensive way to build software.</p>
+<h3 id="the-better-strategy-6">The better strategy:</h3>
+<p>Get involved earlier.</p>
+<h3 id="what-this-looks-like-3">What this looks like:</h3>
+<p><strong>Sit in on design discussions:</strong><br/>
+<em>“How is this supposed to work when [edge case]?”</em></p>
+<p><strong>Review requirements before development:</strong><br/>
+<em>“This spec doesn’t mention what happens if the user already exists.”</em></p>
+<p><strong>Ask questions early:</strong><br/>
+<em>“Are we supporting mobile for this feature?”</em></p>
+<p><strong>Pair with developers during development:</strong><br/>
+<em>“Can I test this on your branch before you merge?”</em></p>
+<p>When you catch problems in the design phase, they take 5 minutes to fix. When you catch them in production, they take 5 days.</p>
+<h3 id="for-small-teams-3">For small teams:</h3>
+<p>You’re probably already doing this because you don’t have formal processes. Keep doing it.</p>
+<p>The more you can prevent bugs instead of just detecting them, the better your life gets.</p>
+<h2 id="strategy-8-document-the-stupid-stuff">Strategy #8: Document the Stupid Stuff</h2>
+<p>“Why would we test that? Nobody would ever do that.”</p>
+<p>And yet, someone will. In production. On a Friday afternoon.</p>
+<h3 id="the-better-strategy-7">The better strategy:</h3>
+<p>Document the weird edge cases you found, even if they seem stupid.</p>
+<h3 id="what-this-looks-like-4">What this looks like:</h3>
+<p><strong>Keep a running list of:</strong></p>
+<ul>
+<li>Bugs that seemed impossible but happened anyway</li>
+<li>Edge cases you discovered by accident</li>
+<li>Scenarios that broke in production</li>
+<li>Things that “nobody would ever do” but someone did</li>
+</ul>
+<p>Then, when the next similar feature gets built, check your list.</p>
+<p>“Last time we built a form like this, users pasted emojis in the email field and it broke the database. Should we handle that?”</p>
+<p>This is how you go from junior tester to senior tester. Not by memorizing theory. By remembering the weird shit that actually broke.</p>
+<h3 id="for-solo-testers-3">For solo testers:</h3>
+<p>You are the institutional knowledge. When you leave, all that context leaves with you.</p>
+<p>Write it down. Future you (or your replacement) will thank you.</p>
+<h2 id="what-actually-matters">What Actually Matters</h2>
+<p>Here’s what nobody tells you about testing strategies:</p>
+<p>The tools don’t matter. The methodology doesn’t matter. The test management platform doesn’t matter.</p>
+<p><strong>What matters is:</strong></p>
+<ul>
+<li>Testing the stuff that’s most likely to break</li>
+<li>Spending your time where it has the most impact</li>
+<li>Preventing bugs instead of just finding them</li>
+<li>Documenting your decisions so you can defend them later</li>
+</ul>
+<p>You’re not paid to find every bug. You’re paid to find the important bugs before customers do.</p>
+<p>That requires strategy, not just effort.</p>
+<h2 id="one-last-thing">One Last Thing</h2>
+<p>If your testing strategy is “work harder and test more,” you’re going to burn out.</p>
+<p>Small teams and solo testers don’t have infinite time or resources. You have to be strategic. You have to prioritize. You have to make conscious decisions about what you’re NOT testing.</p>
+<p>That’s not cutting corners. That’s being professional.</p>
+<p>Test smart. Not hard.</p>
+<hr/>
+<p><strong>Want more practical QA advice?</strong></p>
+<p>I send a weekly newsletter with testing tips, career advice, and lessons from the trenches.</p>
+<p>Plus: Free ebook “Software Testing for Beginners” when you subscribe.</p>
+<p>Get it here: <a href="https://subscribepage.io/software-testing-ebook">https://subscribepage.io/software-testing-ebook</a></p>
+<p>Until next time, happy testing.</p> </div> <div id="lead-magnet-popup" class="lead-magnet-container" data-astro-cid-krvppkqb> <div class="lead-magnet-content" data-astro-cid-krvppkqb> <h3 data-astro-cid-krvppkqb>Grab the free ebook:</h3> <p class="lead-magnet-description" data-astro-cid-krvppkqb>
+"Software Testing for Beginners" is packed with real-world tips on writing bug reports, test cases, and surviving chaotic projects.
+</p> <div class="lead-magnet-features" data-astro-cid-krvppkqb> <h4 data-astro-cid-krvppkqb>💡 What's inside:</h4> <ul data-astro-cid-krvppkqb> <li data-astro-cid-krvppkqb>Smart test case templates</li> <li data-astro-cid-krvppkqb>Bug reports devs actually respect</li> <li data-astro-cid-krvppkqb>Tools, tips, and tactics that work</li> </ul> <p class="lead-magnet-tagline" data-astro-cid-krvppkqb>No fluff. No BS. Just stuff every tester should know.</p> </div> <button class="lead-magnet-button ml-onclick-form" onclick="ml('show', 'rGtm8o', true)" data-astro-cid-krvppkqb>
+👉 Send Me the Free Ebook
+</button> <p class="lead-magnet-footer" data-astro-cid-krvppkqb>Pop it in your inbox. Learn something useful. Go break stuff (intentionally).</p> </div> </div>  <script type="module">function e(){const n=document.getElementById("lead-magnet-popup");window.innerHeight+window.scrollY>=document.body.offsetHeight-300&&n.classList.add("visible")}document.addEventListener("DOMContentLoaded",()=>{window.addEventListener("scroll",e),setTimeout(e,1e3)});</script> </article> </main> <footer data-astro-cid-4sn4zg3r> <div class="container" data-astro-cid-4sn4zg3r> <p data-astro-cid-4sn4zg3r>&copy; 2026 Strahinja Becagol. All rights reserved.</p> </div> </footer> <div id="cookie-consent" class="cookie-consent hidden" data-astro-cid-garwan2p> <div class="cookie-content" data-astro-cid-garwan2p> <div class="cookie-text" data-astro-cid-garwan2p> <h3 data-astro-cid-garwan2p>Cookie Notice</h3> <p data-astro-cid-garwan2p>This website uses cookies for analytics to improve your experience. We won't set non-essential cookies until you accept.</p> </div> <div class="cookie-buttons" data-astro-cid-garwan2p> <button id="cookie-accept" class="cookie-btn accept" data-astro-cid-garwan2p>Accept</button> <button id="cookie-decline" class="cookie-btn decline" data-astro-cid-garwan2p>Decline</button> </div> </div> </div>  <script type="module">document.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("cookie-consent"),t=document.getElementById("cookie-accept"),o=document.getElementById("cookie-decline"),c=localStorage.getItem("cookie-consent");c?c==="accepted"&&n():setTimeout(()=>{e?.classList.remove("hidden")},1e3),t?.addEventListener("click",()=>{localStorage.setItem("cookie-consent","accepted"),e?.classList.add("hidden"),n()}),o?.addEventListener("click",()=>{localStorage.setItem("cookie-consent","declined"),e?.classList.add("hidden")})});function n(){const e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-HDYYD92WHW",document.head.appendChild(e),window.dataLayer=window.dataLayer||[];function t(){dataLayer.push(arguments)}t("js",new Date),t("config","G-HDYYD92WHW")}</script> </body></html>
