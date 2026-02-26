@@ -124,7 +124,7 @@ const formattedDate = entry.data.pubDate.toLocaleDateString('en-US', {
       }
 
       header {
-        padding: 2rem 0;
+        padding: 1rem 0;
         border-bottom: 1px solid var(--border-color);
       }
 
@@ -141,10 +141,21 @@ const formattedDate = entry.data.pubDate.toLocaleDateString('en-US', {
         text-decoration: none;
       }
 
+      .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--text-color);
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0.5rem;
+      }
+
       nav ul {
         display: flex;
         list-style: none;
         padding: 0;
+        margin: 0;
       }
 
       nav li {
@@ -164,6 +175,61 @@ const formattedDate = entry.data.pubDate.toLocaleDateString('en-US', {
       
       .nav-link-highlight {
         color: var(--primary-color);
+      }
+
+      .nav-link-new {
+        position: relative;
+      }
+
+      .nav-link-new::after {
+        content: 'NEW';
+        position: absolute;
+        top: -6px;
+        right: -28px;
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        color: #0f172a;
+        font-size: 0.5rem;
+        font-weight: 700;
+        padding: 1px 4px;
+        border-radius: 2px;
+        transform: rotate(-15deg);
+        box-shadow: 0 1px 3px rgba(245, 158, 11, 0.3);
+      }
+
+      @media (max-width: 768px) {
+        .mobile-menu-toggle {
+          display: block;
+        }
+
+        nav {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 70%;
+          height: 100vh;
+          background-color: var(--bg-accent);
+          transition: right 0.3s ease;
+          z-index: 1000;
+          padding: 2rem;
+          box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        nav.active {
+          right: 0;
+        }
+
+        nav ul {
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        nav li {
+          margin-left: 0;
+        }
+
+        nav a {
+          font-size: 1.2rem;
+        }
       }
 
       .blog-header {
@@ -346,17 +412,36 @@ const formattedDate = entry.data.pubDate.toLocaleDateString('en-US', {
     <header>
       <div class="container">
         <a href="/" class="logo">Strahinja Bećagol</a>
-        <nav>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+        <nav id="mobile-nav">
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="/#courses">Courses</a></li>
             <li><a href="/#ebook" class="nav-link-highlight">Free eBook</a></li>
             <li><a href="/blog">Blog</a></li>
             <li><a href="/test-apps">Test Apps</a></li>
+            <li><a href="https://qaizzerr.sbecagol.com" target="_blank" rel="noopener noreferrer" class="nav-link-new">Qaizzer</a></li>
           </ul>
         </nav>
       </div>
     </header>
+
+    <script>
+      // Mobile menu toggle
+      const menuToggle = document.getElementById('mobile-menu-toggle');
+      const nav = document.getElementById('mobile-nav');
+      
+      menuToggle?.addEventListener('click', () => {
+        nav?.classList.toggle('active');
+      });
+      
+      // Close menu when clicking a link
+      nav?.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('active');
+        });
+      });
+    </script>
 
     <main class="container">
       <a href="/blog" class="back-link">← Back to Blog</a>

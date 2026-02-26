@@ -314,46 +314,113 @@ import CookieConsent from '../components/CookieConsent.astro';
         margin-top: 0.5rem;
       }
       
-      .main-nav {
-        display: flex;
-        justify-content: center;
-        gap: 1.5rem;
-        margin: -1.5rem auto 2.5rem;
-        padding: 1rem;
-        max-width: 600px;
-        background-color: var(--bg-accent);
-        border-radius: 8px;
-        border: 1px solid var(--border-color);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      header {
+        padding: 0;
+        border-bottom: 1px solid var(--border-color);
       }
-      
-      .main-nav-link {
+
+      header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-color);
+        text-decoration: none;
+      }
+
+      .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--text-color);
+        font-size: 1.5rem;
+        cursor: pointer;
+        padding: 0.5rem;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      nav li {
+        margin-left: 1.5rem;
+      }
+
+      nav a {
         color: var(--text-color);
         text-decoration: none;
         font-weight: 500;
-        padding: 0.5rem 1rem;
-        border-radius: 4px;
         transition: color 0.2s;
       }
-      
-      .main-nav-link:hover {
+
+      nav a:hover {
         color: var(--primary-color);
       }
       
-      .main-nav-link-highlight {
+      .nav-link-highlight {
         color: var(--primary-color);
-        font-weight: 600;
       }
-      
-      .hero::before {
-        content: '';
+
+      .nav-link-new {
+        position: relative;
+      }
+
+      .nav-link-new::after {
+        content: 'NEW';
         position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
-        opacity: 0.5;
+        top: -6px;
+        right: -28px;
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+        color: #0f172a;
+        font-size: 0.5rem;
+        font-weight: 700;
+        padding: 1px 4px;
+        border-radius: 2px;
+        transform: rotate(-15deg);
+        box-shadow: 0 1px 3px rgba(245, 158, 11, 0.3);
+      }
+
+      @media (max-width: 768px) {
+        .mobile-menu-toggle {
+          display: block;
+        }
+
+        nav {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 70%;
+          height: 100vh;
+          background-color: var(--bg-accent);
+          transition: right 0.3s ease;
+          z-index: 1000;
+          padding: 2rem;
+          box-shadow: -2px 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        nav.active {
+          right: 0;
+        }
+
+        nav ul {
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        nav li {
+          margin-left: 0;
+        }
+
+        nav a {
+          font-size: 1.2rem;
+        }
       }
       
       h1 {
@@ -676,6 +743,25 @@ import CookieConsent from '../components/CookieConsent.astro';
         gap: 0.25rem;
         flex: 1;
       }
+
+      @media (max-width: 768px) {
+        .course-header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .course-title-wrapper {
+          order: -1;
+          width: 100%;
+        }
+
+        .course-cover {
+          width: 100%;
+          max-width: 300px;
+          height: auto;
+          align-self: center;
+        }
+      }
       
       .students-enrolled {
         font-size: 0.9rem;
@@ -730,6 +816,23 @@ import CookieConsent from '../components/CookieConsent.astro';
       }
     </style>
     <script>
+      // Mobile menu toggle
+      document.addEventListener('DOMContentLoaded', () => {
+        const menuToggle = document.getElementById('mobile-menu-toggle');
+        const nav = document.getElementById('mobile-nav');
+        
+        menuToggle?.addEventListener('click', () => {
+          nav?.classList.toggle('active');
+        });
+        
+        // Close menu when clicking a link
+        nav?.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            nav.classList.remove('active');
+          });
+        });
+      });
+      
       // Add smooth scrolling for anchor links
       document.addEventListener('DOMContentLoaded', () => {
         const anchorLinks = document.querySelectorAll('a[href^="#"]');
@@ -757,13 +860,24 @@ import CookieConsent from '../components/CookieConsent.astro';
     </script>
   </head>
   <body>
-    <div class="container">
-      <div class="main-nav">
-        <a href="#courses" class="main-nav-link">Courses</a>
-        <a href="#ebook" class="main-nav-link main-nav-link-highlight">Free eBook</a>
-        <a href="/blog" class="main-nav-link">Blog</a>
-        <a href="/test-apps" class="main-nav-link">Test Apps</a>
+    <header>
+      <div class="container">
+        <a href="/" class="logo">Strahinja Bećagol</a>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+        <nav id="mobile-nav">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/#courses">Courses</a></li>
+            <li><a href="/#ebook" class="nav-link-highlight">Free eBook</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/test-apps">Test Apps</a></li>
+            <li><a href="https://qaizzerr.sbecagol.com" target="_blank" rel="noopener noreferrer" class="nav-link-new">Qaizzer</a></li>
+          </ul>
+        </nav>
       </div>
+    </header>
+
+    <div class="container">
       <div class="hero">
         <h1>Hi, I'm Strahinja Bećagol</h1>
         <p class="tagline">I help software testers write clearer bug reports, better test cases, and stay sane on projects that make no sense.</p>
