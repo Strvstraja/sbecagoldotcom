@@ -260,22 +260,13 @@ import OptInBanner from '../components/OptInBanner.astro';
       
       .hero {
         padding: 4rem 2rem;
-        background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-        border-radius: 12px;
+        background: #1e293b;
+        border-radius: 0;
         margin-bottom: 3rem;
         text-align: center;
         position: relative;
         overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      }
-      
-      .hero {
-        text-align: center;
-        margin-bottom: 3rem;
-        padding: 2rem;
-        background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-        border-radius: 10px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        box-shadow: none;
       }
 
       .hero h1 {
@@ -305,6 +296,27 @@ import OptInBanner from '../components/OptInBanner.astro';
 
       .hero-cta {
         margin-top: 2rem;
+      }
+      
+      .hero-cta .btn {
+        background: #10b981;
+        color: white;
+        padding: 0.875rem 2rem;
+        border-radius: 6px;
+        font-size: 1.05rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.2s;
+        border: none;
+        text-decoration: none;
+        display: inline-block;
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+      }
+      
+      .hero-cta .btn:hover {
+        background: #059669;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
       }
       
       /* Using the standard .btn class for both hero and ebook sections */
@@ -630,39 +642,6 @@ import OptInBanner from '../components/OptInBanner.astro';
         background-color: var(--primary-color);
         color: white;
         transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      }
-      
-      .ebook-section {
-        text-align: center;
-        padding: 3rem 2rem;
-        background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-        color: white;
-        border-radius: 8px;
-        margin-bottom: 3rem;
-        position: relative;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-      }
-      
-      .ebook-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
-      }
-      
-      .ebook-section h2 {
-        color: white;
-        margin-top: 0;
-      }
-      
-      .btn {
-        display: inline-block;
-        background-color: rgba(255, 255, 255, 0.1);
         color: white;
         padding: 0.75rem 1.5rem;
         border-radius: 6px;
@@ -683,6 +662,64 @@ import OptInBanner from '../components/OptInBanner.astro';
         border-color: rgba(255, 255, 255, 0.3);
       }
       
+      .ebook-section {
+        text-align: center;
+        padding: 4rem 2rem;
+        background: #1e293b;
+        border-radius: 0;
+        margin-bottom: 3rem;
+        position: relative;
+        overflow: hidden;
+        box-shadow: none;
+      }
+      
+      .ebook-section h2 {
+        color: #e2e8f0;
+        margin-top: 0;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        font-weight: 700;
+        text-align: center;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .ebook-content {
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        color: #cbd5e1;
+      }
+      
+      .ebook-content p {
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+        font-size: 1.05rem;
+      }
+      
+      .ebook-content strong {
+        color: #e2e8f0;
+      }
+      
+      .ebook-section .btn {
+        background: #10b981;
+        color: white;
+        padding: 0.875rem 2rem;
+        border-radius: 6px;
+        font-size: 1.05rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.2s;
+        border: none;
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+      }
+      
+      .ebook-section .btn:hover {
+        background: #059669;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+      }
+
       .contact-section {
         text-align: center;
       }
@@ -882,20 +919,11 @@ import OptInBanner from '../components/OptInBanner.astro';
 
     <div class="container">
       <div class="hero">
-        <h1>Hi, I'm Strahinja Bećagol</h1>
-        <p class="tagline">I help software testers write clearer bug reports, better test cases, and stay sane on projects that make no sense.</p>
+        <h1>I help software testers stop guessing and start testing with confidence.</h1>
+        <p class="tagline">Over a decade in QA. I've seen what works and what doesn't. Everything on this site is the advice I wish I had when I started.</p>
         
         <div class="hero-content">
-          <p>With over a decade in the QA world, I've seen what works - and what really doesn't. I created this site to share the kind of advice I wish I had when I started.</p>
-          
-          <p>What you'll find here: Practical testing strategies you can actually use, a free ebook for beginners, templates, tools, and techniques to sharpen your test writing, and courses for testers who want to get better, fast.</p>
-          
-          <p><strong>If you're new to testing - or tired of winging it - this is where you start.</strong></p>
-          
-          <div class="hero-cta">
-            <button class="btn ml-onclick-form" onclick="ml('show', 'rGtm8o', true)">Get the Free Ebook</button>
-            <p class="hero-cta-tagline">Straightforward. No filler. Just the stuff that helps.</p>
-          </div>
+          <p>Practical testing strategies, free resources, and courses for testers who want to get better at the actual job - not just pass a certification.</p>
         </div>
       </div>
 
@@ -1094,18 +1122,17 @@ import OptInBanner from '../components/OptInBanner.astro';
       </section>
 
       <section id="ebook" class="ebook-section">
-        <h2>📘 Free eBook</h2>
-        <p>
-          Start testing smarter - not harder.
-        </p>
-        <p>
-          Get the beginner-friendly guide that shows you how to write bug reports that matter, build test cases that work, and avoid common rookie mistakes.
-        </p>
-        <p>
-          Clear. Practical. No filler.
-        </p>
+        <h2>Your first week in QA is confusing. This makes it less so.</h2>
+        <div class="ebook-content">
+          <p>
+            <strong>Software Testing for Beginners</strong> covers everything nobody explains when you're starting out. What testing actually is, how it fits into development, the difference between manual and automated, the techniques you'll use every day, and the tools worth learning.
+          </p>
+          <p>
+            No jargon without explanation. No theory without context. Written for people who are new to this, not people who want to pass an exam.
+          </p>
+        </div>
         
-        <button class="btn ml-onclick-form" onclick="ml('show', 'rGtm8o', true)">Get My Free Copy</button>
+        <button class="btn ml-onclick-form" onclick="ml('show', 'rGtm8o', true)">Get My Free Copy →</button>
         
         <!-- MailerLite Universal -->
         <script>
@@ -1132,7 +1159,7 @@ import OptInBanner from '../components/OptInBanner.astro';
       </section>
       
       <footer>
-        <p>&copy; 2025 Strahinja Becagol. All rights reserved.</p>
+        <p>&copy; 2026 Strahinja Becagol. All rights reserved.</p>
       </footer>
     </div>
     <CookieConsent />
