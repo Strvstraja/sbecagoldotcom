@@ -191,12 +191,14 @@
 <li>“This component is being replaced next sprint anyway.”</li>
 <li>“We shipped this behavior 2 years ago, and nobody’s complaining.”</li>
 </ul>
+<p>When you’re under time pressure, knowing how to <a href="/blog/prioritize-test-cases-limited-time">prioritize test cases under a deadline</a> becomes critical.</p>
 <p><strong>Offer alternatives:</strong></p>
 <ul>
 <li>“Can we document the workaround while we plan a proper solution?”</li>
 <li>“What if we hide this feature temporarily?”</li>
 <li>“Should we just remove this rather than address it?”</li>
 </ul>
+<p>Sometimes you need to know <a href="/blog/how-to-say-no-to-impossible-deadlines">how to say no to impossible deadlines</a> when severity assessments get political.</p>
 <h2 id="red-flags-that-severity-is-wrong">Red Flags That Severity Is Wrong</h2>
 <h3 id="when-critical-might-actually-be-medium">When “Critical” might actually be Medium:</h3>
 <ul>
@@ -223,8 +225,13 @@
 <p>And the secret level: <strong>Ignored</strong> = True Impact Unknown</p>
 <h2 id="what-this-means-for-you">What This Means for You</h2>
 <p>Stop treating severity as an objective technical truth. It’s a negotiation tool.</p>
-<p><strong>As a junior tester:</strong> Learn to speak the language of business impact. “The button is broken” gets ignored. “40% of mobile users can’t complete checkout” gets attention.</p>
-<p><strong>As a senior tester:</strong> Pick your battles. Not every bug deserves a fight. Save your credibility for the bugs that actually matter.</p>
+<p><strong>A junior tester reports a bug like this:</strong></p>
+<p>“The submit button on checkout doesn’t work.”</p>
+<p>A senior tester reports the same bug like this:</p>
+<p>“The submit button on checkout appears below the fold on mobile devices (iPhone 12 and below, ~40% of our user base). Users will need to scroll to complete their purchase, which will likely increase cart abandonment. Our last UX study showed every extra tap/scroll in checkout costs us ~8% conversion.”</p>
+<p>See the difference?</p>
+<p>Junior testers report what they found. Senior testers report why it matters. Learn more about <a href="/blog/how-to-write-bug-reports-that-dont-suck">writing bug reports developers actually read</a>.</p>
+<p><strong>As a senior tester:</strong> Learn to speak the language of business impact. “The button is broken” gets ignored. “40% of mobile users can’t complete checkout” gets attention.</p>
 <p><strong>As a test lead:</strong> Teach your team that severity isn’t about the bug, it’s about the impact. And impact is measured in money, users, and reputation.</p>
 <p>The companies that get this right are the ones where:</p>
 <ul>
@@ -239,6 +246,7 @@
 <p>I’ve logged bugs marked Low that got hotfixed within an hour.</p>
 <p>Severity levels are guidelines, not gospel. Your job is to provide the information that helps the team make good decisions.</p>
 <p>Find the bugs. Document the impact. Argue for the right priority. Then let the team decide.</p>
+<p>Once you’ve filed the bug, it enters the <a href="/blog/defect-life-cycle-explained">defect life cycle</a> where severity plays a key role in prioritization.</p>
 <p>And when a bug marked “Low” blows up in production six months later? Well, you’ve got receipts.</p> </div> <div id="lead-magnet-popup" class="lead-magnet-container" data-astro-cid-krvppkqb> <div class="lead-magnet-content" data-astro-cid-krvppkqb> <h3 data-astro-cid-krvppkqb>Grab the free ebook:</h3> <p class="lead-magnet-description" data-astro-cid-krvppkqb>
 "Software Testing for Beginners" is packed with real-world tips on writing bug reports, test cases, and surviving chaotic projects.
 </p> <div class="lead-magnet-features" data-astro-cid-krvppkqb> <h4 data-astro-cid-krvppkqb>💡 What's inside:</h4> <ul data-astro-cid-krvppkqb> <li data-astro-cid-krvppkqb>Smart test case templates</li> <li data-astro-cid-krvppkqb>Bug reports devs actually respect</li> <li data-astro-cid-krvppkqb>Tools, tips, and tactics that work</li> </ul> <p class="lead-magnet-tagline" data-astro-cid-krvppkqb>No fluff. No BS. Just stuff every tester should know.</p> </div> <button class="lead-magnet-button ml-onclick-form" onclick="ml('show', 'rGtm8o', true)" data-astro-cid-krvppkqb>

@@ -22,7 +22,7 @@
 <p>You’re not refactoring it. You’re not modernizing it. You’re not writing a master’s thesis on its architecture. You’re just trying to make sure that when someone changes one thing, everything else keeps working.</p>
 <p>Treat legacy code like a black box with really weird behavior. You don’t need to know <strong>why</strong> it does what it does. You just need to know <strong>what</strong> it does, so you can verify it keeps doing that.</p>
 <p>The senior dev who wrote it? Gone. The architect who designed it? Also gone. The documentation? Never existed, or it’s a 200-page PDF from 2009 that’s completely outdated.</p>
-<p>You’re an archaeologist, not an engineer. Act accordingly.</p>
+<p>You’re an archaeologist, not an engineer. Act accordingly. Use <a href="/blog/exploratory-testing-for-beginners">exploratory testing to map unknown systems</a> and discover how things actually work.</p>
 <h2 id="find-someone-who-remembers-before-they-quit">Find Someone Who Remembers (Before They Quit)</h2>
 <p>The real documentation isn’t in Confluence or some dusty wiki page, or a 500-page-long user manual that was created but never completed while you were still in high school (I had experience with one of those 4/10 wouldn’t reccomend).</p>
 <p>It’s in someone’s head. Yes, there is at least one or two people who know all this.</p>
@@ -62,7 +62,7 @@ And fear, and more respect.</p>
 <p>“When you pass an empty string to the search function, it returns all records sorted by creation date in descending order.”</p>
 <p>Is that good design? Probably not. Is that what it does? Yes. Has it been doing that for years? Also yes. Is some downstream system depending on that exact behavior? Almost certainly yes.</p>
 <p>Write it down. Test that it keeps doing exactly that.</p>
-<p>Once you’ve documented the current behavior, THEN you can have a conversation with the product team about whether that behavior should change. But until someone officially decides to change it, your job is to protect it.</p>
+<p>Once you’ve documented the current behavior, THEN you can have a conversation with the product team about whether that behavior should change. But until someone officially decides to change it, your job is to protect it. This is where <a href="/blog/regression-testing-explained">regression testing as your safety net</a> becomes critical.</p>
 <p>Those quirks aren’t bugs. They’re features that nobody documented. Treat them accordingly.</p>
 <h2 id="know-where-the-bodies-are-buried">Know Where the Bodies Are Buried</h2>
 <p>Not all legacy code is equally dangerous.</p>
@@ -80,7 +80,7 @@ Smoke test them and move on.</p>
 <li>Anything in the “utils” folder (it’s never just utilities)</li>
 <li>The parts that make senior devs go pale when you mention them</li>
 </ul>
-<p>Map these areas. Document them. Test them thoroughly every single time.</p>
+<p>Map these areas. Document them. Test them thoroughly every single time. Having effective <a href="/blog/software-testing-strategies-that-arent-just-write-more-tests">software testing strategies</a> helps you prioritize what matters.</p>
 <p>When the PM says “we’re just changing the button color,” and that button is in one of these danger zones? You test <strong>everything</strong> around it. Because in legacy code, everything is connected to everything else in ways nobody understands.</p>
 <p>Don’t take this lightly, I am not joking.</p>
 <h2 id="when-you-cant-test-it-monitor-it">When You Can’t Test It, Monitor It</h2>
@@ -120,7 +120,8 @@ Your goal is not to make it worse.</p>
 <p>But I do. Every tester who’s ever stared at a 20-year-old application with no docs and no idea, and thought “How do I even test this? Why is this even a project still, why is this alive?” knows exactly what you’re dealing with.</p>
 <p>You’re not alone. We’ve all been there. And we’re all doing our best to make sure these Frankenstein systems keep shuffling along.</p>
 <hr>
-<p><strong>What’s your worst legacy code horror story?</strong> I want to hear it. Drop a comment or message me on LinkedIn, misery loves company, and I guarantee I’ve seen worse!</p> </div> <div id="lead-magnet-popup" class="lead-magnet-container" data-astro-cid-krvppkqb> <div class="lead-magnet-content" data-astro-cid-krvppkqb> <h3 data-astro-cid-krvppkqb>Grab the free ebook:</h3> <p class="lead-magnet-description" data-astro-cid-krvppkqb>
+<p><strong>What’s your worst legacy code horror story?</strong> I want to hear it. Drop a comment or message me on LinkedIn, misery loves company, and I guarantee I’ve seen worse!</p>
+<p>If you’re dealing with unclear requirements on top of legacy code, check out <a href="/blog/how-to-test-feature-when-requirements-are-garbage">testing when requirements are garbage</a>.</p> </div> <div id="lead-magnet-popup" class="lead-magnet-container" data-astro-cid-krvppkqb> <div class="lead-magnet-content" data-astro-cid-krvppkqb> <h3 data-astro-cid-krvppkqb>Grab the free ebook:</h3> <p class="lead-magnet-description" data-astro-cid-krvppkqb>
 "Software Testing for Beginners" is packed with real-world tips on writing bug reports, test cases, and surviving chaotic projects.
 </p> <div class="lead-magnet-features" data-astro-cid-krvppkqb> <h4 data-astro-cid-krvppkqb>💡 What's inside:</h4> <ul data-astro-cid-krvppkqb> <li data-astro-cid-krvppkqb>Smart test case templates</li> <li data-astro-cid-krvppkqb>Bug reports devs actually respect</li> <li data-astro-cid-krvppkqb>Tools, tips, and tactics that work</li> </ul> <p class="lead-magnet-tagline" data-astro-cid-krvppkqb>No fluff. No BS. Just stuff every tester should know.</p> </div> <button class="lead-magnet-button ml-onclick-form" onclick="ml('show', 'rGtm8o', true)" data-astro-cid-krvppkqb>
 👉 Send Me the Free Ebook

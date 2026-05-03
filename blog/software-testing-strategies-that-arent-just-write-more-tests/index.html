@@ -37,7 +37,7 @@
 <p>These are the scenarios that break. These are the bugs customers hit. These are the production incidents that wake you up at 2 AM.</p>
 <p>Happy path testing is important. But it’s not where the interesting bugs live.</p>
 <h3 id="for-small-teams">For small teams:</h3>
-<p>You don’t have time to test everything. So test the stuff that’s most likely to break. The new features. The integrations. The code that three different developers touched last sprint.</p>
+<p>You don’t have time to test everything. So test the stuff that’s most likely to break. The new features. The integrations. The code that three different developers touched last sprint. This is where <a href="/blog/exploratory-testing-for-beginners">exploratory testing</a> shines.</p>
 <p>Let the stuff that’s been stable for two years stay stable. Focus your energy on the fragile parts.</p>
 <h2 id="strategy-2-stop-writing-test-cases-like-youre-getting-paid-per-word">Strategy #2: Stop Writing Test Cases Like You’re Getting Paid Per Word</h2>
 <p>I’ve seen test cases that are 47 steps long.</p>
@@ -91,7 +91,7 @@ Step 4: Click login button using mouse cursor.</p>
 <h3 id="what-to-automate">What to automate:</h3>
 <ul>
 <li><strong>Smoke tests</strong> - is the build fundamentally broken?</li>
-<li><strong>Regression tests for stable features</strong> - login, checkout, core workflows</li>
+<li><strong><a href="/blog/regression-testing-explained">Regression testing</a> for stable features</strong> - login, checkout, core workflows</li>
 <li><strong>Data setup</strong> - getting the system into the right state for testing</li>
 <li><strong>Tests that need to run constantly</strong> - on every commit, every deploy</li>
 </ul>
@@ -113,7 +113,7 @@ Step 4: Click login button using mouse cursor.</p>
 <li>Needs to run frequently</li>
 <li>Unlikely to change</li>
 </ul>
-<p>Automate that. Test everything else manually.</p>
+<p>Automate that. Test everything else manually. Understanding <a href="/blog/manual-and-automation-testing">manual and automation testing</a> helps you make these decisions.</p>
 <p>And when someone asks “why isn’t this automated?” the answer is “because I can test it manually in 5 minutes and automating it would take 3 days.”</p>
 <p>That’s a strategy, not laziness.</p>
 <h2 id="strategy-4-know-what-youre-not-testing">Strategy #4: Know What You’re NOT Testing</h2>
@@ -135,7 +135,7 @@ Step 4: Click login button using mouse cursor.</p>
 <p>“We made a conscious choice not to test that because [reason]. If that’s a problem, we can reprioritize.”</p>
 <h3 id="for-solo-testers-1">For solo testers:</h3>
 <p>You literally cannot test everything. There aren’t enough hours in the day.</p>
-<p>So make conscious decisions about what you’re NOT testing. Document them. Get agreement from stakeholders.</p>
+<p>So make conscious decisions about what you’re NOT testing. Document them. Get agreement from stakeholders. Learn <a href="/blog/prioritize-test-cases-limited-time">how to prioritize test cases</a> when you’re under pressure.</p>
 <p>Then when something breaks, you’re not the one who “missed” it. You’re the one who flagged the risk and was overruled.</p>
 <p>That’s called covering your ass. It’s also called being professional.</p>
 <h2 id="strategy-5-test-integration-points-like-theyre-trying-to-kill-you">Strategy #5: Test Integration Points Like They’re Trying to Kill You</h2>
@@ -198,7 +198,7 @@ Step 4: Click login button using mouse cursor.</p>
 <p><strong>Sit in on design discussions:</strong><br/>
 <em>“How is this supposed to work when [edge case]?”</em></p>
 <p><strong>Review requirements before development:</strong><br/>
-<em>“This spec doesn’t mention what happens if the user already exists.”</em></p>
+<em>“This spec doesn’t mention what happens if the user already exists.”</em> Understanding the <a href="/blog/stlc-in-software-testing">software testing life cycle</a> helps you see where testing fits in the development process.</p>
 <p><strong>Ask questions early:</strong><br/>
 <em>“Are we supporting mobile for this feature?”</em></p>
 <p><strong>Pair with developers during development:</strong><br/>
@@ -240,7 +240,7 @@ Step 4: Click login button using mouse cursor.</p>
 <p>That requires strategy, not just effort.</p>
 <h2 id="one-last-thing">One Last Thing</h2>
 <p>If your testing strategy is “work harder and test more,” you’re going to burn out.</p>
-<p>Small teams and solo testers don’t have infinite time or resources. You have to be strategic. You have to prioritize. You have to make conscious decisions about what you’re NOT testing.</p>
+<p>Small teams and solo testers don’t have infinite time or resources. You have to be strategic. You have to prioritize. You have to make conscious decisions about what you’re NOT testing. And yes, you still need to know <a href="/blog/how-to-write-test-cases-that-dont-suck">how to write test cases</a> when you do write them.</p>
 <p>That’s not cutting corners. That’s being professional.</p>
 <p>Test smart. Not hard.</p>
 <hr/>

@@ -16,7 +16,7 @@
 The devs fix a bug for this weird edge case in the login form, the issue gets merged, and then deployed to a test environment. After this, the tester re-runs the existing test cases for authentication, user sessions, password resets, and even unrelated areas like profile updates, because you never know where side effects might appear.</p>
 <p>It sounds straightforward, but the scale and complexity of regression testing grow fast as your application evolves and there is a point where regression testing becomes overwhelming if done exclusively manually.</p>
 <h2 id="manual-and-automated-regression-testing">Manual and Automated Regression Testing</h2>
-<p>Both have their place, and the best teams usually combine them.</p>
+<p>Both have their place, and the best teams usually combine them. Understanding <a href="/blog/manual-and-automation-testing">manual and automation testing</a> helps you decide which approach fits your context.</p>
 <p>Manual regression testing works well for smaller applications or cases where the interface or behavior changes frequently. It allows testers to observe subtle issues that automation might miss, things like visual misalignments, unexpected flows, confusing UX behavior, or observe a crash when wandering off script, accidentally stumble into an “unexplored territory”.</p>
 <p>Automated regression testing, on the other hand, shines when your product stabilizes. It saves massive amounts of time by letting scripts handle repetitive verifications, freeing testers to focus on more complex and creative testing.</p>
 <p>But automation isn’t a magic solution to all testing. It requires maintenance, setup time, and ongoing care. An outdated automated suite can easily give you a false sense of security, make you feel like everything is safe while not touching the new features or updated flows, and that’s worse than having no automation at all.</p>
@@ -35,7 +35,7 @@ The devs fix a bug for this weird edge case in the login form, the issue gets me
 Here’s where some testers fall into a trap of relying on regression testing alone.</p>
 <p>Regression testing can confirm that existing functionality works as defined by your test cases, but it doesn’t uncover unknown risks, new usability issues, or problems in areas not covered by your suite.</p>
 <p>In other words, regression testing checks what you already know and not what you don’t.</p>
-<p>This is where exploratory testing comes in.</p>
+<p>This is where <a href="/blog/exploratory-testing-for-beginners">exploratory testing</a> comes in.</p>
 <h2 id="where-exploratory-testing-complements-regression">Where Exploratory Testing Complements Regression</h2>
 <p>Exploratory testing fills the gaps left by scripted regression testing. It’s unscripted, creative, and investigative. Testers use their intuition and experience to explore the product, looking for unexpected issues that automated or pre-defined tests would never catch.</p>
 <p>Imagine you just finished your regression run after a major update. Everything passes. Green lights everywhere.
@@ -52,13 +52,13 @@ But then you start clicking around and notice that the “Save” button on one 
 <p>The important part is consistency. Regression testing should be a habit, not an afterthought.</p>
 <h2 id="tips-for-better-regression-testing">Tips for Better Regression Testing</h2>
 <ol>
-<li><strong>Prioritize your tests.</strong> Not all tests need to be run every time. Focus on critical paths first, whatever you are most worried about is that login, checkout,  perhaps payments? You, the tester, know our risks best; cover them with regression!</li>
+<li><strong>Prioritize your tests.</strong> Not all tests need to be run every time. Focus on critical paths first, whatever you are most worried about is that login, checkout,  perhaps payments? You, the tester, know our risks best; cover them with regression! Learn more about <a href="/blog/prioritize-test-cases-limited-time">prioritizing test cases</a> when time is limited.</li>
 <li><strong>Automate smartly.</strong> Automate stable, repetitive flows that take a lot of time to execute and leave exploratory or changing areas for manual testing.</li>
 <li><strong>Review your suite regularly.</strong> Remove outdated tests and add new ones as features evolve. Disable flaky tests or just remove them, as if you can’t rely on them, they are only a burden and don’t bring value.</li>
 <li><strong>Combine with exploratory testing.</strong> Use exploratory sessions to identify new edge cases to later turn into regression tests.</li>
 </ol>
 <h2 id="conclusion">Conclusion</h2>
-<p>Regression testing is essential, but it’s only part of the quality story. It ensures stability but not necessarily usability, performance, or customer satisfaction.</p>
+<p>Regression testing is essential, but it’s only part of the quality story. It ensures stability but not necessarily usability, performance, or customer satisfaction. For a broader view, check out <a href="/blog/software-testing-strategies-that-arent-just-write-more-tests">software testing strategies</a> that go beyond just writing more tests.</p>
 <p>That’s why great testers balance both the predictable routine of regression and the creative freedom of exploratory testing. Together, they form a complete safety net that keeps products reliable and teams confident.</p>
 <p>If you want to go deeper into exploratory testing, including how to make it effective and even fun, check out my course:
 👉 <a href="https://www.udemy.com/course/how-to-do-exploratory-testing-that-doesnt-suck/?referralCode=DBCFBDD542A0459E099D">How to Perform Exploratory Testing That Doesn’t Suck</a></p> </div> <div id="lead-magnet-popup" class="lead-magnet-container" data-astro-cid-krvppkqb> <div class="lead-magnet-content" data-astro-cid-krvppkqb> <h3 data-astro-cid-krvppkqb>Grab the free ebook:</h3> <p class="lead-magnet-description" data-astro-cid-krvppkqb>
