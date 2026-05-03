@@ -60,7 +60,7 @@ Happy path testing is important. But it's not where the interesting bugs live.
 
 ### For small teams:
 
-You don't have time to test everything. So test the stuff that's most likely to break. The new features. The integrations. The code that three different developers touched last sprint.
+You don't have time to test everything. So test the stuff that's most likely to break. The new features. The integrations. The code that three different developers touched last sprint. This is where [exploratory testing](/blog/exploratory-testing-for-beginners) shines.
 
 Let the stuff that's been stable for two years stay stable. Focus your energy on the fragile parts.
 
@@ -134,7 +134,7 @@ Automate strategically, not religiously.
 
 ### What to automate:
 - **Smoke tests** - is the build fundamentally broken?
-- **Regression tests for stable features** - login, checkout, core workflows
+- **[Regression testing](/blog/regression-testing-explained) for stable features** - login, checkout, core workflows
 - **Data setup** - getting the system into the right state for testing
 - **Tests that need to run constantly** - on every commit, every deploy
 
@@ -158,7 +158,7 @@ You don't have time to automate everything. Pick the stuff that's:
 - Needs to run frequently
 - Unlikely to change
 
-Automate that. Test everything else manually.
+Automate that. Test everything else manually. Understanding [manual and automation testing](/blog/manual-and-automation-testing) helps you make these decisions.
 
 And when someone asks "why isn't this automated?" the answer is "because I can test it manually in 5 minutes and automating it would take 3 days."
 
@@ -193,7 +193,7 @@ Now when production breaks and someone asks "why didn't you test this?", you can
 
 You literally cannot test everything. There aren't enough hours in the day.
 
-So make conscious decisions about what you're NOT testing. Document them. Get agreement from stakeholders.
+So make conscious decisions about what you're NOT testing. Document them. Get agreement from stakeholders. Learn [how to prioritize test cases](/blog/prioritize-test-cases-limited-time) when you're under pressure.
 
 Then when something breaks, you're not the one who "missed" it. You're the one who flagged the risk and was overruled.
 
@@ -289,7 +289,7 @@ Get involved earlier.
 *"How is this supposed to work when [edge case]?"*
 
 **Review requirements before development:**  
-*"This spec doesn't mention what happens if the user already exists."*
+*"This spec doesn't mention what happens if the user already exists."* Understanding the [software testing life cycle](/blog/stlc-in-software-testing) helps you see where testing fits in the development process.
 
 **Ask questions early:**  
 *"Are we supporting mobile for this feature?"*
@@ -355,7 +355,7 @@ That requires strategy, not just effort.
 
 If your testing strategy is "work harder and test more," you're going to burn out.
 
-Small teams and solo testers don't have infinite time or resources. You have to be strategic. You have to prioritize. You have to make conscious decisions about what you're NOT testing.
+Small teams and solo testers don't have infinite time or resources. You have to be strategic. You have to prioritize. You have to make conscious decisions about what you're NOT testing. And yes, you still need to know [how to write test cases](/blog/how-to-write-test-cases-that-dont-suck) when you do write them.
 
 That's not cutting corners. That's being professional.
 

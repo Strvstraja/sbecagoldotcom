@@ -18,7 +18,7 @@ This post will help you write bug reports that actually get read, understood, an
 
 A bug report isn’t just a note that “something is broken.”
 
-It’s a **communication tool** - one that connects the person who found the issue (you) with the person who can fix it (usually a developer).
+It’s a **communication tool** - one that connects the person who found the issue (you) with the person who can fix it (usually a developer). If you're new to testing, check out [software testing basics](/blog/what-is-software-testing-beginner-guide) to understand where bug reporting fits in.
 
 If that message is unclear or incomplete, the bug might:
 - Never get fixed
@@ -61,7 +61,7 @@ It should answer:
 - **Title**: Descriptive and specific  
   _e.g., “Login fails with valid credentials on Firefox 118”_
 
-- **Steps to Reproduce**:
+- **Steps to Reproduce** (similar to [how to write test cases](/blog/how-to-write-test-cases-that-dont-suck)):
   1. Go to login page
   2. Enter valid credentials
   3. Click Login
@@ -73,6 +73,8 @@ It should answer:
 - **Environment**: Firefox 118, Windows 11, Staging environment
 
 - **Attachments**: Screenshot, video, console logs - anything that helps
+
+- **Severity/Priority**: Understanding [bug severity](/blog/bug-severity-guide-nobody-tells-you) helps you communicate impact effectively
 
 ## Tips for Writing Bug Reports That Don’t Suck
 
@@ -93,6 +95,8 @@ It should answer:
 ## Final Thoughts
 
 Your bug report is the bridge between you and the dev. If the bridge is full of holes, guess what? Bugs fall through.
+
+Once you file a bug, it goes through the [defect life cycle](/blog/defect-life-cycle-explained) from discovery to resolution.
 
 A clear, simple bug report saves time, earns respect, and makes you look like a pro.
 

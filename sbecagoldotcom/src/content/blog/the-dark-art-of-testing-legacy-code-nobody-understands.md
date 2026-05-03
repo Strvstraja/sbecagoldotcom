@@ -38,7 +38,7 @@ Treat legacy code like a black box with really weird behavior. You don't need to
 
 The senior dev who wrote it? Gone. The architect who designed it? Also gone. The documentation? Never existed, or it's a 200-page PDF from 2009 that's completely outdated.
 
-You're an archaeologist, not an engineer. Act accordingly.
+You're an archaeologist, not an engineer. Act accordingly. Use [exploratory testing to map unknown systems](/blog/exploratory-testing-for-beginners) and discover how things actually work.
 
 ## Find Someone Who Remembers (Before They Quit)
 
@@ -102,7 +102,7 @@ Is that good design? Probably not. Is that what it does? Yes. Has it been doing 
 
 Write it down. Test that it keeps doing exactly that.
 
-Once you've documented the current behavior, THEN you can have a conversation with the product team about whether that behavior should change. But until someone officially decides to change it, your job is to protect it.
+Once you've documented the current behavior, THEN you can have a conversation with the product team about whether that behavior should change. But until someone officially decides to change it, your job is to protect it. This is where [regression testing as your safety net](/blog/regression-testing-explained) becomes critical.
 
 Those quirks aren't bugs. They're features that nobody documented. Treat them accordingly.
 
@@ -127,7 +127,7 @@ Then there are the danger zones:
 - Anything in the "utils" folder (it's never just utilities)
 - The parts that make senior devs go pale when you mention them
 
-Map these areas. Document them. Test them thoroughly every single time.
+Map these areas. Document them. Test them thoroughly every single time. Having effective [software testing strategies](/blog/software-testing-strategies-that-arent-just-write-more-tests) helps you prioritize what matters.
 
 When the PM says "we're just changing the button color," and that button is in one of these danger zones? You test **everything** around it. Because in legacy code, everything is connected to everything else in ways nobody understands.
 
@@ -198,3 +198,5 @@ You're not alone. We've all been there. And we're all doing our best to make sur
 ---
 
 **What's your worst legacy code horror story?** I want to hear it. Drop a comment or message me on LinkedIn, misery loves company, and I guarantee I've seen worse!
+
+If you're dealing with unclear requirements on top of legacy code, check out [testing when requirements are garbage](/blog/how-to-test-feature-when-requirements-are-garbage).

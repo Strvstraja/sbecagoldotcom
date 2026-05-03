@@ -87,7 +87,7 @@ Breaking it down like this does two things:
 
 First, it shows you actually thought about their request. You're not just saying "that's too much," you're explaining exactly why.
 
-Second, it forces them to prioritize. Maybe they don't need mobile testing today. Maybe payment testing can wait because that code didn't change. Suddenly, the conversation shifts from "can you do this impossible thing" to "what's actually important here?"
+Second, it forces them to prioritize. Maybe they don't need mobile testing today. Maybe payment testing can wait because that code didn't change. Suddenly, the conversation shifts from "can you do this impossible thing" to "what's actually important here?" Learn more about [how to prioritize test cases when time runs out](/blog/prioritize-test-cases-limited-time).
 
 And that's a much healthier conversation.
 
@@ -111,7 +111,7 @@ Here's the uncomfortable truth: your ability to say no depends entirely on your 
 
 If you've been saying "that's impossible" every single week, people stop listening. You become the tester who cries wolf.
 
-But if you've spent months being reasonable, hitting deadlines, finding critical bugs, and only pushing back when it's genuinely necessary? Then when you say "this is a problem," people listen.
+But if you've spent months being reasonable, hitting deadlines, finding critical bugs, and only pushing back when it's genuinely necessary? Then when you say "this is a problem," people listen. This is part of [what senior testers do differently](/blog/5-things-senior-testers-do-that-juniors-dont).
 
 So pick your battles. Say yes when you can. Be flexible when it's reasonable. Save your "no" for when it really matters.
 
@@ -134,6 +134,8 @@ Send an email (or update the ticket) with exactly what you're covering and what 
 - Mobile-specific flows  
 - Integration with the rewards system
 - Error handling for network failures
+
+Understanding [bug severity](/blog/bug-severity-guide-nobody-tells-you) helps you communicate which untested areas carry the most risk.
 
 If any of these areas are critical, please let me know so I can adjust priorities."
 
@@ -175,7 +177,7 @@ Protect your boundaries. Not just for yourself, but for every tester who comes a
 
 Here's what nobody tells junior testers: saying no isn't about this one deadline. It's about training your team to respect testing time.
 
-If you say yes to every impossible request, you're teaching them that testing is infinitely compressible. That it doesn't really matter. That it's just a formality.
+If you say yes to every impossible request, you're teaching them that testing is infinitely compressible. That it doesn't really matter. That it's just a formality. Having a solid [software testing strategy](/blog/software-testing-strategies-that-arent-just-write-more-tests) helps you defend your position.
 
 But if you consistently, professionally, and reasonably push back when needed? You're teaching them that testing takes time, that quality matters, and that shortcuts have consequences.
 

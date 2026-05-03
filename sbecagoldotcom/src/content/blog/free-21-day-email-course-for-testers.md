@@ -17,7 +17,7 @@ I've been helping testers get better at this stuff for a few years now. Three co
 
 Not technical gaps. Thinking gaps.
 
-How do you decide what to test when nobody tells you? How do you write a bug report that doesn't get dismissed in thirty seconds? How do you build a test strategy when there's no time for a test strategy?
+How do you decide what to test when nobody tells you? How do you [write a bug report](/blog/how-to-write-bug-reports-that-dont-suck) that doesn't get dismissed in thirty seconds? How do you build a [test strategy](/blog/software-testing-strategies-that-arent-just-write-more-tests) when there's no time for a test strategy?
 
 These are the questions that actually determine whether you're good at this job. And almost nobody teaches them directly.
 

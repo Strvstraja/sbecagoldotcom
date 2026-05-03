@@ -31,7 +31,7 @@ This takes about five minutes when you're practiced at it. Here's the framework 
 
 Start with the purpose of the feature. What problem does it solve? Who uses it and how? That immediately tells you what "working correctly" means from a user's perspective, which is the only perspective that matters.
 
-Then look for the edges. What happens at the boundaries of valid input? What happens when someone uses it in a way the developer didn't intend? What integrations or dependencies does this feature touch?
+Then look for the edges. What happens at the boundaries of valid input? What happens when someone uses it in a way the developer didn't intend? What integrations or dependencies does this feature touch? This is the foundation of [exploratory testing](/blog/exploratory-testing-for-beginners).
 
 Then apply risk thinking. You probably don't have time to test everything. Where is the highest chance of something going wrong, and where would the impact be worst if it did? Start there.
 
@@ -43,7 +43,7 @@ Writing a bug report is not about documenting what you found. It's about convinc
 
 The difference matters because developers are busy, they have their own priorities, and a poorly written bug report gives them every reason to close it as "cannot reproduce" or "works as expected" and move on.
 
-A strong bug report has four things: a title that tells the developer exactly what is broken without them having to read the rest, steps to reproduce that are specific enough to follow without any prior context, a clear description of what happened versus what should have happened, and an indication of severity that connects to business impact, not just your gut feeling.
+A strong bug report has four things: a title that tells the developer exactly what is broken without them having to read the rest, steps to reproduce that are specific enough to follow without any prior context, a clear description of what happened versus what should have happened, and an indication of severity that connects to business impact, not just your gut feeling. Learn more about [how to write bug reports](/blog/how-to-write-bug-reports-that-dont-suck).
 
 The title is the one most people get wrong. "Login doesn't work" is not a title. "Login fails with a 500 error when password contains a special character" is a title. The first one gets ignored. The second one gets fixed.
 
@@ -61,9 +61,9 @@ Most testers have never been explicitly trained for this, so they either freeze,
 
 None of those work long term.
 
-The skill you actually need is structured prioritization. When time collapses, you need a fast and defensible answer to: what gets tested, what gets deferred, and what's the risk of each decision?
+The skill you actually need is structured prioritization. When time collapses, you need a fast and defensible answer to: what gets tested, what gets deferred, and what's the risk of each decision? Learn [how to prioritize test cases](/blog/prioritize-test-cases-limited-time) when you're under pressure.
 
-"Defensible" is the key word. If you defer testing an edge case and it ships broken, you need to be able to explain why that was the right call given what you knew at the time. "I didn't have time" is not a defense. "Given the user impact and the likelihood of that path being hit in production, I prioritized X and Y and accepted the risk on Z" is.
+"Defensible" is the key word. If you defer testing an edge case and it ships broken, you need to be able to explain why that was the right call given what you knew at the time. "I didn't have time" is not a defense. "Given the user impact and the likelihood of that path being hit in production, I prioritized X and Y and accepted the risk on Z" is. Sometimes you also need to know [how to say no to impossible deadlines](/blog/how-to-say-no-to-impossible-deadlines).
 
 Visibility matters here too. One of the most underrated skills in QA is making your work visible to people who don't see it. Your test coverage decisions, your risk assessments, the things you caught before they reached production, the edge cases you flagged before development started. None of that is visible by default.
 

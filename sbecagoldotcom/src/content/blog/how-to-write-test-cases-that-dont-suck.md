@@ -16,7 +16,7 @@ Let’s fix that.
 
 ## What Is a Test Case?
 
-A test case is a set of conditions, steps, and expected results used to verify that a feature works as intended.
+A test case is a set of conditions, steps, and expected results used to verify that a feature works as intended. If you're new to testing, you might want to start with [what software testing is](/blog/what-is-software-testing-beginner-guide) to understand the bigger picture.
 
 Sounds simple, right? But poorly written test cases can cause:
 - Confusion for other testers
@@ -56,7 +56,7 @@ Some classic ways to write terrible test cases:
 - Skipping preconditions
 - Writing one massive case to cover 10 flows
 - Being too vague (“App works correctly” – wow, thanks)
-- Forgetting edge cases (what if the user enters an emoji as their name?)
+- Forgetting edge cases (what if the user enters an emoji as their name?) [Exploratory testing](/blog/exploratory-testing-for-beginners) can help you discover these scenarios.
 
 ## A Quick Example
 
@@ -75,6 +75,8 @@ Simple. Clear. No guesswork.
 ## Final Thoughts
 
 You don’t need 10 years of experience or a fancy tool to write good test cases. You just need structure, clarity, and the will to not write garbage.
+
+Once you've written your test cases, you'll need to know [how to write bug reports that don't suck](/blog/how-to-write-bug-reports-that-dont-suck) when you find issues. And when time is tight, learn how to [prioritize test cases when you have limited time](/blog/prioritize-test-cases-limited-time).
 
 And hey, if you want to go deeper, [How To Write Test Cases That Don't Suck is live on Udemy](https://www.udemy.com/course/how-to-write-test-cases-that-dont-suck/?referralCode=8914C6D9F0373B3952B9).
 

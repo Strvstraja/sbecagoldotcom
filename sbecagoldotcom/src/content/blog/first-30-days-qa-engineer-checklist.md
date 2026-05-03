@@ -39,7 +39,7 @@ This question does three things. It tells you where the real risk areas are fast
 
 By week two you should have a working environment and a rough mental model of the team structure. Now the job is to actually understand what you are testing.
 
-**Explore without a plan first.** Not formal exploratory testing. Just use the product. Use it as someone who has never seen it before. Use it in a hurry. Use it in ways that feel slightly wrong. Write down everything that is confusing, unexpected, or incomplete.
+**Explore without a plan first.** Not formal [exploratory testing](/blog/exploratory-testing-for-beginners). Just use the product. Use it as someone who has never seen it before. Use it in a hurry. Use it in ways that feel slightly wrong. Write down everything that is confusing, unexpected, or incomplete.
 
 This matters because you have something the rest of the team has lost: genuine first impressions. They have been looking at this product for months or years and they are blind to a lot of things that will immediately stand out to you. Document those impressions now because in two weeks you will have lost them too.
 
@@ -55,9 +55,9 @@ Week three is when most new QA engineers overcorrect. They have been quiet for t
 
 The problem is that at week three you still do not fully know what is a bug and what is expected behavior. You do not know the team's standards for severity. You do not know which components are intentionally left in a rough state because they are being rewritten next quarter.
 
-**Before filing a bug, do two minutes of research.** Search the backlog. Has this been reported before? Is there a known reason it works this way? Is there a comment on a related ticket that explains it? Filing a bug that gets closed in thirty seconds because everyone already knows about it is the fastest way to lose credibility with the development team.
+**Before filing a bug, do two minutes of research.** Search the backlog. Has this been reported before? Is there a known reason it works this way? Is there a comment on a related ticket that explains it? Filing a bug that gets closed in thirty seconds because everyone already knows about it is the fastest way to lose credibility with the development team. Learn [how to write bug reports](/blog/how-to-write-bug-reports-that-dont-suck) that get taken seriously.
 
-**Connect your severity to business impact.** "This is a P1 because it looks bad" is not a severity assessment. "This is a P1 because it breaks the checkout flow for users on mobile Safari, which is 40% of our traffic" is. If you do not know the business impact yet, say so. "I'm marking this high because the flow breaks, but I'm not sure of the user impact yet" is better than a severity label that gets argued about.
+**Connect your severity to business impact.** "This is a P1 because it looks bad" is not a severity assessment. "This is a P1 because it breaks the checkout flow for users on mobile Safari, which is 40% of our traffic" is. If you do not know the business impact yet, say so. "I'm marking this high because the flow breaks, but I'm not sure of the user impact yet" is better than a severity label that gets argued about. Understanding [bug severity](/blog/bug-severity-guide-nobody-tells-you) helps you communicate impact.
 
 **Find one genuinely useful contribution.** Not a volume of bugs. One thing that makes the team's work better. A missing test case for a critical path. A gap in regression coverage that everyone knows exists but nobody has documented. A confusing step in the deployment process that you can write up clearly. Something that makes someone else's day slightly easier. That is worth more than twenty duplicate bug reports.
 
@@ -73,7 +73,7 @@ This does not mean being loud or self-promotional. It means writing a short summ
 
 The QA engineers who get taken seriously and get listened to in rooms where decisions are made are not always the most technically skilled. They are the ones who communicate clearly about what they do and why it matters.
 
-**Set your direction for the next 30 days.** What coverage gaps need addressing? What part of the test process is slow or fragile? What recurring bug type could be caught earlier in the development cycle? Write it down even if it is just a short list. It gives you direction and it signals to the team that you think about improvement, not just execution.
+**Set your direction for the next 30 days.** What coverage gaps need addressing? What part of the test process is slow or fragile? What recurring bug type could be caught earlier in the development cycle? Write it down even if it is just a short list. It gives you direction and it signals to the team that you think about improvement, not just execution. Having solid [software testing strategies](/blog/software-testing-strategies-that-arent-just-write-more-tests) helps you prioritize.
 
 ## The Bit Most People Get Wrong
 

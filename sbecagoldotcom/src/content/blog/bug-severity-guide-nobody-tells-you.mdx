@@ -245,11 +245,15 @@ Your job as a QA engineer isn't just to find bugs. It's to advocate for the righ
 - "This component is being replaced next sprint anyway."
 - "We shipped this behavior 2 years ago, and nobody's complaining."
 
+When you're under time pressure, knowing how to [prioritize test cases under a deadline](/blog/prioritize-test-cases-limited-time) becomes critical.
+
 **Offer alternatives:**
 
 - "Can we document the workaround while we plan a proper solution?"
 - "What if we hide this feature temporarily?"
 - "Should we just remove this rather than address it?"
+
+Sometimes you need to know [how to say no to impossible deadlines](/blog/how-to-say-no-to-impossible-deadlines) when severity assessments get political.
 
 ## Red Flags That Severity Is Wrong
 
@@ -282,9 +286,19 @@ And the secret level: **Ignored** = True Impact Unknown
 
 Stop treating severity as an objective technical truth. It's a negotiation tool.
 
-**As a junior tester:** Learn to speak the language of business impact. "The button is broken" gets ignored. "40% of mobile users can't complete checkout" gets attention.
+**A junior tester reports a bug like this:**
 
-**As a senior tester:** Pick your battles. Not every bug deserves a fight. Save your credibility for the bugs that actually matter.
+"The submit button on checkout doesn't work."
+
+A senior tester reports the same bug like this:
+
+"The submit button on checkout appears below the fold on mobile devices (iPhone 12 and below, ~40% of our user base). Users will need to scroll to complete their purchase, which will likely increase cart abandonment. Our last UX study showed every extra tap/scroll in checkout costs us ~8% conversion."
+
+See the difference?
+
+Junior testers report what they found. Senior testers report why it matters. Learn more about [writing bug reports developers actually read](/blog/writing-bug-reports).
+
+**As a senior tester:** Learn to speak the language of business impact. "The button is broken" gets ignored. "40% of mobile users can't complete checkout" gets attention.
 
 **As a test lead:** Teach your team that severity isn't about the bug, it's about the impact. And impact is measured in money, users, and reputation.
 
@@ -306,5 +320,7 @@ I've logged bugs marked Low that got hotfixed within an hour.
 Severity levels are guidelines, not gospel. Your job is to provide the information that helps the team make good decisions.
 
 Find the bugs. Document the impact. Argue for the right priority. Then let the team decide.
+
+Once you've filed the bug, it enters the [defect life cycle](/blog/defect-life-cycle-explained) where severity plays a key role in prioritization.
 
 And when a bug marked "Low" blows up in production six months later? Well, you've got receipts.
