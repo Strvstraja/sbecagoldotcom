@@ -11,7 +11,7 @@ There's a version of this post where I tell you testing is broken and I'm here t
 
 That's not this post.
 
-Here's what's actually true: most testers learn on the job, under pressure, from people who are also figuring it out as they go. Nobody sits you down and explains how to think through a feature you've never seen before, with docs that are six months out of date, and a release window that's closing fast. You just... figure it out. Or you don't, and something ships broken.
+Here's what's actually true: most testers learn on the job, under pressure, from people who are also figuring it out as they go. Nobody sits you down and explains how to think through a feature you've never seen before, with [docs that are six months out of date](/blog/how-to-test-feature-when-requirements-are-garbage), and a release window that's closing fast — and knowing [how to say no when that deadline is impossible](/blog/how-to-say-no-to-impossible-deadlines) is a skill nobody teaches you either. You just... figure it out. Or you don't, and something ships broken.
 
 I've been helping testers get better at this stuff for a few years now. Three courses, 3,000+ students. And the same gaps keep showing up regardless of experience level.
 
@@ -37,7 +37,7 @@ Because the people who need it most aren't going to pay for it upfront. A junior
 
 If the course is useful, some of those people will eventually check out my paid stuff. That's the model. No hidden upsell inside the emails, no bait and switch.
 
-Twenty-one days. Free. First email in your inbox within five minutes of signing up.
+Twenty-one days. Free. First email in your inbox within five minutes of signing up. If you want a preview of what the improvement arc looks like, read [how to become a better tester in 21 days](/blog/what-actually-makes-you-better-at-testing).
 
 <div style="text-align: center; margin: 3rem 0; padding: 2.5rem; background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%); border-radius: 12px; border: 2px solid #10b981;">
   <p style="font-size: 1.3rem; font-weight: 600; color: #10b981; margin-bottom: 1.5rem;">Ready to level up your testing skills?</p>
