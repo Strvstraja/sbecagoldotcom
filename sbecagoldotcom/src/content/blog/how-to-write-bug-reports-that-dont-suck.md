@@ -86,6 +86,8 @@ It should answer:
 
 ## Common Mistakes to Avoid
 
+Understanding [common QA mistakes](/blog/qa-mistakes-cpu-cooler) helps you avoid them in your bug reports too. Here are the most frequent issues:
+
 - Writing a vague title
 - Skipping reproduction steps
 - Reporting multiple bugs in one report
