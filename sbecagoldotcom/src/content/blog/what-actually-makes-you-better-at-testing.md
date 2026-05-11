@@ -77,6 +77,8 @@ One email a day. Three to five minutes to read. One practical exercise you can a
 
 If you're a junior or mid-level tester who feels like you're just clicking around and wants to actually understand what you're doing, or if you're preparing for interviews and want to be able to talk about your work with clarity and confidence, the course is built for you.
 
+For interview-specific prep, [Qaizzerr now tracks your progress with a dashboard](/blog/qaizzerr-progress-dashboard-ai-explanations) that shows whether your studying is actually working, plus saved AI explanations for every wrong answer.
+
 It's free. First email hits your inbox within five minutes of signing up.
 
 <div style="text-align: center; margin: 3rem 0; padding: 2.5rem; background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.05) 100%); border-radius: 12px; border: 2px solid #10b981;">
