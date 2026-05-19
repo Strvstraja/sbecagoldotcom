@@ -1,0 +1,117 @@
+---
+title: "Nasty Inputs That Break Apps: A QA Cheat Sheet"
+description: "The specific nasty inputs that break real apps in production. From SQL injection to zero-width spaces, here's what to test in every field type."
+pubDate: 2026-05-20
+author: "Strahinja Becagol"
+image: "/nasty-inputs (1).png"
+tags: [software-testing, qa-engineer, test-cases, edge-cases, input-validation]
+draft: false
+---
+
+Most apps handle the happy path just fine.
+
+The user types a normal name, picks a valid date, enters a real email address, and the system works exactly as designed. Great. But that is not where the interesting bugs hide.
+
+The bugs that make it to production, the ones that corrupt data silently or crash the app at 2 AM, are almost always hiding in the inputs nobody thought to test. This post covers the specific nasty inputs that break real apps, category by category, with examples you can use today.
+
+## Why "Edge Cases" Is the Wrong Frame
+
+Most resources talk about edge cases as rare scenarios. Something to test if you have time.
+
+That framing gets teams into trouble. A user pasting Arabic text into a name field is not rare. A user accidentally submitting a form with only whitespace in a required field is not rare. A developer in Germany entering dates in DD.MM.YYYY format into a field built for MM/DD/YYYY is not rare at all.
+
+These are everyday inputs that break apps because nobody specifically tested them. The better frame is not "edge cases" but "inputs the developer did not personally type while building the feature."
+
+## Special Characters and Injection Attacks
+
+This is the category most testers know, but fewer test systematically.
+
+The classics are SQL injection and cross-site scripting. Inputs like `' OR '1'='1` and `'; DROP TABLE users;--` have been breaking apps for decades and still do, because someone always forgets to sanitize a new input field. `<script>alert(1)</script>` still catches XSS vulnerabilities in fields that render content back to the user.
+
+The less obvious ones are template injection payloads like `{{7*7}}` and `${7*7}`, which break apps built on templating engines. Path traversal strings like `../../../etc/passwd` catch file handling bugs. URL-encoded versions like `%3Cscript%3E` catch apps that sanitize raw input but forget to decode first.
+
+Test these in every text field. Not just the obvious ones. Search boxes, filter fields, comment fields, profile bios.
+
+## Whitespace and Empty Inputs
+
+This is the category that causes the most silent data corruption, and the one most testers skip.
+
+An empty string, a single space, multiple spaces, a tab character, a newline, and a carriage return are all different inputs. Most apps treat them the same. Some do not, and that is where bugs live.
+
+The nastiest ones are invisible characters: the null byte (`\0`), the zero-width space (U+200B), and the non-breaking space (U+00A0). These look empty to the human eye but are not empty to the system. A required field validator that checks for empty strings will pass when a user submits just a non-breaking space. The data gets saved. It looks blank in the UI. Nothing works downstream.
+
+Test every required field with a single space, multiple spaces, and a copy-pasted zero-width space. You will find bugs in most apps.
+
+## Length Extremes
+
+Developers test with normal-length inputs. They do not always test what happens at the limits.
+
+For any text field, test one character, two characters, the stated maximum, and maximum plus one. For fields without a stated maximum, test 255, 256, 1000, and 10000 characters. The exact values matter less than systematically probing both sides of every boundary.
+
+The bugs here are usually one of two types: the app truncates input silently without telling the user, or it throws an unhandled database error because the column length was never enforced at the application layer. Both are real bugs. Both get found with length extremes.
+
+## Numbers and Numeric Fields
+
+Any field that accepts a number should be tested with: zero, negative one, a very large number, a decimal, and a value with the wrong separator.
+
+The separator issue catches more bugs than people expect. In many European countries, a comma is the decimal separator and a period is the thousands separator. An amount of "1.000" means one thousand in Germany and one in the US. Apps built by one team and used internationally get this wrong constantly.
+
+Also test: `NaN`, `Infinity`, `-Infinity`, hex values like `0x1F`, numbers with leading zeros like `007`, and integers large enough to overflow a 32-bit field. `99999999999999999999` will break any field that was not built to handle it.
+
+## Unicode and Encoding
+
+This is the category that separates testers who work on global products from those who do not.
+
+Chinese, Arabic, Hebrew, and emoji are all valid inputs in any text field that real users will encounter. Arabic text is right-to-left, which breaks layout assumptions in fields that were only ever tested with left-to-right text. Emoji in a name field will break any system that stores strings in a database column with a character set that does not support 4-byte Unicode. That is more systems than you would think.
+
+Also test URL-encoded inputs like `%00`, `%0A`, and `%2F`, and HTML entities like `&amp;`, `&lt;`, and `&#x27;`. These catch double-encoding bugs where the app encodes something that is already encoded, and decoding bugs where it renders raw entities instead of the intended characters.
+
+## Dates
+
+Date fields are a goldmine for bugs, because developers almost always test with today's date or a date they made up on the spot.
+
+The inputs worth testing: February 29 on a non-leap year (2023), February 29 on a valid leap year (2024), the date 00/00/0000, month 13, day 32, the Unix epoch (January 1 1970), January 1 2000 for Y2K-adjacent logic, and 9999-12-31 for any system that calculates date ranges.
+
+Negative timestamps break apps that store dates as integers and do not account for dates before 1970. The string "yesterday" breaks apps that parse user input without strict validation. `NOW()` and `CURRENT_DATE` as literal strings catch apps that pass user input directly to a database query.
+
+## Email Fields
+
+Email validation is one of the most over-engineered and under-tested areas in most apps.
+
+Test the baseline valid address, then systematically break it: no @ symbol, @ at the start, @ at the end, double dots in the local part (`user..name@domain.com`), double dots in the domain (`user@domain..com`), a quoted local part with spaces (`"user name"@domain.com`), an IP address as the domain (`user@[127.0.0.1]`), and a script tag as the local part (`<script>@domain.com`).
+
+Also test a very long email address. Many systems have a 255-character limit on the full address but a different limit on the local part, and they do not always enforce both.
+
+## Passwords and Auth Fields
+
+Password fields get special treatment because bugs here are security bugs, not just UX bugs.
+
+A space-only password passes most "required field" validators but is obviously not a real password. Emoji-only passwords break any system that counts characters by bytes instead of code points. The maximum length plus one exposes any system that truncates passwords silently, which means two different passwords can authenticate the same account.
+
+SQL injection in a password field is a classic for a reason. `' OR 1=1--` should never authenticate a user, but in apps that build authentication queries by string concatenation, it does.
+
+Also test a password with a null byte in the middle. Some systems stop reading the string at the null byte, which means the stored password and the validated password are different lengths without the system noticing.
+
+## The Category Most Testers Miss: Booleans and Type Confusion
+
+Any field that expects a boolean is worth testing with its string representations: `true`, `false`, `True`, `False`, `TRUE`, `FALSE`, `1`, `0`, `yes`, `no`, `on`, `off`, `null`, `undefined`, `None`.
+
+These break apps that check `if (value === true)` instead of `if (value)`, or that parse incoming data without strict type validation. An API endpoint that expects `{"active": true}` and receives `{"active": "true"}` will behave differently depending on how the backend handles the coercion, and it is not always graceful.
+
+## How to Use This in Practice
+
+You do not need to run every input in every field on every test session. That would take forever and most of it would find nothing.
+
+The approach that works: when you are testing a new feature or a modified field, pick the two or three categories most likely to cause problems for that specific field type. A date picker gets the dates category and the whitespace category. A payment amount field gets numbers, length extremes, and Unicode. A search box gets special characters, whitespace, and length extremes.
+
+Build the habit of opening the relevant category list before you start testing a new input field. Over time it becomes instinct.
+
+If you want all 100+ inputs from every category in one place, ready to copy with one click, I put together a free cheat sheet. It covers all ten categories in this post, formatted so you can have it open in one tab while you test in another.
+
+---
+
+**Get the complete nasty inputs cheat sheet**
+
+👉 **[Download the free cheat sheet](https://subscribepage.io/nasty-inputs)** — 100+ inputs across 10 categories, ready to copy and paste.
+
+Free download | No credit card required | Use it immediately
