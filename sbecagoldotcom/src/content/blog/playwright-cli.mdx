@@ -1,0 +1,60 @@
+---
+title: "Playwright CLI: What It Is and Why Testers Should Care"
+description: "Playwright CLI lets AI agents drive a browser for you. Here's what it actually is, how it differs from Playwright MCP, and why testers should learn it now."
+pubDate: 2026-09-05
+author: "Strahinja Becagol"
+image: "/aiBrowserAutomation.png"
+tags: ["playwright-cli", "ai-agents", "software-testing", "browser-automation", "qa-engineer"]
+---
+
+# Playwright CLI: What It Is and Why Testers Should Care
+
+Every article I found about Playwright CLI is written for developers building AI agent infrastructure. Token counts, architecture diagrams, comparisons to MCP overhead. Useful if you're building the tooling. Less useful if you're the person who actually has to test the app.
+
+So here's the version for testers.
+
+## What Playwright CLI Actually Is
+
+Playwright CLI is a command-line tool from Microsoft, built specifically for AI coding agents like Claude Code and Codex to drive a real browser. It's not the classic `npx playwright test` you might already know, that runs test files you write yourself. It's not Playwright MCP either, which streams a rich but expensive view of the page straight into the model's context.
+
+Playwright CLI does something more practical: it gives the agent a snapshot of the page with short reference IDs, like `e5` or `e10`, instead of CSS selectors. The agent reads that, decides what to click or fill, and moves on. No massive accessibility tree loaded into context, no screenshot bytes streamed back and forth. Just cheap, precise commands.
+
+The practical result: you describe what you want tested in plain language, and an agent you're already using handles the clicking, typing, and repeating.
+
+## Why This Matters If You're a Tester, Not a Developer
+
+Most of what's written about Playwright CLI assumes you're the one building agent tooling. You're not. You're the person who needs a real bug found, a real login flow tested, a real report written, without spending an afternoon clicking through the same quiz five times.
+
+That's a different use case, and it changes what actually matters:
+
+- You don't need to memorize commands. The agent knows them. Your job is still knowing what to test and why.
+- You need to trust the output enough to hand a bug report to a developer without rewriting it.
+- You need a workflow that survives being picked up again next week, not just a one-off demo.
+
+None of the developer-focused posts on this topic address any of that.
+
+## What You Can Actually Do With It
+
+A few concrete things Playwright CLI handles well for testing work:
+
+**Navigation and inspection.** Point an agent at a page, ask it to take a snapshot, and it'll tell you what the main interactive elements are. Ask it to highlight something, and you'll see exactly what it picked, right on screen.
+
+**Driving a real flow.** Click a button, fill a form, submit an answer, all from a plain-language instruction. No selector-hunting required, though it can generate a real Playwright locator for you if you want to drop it into an actual test file afterward.
+
+**Staying logged in.** Save a session's cookies and storage to a file once, and every future session loads that file instead of repeating the login form. Worth doing this the safe way: open the login page and type your own password, never let the agent handle credentials directly.
+
+**Capturing proof.** Video recording with chapter markers, screenshots, the works. This is the difference between a bug report that gets fixed and one that gets closed as "can't reproduce."
+
+**Making it repeatable.** The real payoff isn't a single clever demo, it's turning scattered one-off testing sessions into a reusable exploratory testing suite an agent can pick up again without you re-explaining everything.
+
+## Common Mistake: Treating It Like a Replacement
+
+Worth saying directly: this isn't about replacing testers with AI. An agent driving Playwright CLI is still doing mechanical work. It's still your job to decide what's worth testing, what counts as a real bug, and whether the output is good enough to send. If you skip that part and just trust whatever the agent reports, you've traded a slow process for a fast, unreliable one.
+
+## Where to Go From Here
+
+If you want to actually see this in action rather than read about it in the abstract, I put together a full course built entirely from real, unstaged recordings: logging in, exploring a real quiz app, catching a genuine accessibility bug, and building a reusable testing suite out of it.
+
+<div style="text-align: center; margin: 2.5rem 0; padding: 1.75rem; background: rgba(16, 185, 129, 0.08); border-radius: 0.75rem; border: 1px solid rgba(16, 185, 129, 0.25);">
+  <a href="https://www.udemy.com/course/ai-browser-automation-that-doesnt-suck/?referralCode=3E77AD95317A6809F557" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #10b981; color: #ffffff !important; padding: 0.75rem 1.75rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: all 0.2s;">Get the course: AI Browser Automation That Doesn't Suck →</a>
+</div>
