@@ -58,6 +58,17 @@ import OptInBanner from '../components/OptInBanner.astro';
         {
           "@type": "Course",
           "position": 1,
+          "name": "AI Browser Automation That Doesn't Suck",
+          "description": "Use AI agents with Playwright CLI to test real workflows without writing a single selector.",
+          "provider": {
+            "@type": "Person",
+            "name": "Strahinja Becagol"
+          },
+          "url": "https://www.udemy.com/course/ai-browser-automation-that-doesnt-suck/?referralCode=3E77AD95317A6809F557"
+        },
+        {
+          "@type": "Course",
+          "position": 2,
           "name": "How to Write Test Cases That Don't Suck",
           "description": "Learn how to write effective test cases that help find bugs and improve software quality.",
           "provider": {
@@ -68,7 +79,7 @@ import OptInBanner from '../components/OptInBanner.astro';
         },
         {
           "@type": "Course",
-          "position": 2,
+          "position": 3,
           "name": "How to Write Bug Reports That Don't Suck",
           "description": "Learn how to write bug reports that actually get bugs fixed - clear, detailed, and impossible to ignore.",
           "provider": {
@@ -79,7 +90,7 @@ import OptInBanner from '../components/OptInBanner.astro';
         },
         {
           "@type": "Course",
-          "position": 3,
+          "position": 4,
           "name": "How to Do Exploratory Testing That Doesn't Suck",
           "description": "Master exploratory software testing techniques to uncover hidden bugs and boost QA skills.",
           "provider": {
@@ -933,11 +944,66 @@ import OptInBanner from '../components/OptInBanner.astro';
         <div class="courses-intro">
           <h3>Not Sure Where to Start?</h3>
           <p>Most students begin with <strong>Test Cases That Don't Suck</strong> - it's the foundation everything else builds on.</p>
-          <p>Already comfortable with test cases? Jump to <strong>Bug Reports</strong> or <strong>Exploratory Testing</strong>.</p>
-          <p>Want all three? They complement each other perfectly and cover the core skills every tester needs.</p>
+          <p>Already comfortable with test cases? Jump to <strong>Bug Reports</strong>, <strong>Exploratory Testing</strong>, or <strong>AI Browser Automation</strong>.</p>
+          <p>Want all four? They complement each other perfectly and cover the core skills every tester needs.</p>
         </div>
         
         <ul class="course-list">
+          <li class="course-card">
+            <div class="course-header">
+              <img src="/aiBrowserAutomation.png" alt="AI Browser Automation Course Cover" class="course-cover" width="150" height="150" />
+              <div class="course-title-wrapper">
+                <a class="course-link" href="https://www.udemy.com/course/ai-browser-automation-that-doesnt-suck/?referralCode=3E77AD95317A6809F557">AI Browser Automation That Doesn't Suck</a>
+                <span class="students-enrolled">New course</span>
+              </div>
+            </div>
+            <div class="course-details">
+              <p class="course-highlight">Use AI agents with Playwright CLI to test real workflows without writing a single selector.</p>
+              <p>Built entirely from real, unstaged recordings: logging in, exploring a real quiz app, catching a genuine accessibility bug, and building a reusable exploratory testing suite out of it. No automation background required.</p>
+              
+              <div class="course-features">
+                <div class="feature">
+                  <span class="feature-icon">✓</span>
+                  <span>Real, unstaged recordings</span>
+                </div>
+                <div class="feature">
+                  <span class="feature-icon">✓</span>
+                  <span>Reusable testing workflow</span>
+                </div>
+                <div class="feature">
+                  <span class="feature-icon">✓</span>
+                  <span>Works with Claude Code, Codex, and other AI agents</span>
+                </div>
+              </div>
+              
+              <div class="course-topics">
+                <h4>What you'll learn:</h4>
+                <ul>
+                  <li>Navigate and inspect pages with Playwright CLI snapshots</li>
+                  <li>Drive real login and quiz flows with plain-language instructions</li>
+                  <li>Save sessions and stay logged in securely</li>
+                  <li>Capture proof with screenshots and video</li>
+                  <li>Build a reusable exploratory testing suite</li>
+                </ul>
+              </div>
+              
+              <div class="course-meta">
+                <div class="meta-item">
+                  <h4>Requirements:</h4>
+                  <p>No automation experience needed. A browser and an AI agent tool like Claude Code or Codex are enough. Curiosity to explore software.</p>
+                </div>
+                
+                <div class="meta-item">
+                  <h4>Who it's for:</h4>
+                  <p>QA engineers who want to use AI for browser automation, testers curious about Playwright CLI, developers who want faster manual testing workflows, and anyone tired of writing boilerplate scripts.</p>
+                </div>
+              </div>
+              
+              <div class="course-cta" style="margin-top: 1.5rem;">
+                <a href="https://www.udemy.com/course/ai-browser-automation-that-doesnt-suck/?referralCode=3E77AD95317A6809F557" class="btn-secondary">Enroll Now</a>
+              </div>
+            </div>
+          </li>
           <li class="course-card">
             <div class="course-header">
               <Image src={coverTestCases} alt="Test Cases Course Cover" class="course-cover" width={150} height={150} />
